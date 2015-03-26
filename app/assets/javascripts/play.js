@@ -43,6 +43,18 @@ $(document).on("ready", function(){
     success: function(resp) {
       console.log(JSON.stringify(resp));
     }
-  })
+  });
+
+  $.ajax({
+    url: 'https://zilyo.p.mashape.com/search?latitude=52.5306438&longitude=13.3830683&pricemax=200&provider=airbnb',
+    type: 'POST',
+    dataType: 'json',
+    success: function(data) {
+      console.log(data)
+    },
+    beforeSend: function(xhr) {
+      xhr.setRequestHeader("X-Mashape-Authorization", "N7SrCXP14imshrRVT7zdeMHz9NeLp1va6vFjsnpDJD7Fi1jnFg");
+    }
+  });
 
 })
