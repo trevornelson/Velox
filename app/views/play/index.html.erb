@@ -1,0 +1,23 @@
+<div ng-controller="playCtrl">
+  Search: <input ng-model="search">
+  <ul>
+    <li ng-repeat="flight in flights | orderBy: 'price'">
+      <a href="#" ng-click="showDepart = ! showDepart"> {{ flight.name }} </a>
+      <p ng-show="showDepart">yay! {{flight.depart}} </p>
+    </li>
+  </ul>
+</div>
+
+
+
+<div ng-controller="playCtrl">
+  <ul>
+    <li ng-repeat="flight in flights | orderBy: duration">
+      <a href="#" ng-click="showDepart = ! showDepart"> {{ flight.name}} </a>
+      <p ng-show="showDepart">yay! {{flight.depart}} </p>
+    </li>
+  </ul>
+</div>
+
+
+
