@@ -7,51 +7,48 @@ var Hotel = function(data) {
   this.streetName = data.location.streetName;
   this.price = data.price.nightly;
   this.provider = data.provider.full;
-  this.availability = data.availabity;
+  this.availability = data.availability;
   this.photo_url = data.photos[0].xlarge;
   this.url = data.provider.url;
 };
 
-//hydrates hotel objects from API output
-var createHotels = function(data) {
-  var hotels = [];
-  for (i=0; i<data.length; i++) {
-    hotels.push(new Hotel(data[i]));
-  }
-  return hotels;
-};
-
-//create function to fetch hotels from API
-var fetchHotels = function() {
-  $.ajax({
-    url: 'https://zilyo.p.mashape.com/search?latitude=52.5306438&longitude=13.3830683&pricemax=200&provider=airbnb',
-    type: 'POST',
-    dataType: 'json',
-    success: function(data) {
-      hotels = createHotels(data.result);
-      console.log(hotels);
-    },
-    beforeSend: function(xhr) {
-      xhr.setRequestHeader("X-Mashape-Authorization", "N7SrCXP14imshrRVT7zdeMHz9NeLp1va6vFjsnpDJD7Fi1jnFg");
-    }
-  });
-}
-
-//enclosure containing hither module
-// (function(){
-
-  var myAppModule = angular.module('hither', []);
+  //create hither module
+  angular.module('hither', []);
 
   //create hotel controller
-  myAppModule.controller('HotelController', function() {
-    this.hotels = [];
+  angular.module('hither').controller('HotelController', ['$scope', '$http', function($scope, $http) {
 
-  });
+    var httpConfig = {  headers:{ "X-Mashape-Authorization": "N7SrCXP14imshrRVT7zdeMHz9NeLp1va6vFjsnpDJD7Fi1jnFg"}};
 
-// })();
+    $scope.fetchHotels = function() {
+      $http.get('https://zilyo.p.mashape.com/search?latitude=52.5306438&longitude=13.3830683&pricemax=200&provider=airbnb', httpConfig)
+      .success(function(data) {
+       $scope.hotels = data.result.map(function(hotel_data) {
+        return new Hotel(hotel_data)
+      });
+     })
+    };
 
-$(document).on("ready", function(){
+  }] );
 
-  fetchHotels();
 
-})
+
+  //Given API output (array of data objects), return array of hydrated hotel objects
+// var createHotels = function(data) {
+//   return data.map(function(hotel_data) {return new Hotel(hotel_data)})
+// };
+
+//create function to fetch hotels from API
+// var fetchHotels = function() {
+
+//   return $.ajax({
+//     url: 'https://zilyo.p.mashape.com/search?latitude=52.5306438&longitude=13.3830683&pricemax=200&provider=airbnb',
+//     type: 'POST',
+//     dataType: 'json',
+//     beforeSend: function(xhr) {
+//       xhr.setRequestHeader("X-Mashape-Authorization", "N7SrCXP14imshrRVT7zdeMHz9NeLp1va6vFjsnpDJD7Fi1jnFg");
+//     }
+//   }).then(function(data) {
+//    return data.result.map(function(hotel_data) {return new Hotel(hotel_data)})
+//   });
+// };
