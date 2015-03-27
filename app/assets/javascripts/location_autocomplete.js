@@ -1,17 +1,29 @@
-function initialize() {
+$(document).ready(function(){
   var depart_autocomplete = $('#depart-autocomplete');
   var return_autocomplete = $('#return-autocomplete');
-  var departing, returning;
 
-  departing = new google.maps.places.Autocomplete((depart_autocomplete), { types: ['airport'] });
+  console.log("Initialized function called");
+
+
+  var departing = new google.maps.places.Autocomplete((depart_autocomplete), { types: ['airport'] });
+
+
+  console.log("Departing object initialized");
+  console.log(departing);
 
   google.maps.event.addListener(departing, 'place_changed', function() {
-    console.log(departing.getPlace());
+    console.log("event listener added to departing");
+    // console.log(departing.getPlace());
   });
 
-  returning = new google.maps.places.Autocomplete((return_autocomplete), { types: ['airport'] });
+  var returning = new google.maps.places.Autocomplete((return_autocomplete), { types: ['airport'] });
+
+
+  console.log("Returning object initialized");
+  console.log(returning);
+
 
   google.maps.event.addListener(returning, 'place_changed', function() {
-    console.log(returning.getPlace());
+    // console.log(returning.getPlace());
   });
-}
+});
