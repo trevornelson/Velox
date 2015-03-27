@@ -8,10 +8,9 @@
 </div>
 
 
-
 <div ng-controller="FlightController as fc">
   <ul>
-    <li ng-repeat="flight in fc.flights | orderBy: duration">
+    <li ng-repeat="flight in fc.flights | orderBy: fc.duration">
       <p>{{flight.name}}</p>
     </li>
   </ul>
