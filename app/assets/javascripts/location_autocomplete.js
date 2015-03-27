@@ -12,18 +12,27 @@ $(document).ready(function(){
   console.log(departing);
 
   google.maps.event.addListener(departing, 'place_changed', function() {
-    console.log("event listener added to departing");
+    createSearch();
     // console.log(departing.getPlace());
   });
 
-  var returning = new google.maps.places.Autocomplete((return_autocomplete), { types: ['airport'] });
+  function createSearch() {
+    console.log("in createSearch");
+
+    var place = autocomplete.getPlace();
+
+    console.log(place.geometry.location.lat());
+    console.log(place.geometry.location.lng());
+  }
+
+  // var returning = new google.maps.places.Autocomplete((return_autocomplete), { types: ['airport'] });
 
 
-  console.log("Returning object initialized");
-  console.log(returning);
+  // console.log("Returning object initialized");
+  // console.log(returning);
 
 
-  google.maps.event.addListener(returning, 'place_changed', function() {
-    // console.log(returning.getPlace());
-  });
+  // google.maps.event.addListener(returning, 'place_changed', function() {
+  //   // console.log(returning.getPlace());
+  // });
 });
