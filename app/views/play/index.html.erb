@@ -1,4 +1,4 @@
-<div ng-controller="FlightController as fc">
+<!-- <div ng-controller="FlightController as fc">
   Search: <input ng-model="search">
   <ul>
     <li ng-repeat="flight in fc.flights | orderBy: 'price'">
@@ -6,15 +6,14 @@
     </li>
   </ul>
 </div>
+ -->
 
-
-<div ng-controller="FlightController as fc">
+<div ng-controller="HotelController as hc">
   <ul>
-    <li ng-repeat="flight in fc.flights | orderBy: fc.duration">
-      <p>{{flight.name}}</p>
+    <li ng-repeat="hotel in hc.hotels | orderBy: 'price'">
+      <p>{{hotel.name}}</p>
     </li>
   </ul>
 </div>
-
 
 
