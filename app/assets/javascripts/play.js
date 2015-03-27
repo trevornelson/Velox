@@ -1,6 +1,7 @@
+var myAppModule = angular.module('hither', []);
+
 (function(){
 
-  var myAppModule = angular.module('hither', []);
 
   myAppModule.controller('FlightController', function() {
     this.flights = flights;
@@ -38,30 +39,3 @@ thing = {
     "refundable": false
   }
 }
-
-$(document).on("ready", function(){
-
-  // $.ajax({
-  //   type: 'POST',
-  //   url: 'https://www.googleapis.com/qpxExpress/v1/trips/search?key=AIzaSyDskBz8WieP74_yU_hA7tVRvL1Ifl4ED1w',
-  //   contentType: 'application/json',
-  //   data: JSON.stringify(thing),
-  //   dataType: "json",
-  //   success: function(resp) {
-  //     // console.log(JSON.stringify(resp));
-  //   }
-  // });
-
-  // $.ajax({
-  //   url: 'https://zilyo.p.mashape.com/search?latitude=52.5306438&longitude=13.3830683&pricemax=200&provider=airbnb',
-  //   type: 'POST',
-  //   dataType: 'json',
-  //   success: function(data) {
-  //     // console.log(data)
-  //   },
-  //   beforeSend: function(xhr) {
-  //     xhr.setRequestHeader("X-Mashape-Authorization", "N7SrCXP14imshrRVT7zdeMHz9NeLp1va6vFjsnpDJD7Fi1jnFg");
-  //   }
-  // });
-
-})

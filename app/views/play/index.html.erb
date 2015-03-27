@@ -18,3 +18,15 @@
 
 
 
+<div ng-controller="TripController">
+  <p ng-bind="steven"></p>
+  <form>
+    Origin: <input ng-model="trip.origin">
+    Dest: <input ng-model="trip.dest">
+
+  <button ng-click="findTrips()">Find trips</button>
+
+  <div ng-repeat="trip in trips">
+    <p ng-bind="trip[0].carrier_abbv"></p>
+  </div>
+</div>
