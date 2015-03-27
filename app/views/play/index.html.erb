@@ -1,20 +1,18 @@
-<div ng-controller="playCtrl">
+<div ng-controller="FlightController as fc">
   Search: <input ng-model="search">
   <ul>
-    <li ng-repeat="flight in flights | orderBy: 'price'">
-      <a href="#" ng-click="showDepart = ! showDepart"> {{ flight.name }} </a>
-      <p ng-show="showDepart">yay! {{flight.depart}} </p>
+    <li ng-repeat="flight in fc.flights | orderBy: 'price'">
+      <p>{{flight.name}} : {{flight.price | currency}}</p>
     </li>
   </ul>
 </div>
 
 
 
-<div ng-controller="playCtrl">
+<div ng-controller="FlightController as fc">
   <ul>
-    <li ng-repeat="flight in flights | orderBy: duration">
-      <a href="#" ng-click="showDepart = ! showDepart"> {{ flight.name}} </a>
-      <p ng-show="showDepart">yay! {{flight.depart}} </p>
+    <li ng-repeat="flight in fc.flights | orderBy: duration">
+      <p>{{flight.name}}</p>
     </li>
   </ul>
 </div>
