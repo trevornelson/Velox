@@ -19,23 +19,9 @@ describe('SearchController', function() {
   });
 
   it('should call searchFactory query function when keyup event is triggered', function() {
-
-  });
-
-  it('should update departing location results dropdown when departing keyup event is triggered', function() {
-
-  });
-
-  it('should update destination location results dropdown when destination keyup event is triggered', function() {
-
-  });
-
-  it('should not update destination location results dropdown when departing keyup event is triggered', function() {
-
-  });
-
-  it('should not update departing location results dropdown when destination keyup event is triggered', function() {
-
+    spyOn(searchFactory, 'query');
+    angular.element('#depart-autocomplete').trigger('keyup');
+    expect(searchFactory.query).toHaveBeenCalled();
   });
 
 })
