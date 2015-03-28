@@ -28,8 +28,8 @@ request_input = {
   "request": {
     "slice": [
       {
-        "origin": "JAN",
-        "destination": "KTN",
+        "origin": "EWR",
+        "destination": "SFO",
         "date": "2015-03-27"
       }
     ],
