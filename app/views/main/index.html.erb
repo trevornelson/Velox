@@ -1,0 +1,33 @@
+<div class="row" onload="initialize()">
+  <div class="col-md-6 col-md-offset-3">
+    <h1>Travel, simplified.</h1>
+    <form name="searchForm" ng-controller="SearchController">
+      <div class="row" id="location-inputs">
+        <div class="col-md-6">
+          <input type="text" class="search-bar" placeholder="Departure" name="depart_location" id="depart-autocomplete" ng-keyup="keyup($event)" ng-model="search.query" required>
+          <ul class="list-group">
+            <li class="list-group-item" ng-repeat="result in search.results">
+              {{result.description}}
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <input type="text" class="search-bar" placeholder="Destination" name="destination_location" id="destination-autocomplete" ng-focus="autoComplete($event)" required>
+        </div>
+      </div>
+      <div class="row" id="date-inputs">
+        <div class="col-md-6">
+          <label>Departure Date:</br>
+            <input type="date" name="depart_date" ng-model="itinerary" required>
+          </label>
+        </div>
+        <div class="col-md-6">
+          <label>Arrival Date:</br>
+            <input type="date" name="return_date" ng-model="itinerary">
+          </label>
+        </div>
+      </div>
+      <input type="submit" class="btn btn-default">
+    </form>
+  </div>
+</div>
