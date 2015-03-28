@@ -3,8 +3,8 @@
     <h1>Travel, simplified.</h1>
     <form name="searchForm" ng-controller="SearchController as search">
       <div class="row" id="location-inputs">
-        <input type="text" placeholder="Departure" name="depart_location" ng-model="itinerary" id="depart-autocomplete" required>
-        <input type="text" placeholder="Destination" name="destination_location" ng-model="itinerary" id="destination-autocomplete" required>
+        <input type="text" placeholder="Departure" name="depart_location" ng-model="itinerary" id="depart-autocomplete" ng-focus="autoComplete($event)" required>
+        <input type="text" placeholder="Destination" name="destination_location" ng-model="itinerary" id="destination-autocomplete" ng-focus="autoComplete($event)" required>
       </div>
       <div class="row" id="date-inputs">
         <div class="col-md-6">
