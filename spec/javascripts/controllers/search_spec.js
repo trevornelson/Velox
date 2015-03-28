@@ -14,12 +14,8 @@ describe('SearchController', function() {
     $controller('SearchController', {'$rootScope': $rootScope, '$scope': $scope});
   }));
 
-  it('should initialize an AutoCompleteService object for departing location', function() {
-    expect($scope.departing.constructor.name == 'Ll');
-  });
-
-  it('should initialize an AutoCompleteService object for returning location', function() {
-    expect($scope.returning.constructor.name == 'Ll');
+  it('should contain injected searchFactory dependency', function() {
+    expect($controller.searchFactory).toBeDefined();
   });
 
 })
