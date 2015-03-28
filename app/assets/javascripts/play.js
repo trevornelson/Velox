@@ -15,7 +15,7 @@ var Hotel = function(data) {
   //create hither module
   angular.module('hither', []);
 
-  //create hotel controller
+  // create hotel controller
   angular.module('hither').controller('HotelController', ['$scope', '$http', function($scope, $http) {
 
     var httpConfig = {  headers:{ "X-Mashape-Authorization": "N7SrCXP14imshrRVT7zdeMHz9NeLp1va6vFjsnpDJD7Fi1jnFg"}};
@@ -30,8 +30,6 @@ var Hotel = function(data) {
     };
 
   }] );
-
-
 
   //Given API output (array of data objects), return array of hydrated hotel objects
 // var createHotels = function(data) {
