@@ -2,12 +2,29 @@
 
 describe('searchFactory', function() {
 
-  beforeEach(module('searchFactory'));
+  var searchFactory;
+
+  beforeEach(function() {
+
+    module('hither');
+
+    inject(function(_searchFactory_) {
+      searchFactory = _searchFactory_;
+    });
+  });
 
   describe('selectResult', function() {
-    it('should create a Search object', function() {
-      var returned_object = searchFactory.selectResult();
-      expect(returned_object.constructor).toBe('Search');
+    var search_options, returned_object;
+
+    beforeEach(function() {
+      search_options = {}
+    });
+
+
+    it('should call buildSearch function', function() {
+      spyOn(searchFactory, 'buildSearch');
+      searchFactory.selectResult();
+      expect(searchFactory.buildSearch).toHaveBeenCalled();
     });
 
   });
