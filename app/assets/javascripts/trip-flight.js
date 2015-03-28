@@ -19,10 +19,31 @@ function Trip(flight_array, trip_data){
   }
 }
 
+thing = {
+  "request": {
+    "slice": [
+      {
+        "origin": "JAN",
+        "destination": "KTN",
+        "date": "2015-03-27"
+      }
+    ],
+    "passengers": {
+      "adultCount": 1,
+      "infantInLapCount": 0,
+      "infantInSeatCount": 0,
+      "childCount": 0,
+      "seniorCount": 0
+    },
+    "solutions": 1,
+    "refundable": false
+  }
+}
+
 myAppModule.controller('TripController', function($scope,$http) {
   var httpConfig = {headers: {'key':'AIzaSyDskBz8WieP74_yU_hA7tVRvL1Ifl4ED1w'}};
   $scope.findTrips = function(){
-    $http.post('https://www.googleapis.com/qpxExpress/v1/trips/search', flight_input)
+    $http.post('https://www.googleapis.com/qpxExpress/v1/trips/search', thing)
     .success(function(data){
       var flight_input = data.trips.tripOption[0].slice[0].segment[0];
       var trip_input = data.trips.tripOption;
@@ -34,7 +55,8 @@ myAppModule.controller('TripController', function($scope,$http) {
   }
 });
 
-flight_input = [
+
+flight_output = [
 {
   carrier_abbv: "US",
   origin: "EWR",
