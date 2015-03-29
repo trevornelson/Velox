@@ -30,16 +30,24 @@ describe('searchFactory', function() {
   });
 
   describe('hydrateResults', function() {
+    var search_results;
+
     beforeEach(function() {
-      this.returned_object = searchFactory.hydrateResults();
+       search_results = [{description: 'Laguardia Airport',
+                        airport_code: 'LGA',
+                        latitude: '86.12456',
+                        longitude: '45.235721'
+                        }]
+
+      this.returned_object = searchFactory.hydrateResults(search_results);
     });
 
     it('should return an array', function() {
-      expect(Array.isArray(this.returned_object)).toBeTruthy;
+      expect(Array.isArray(this.returned_object)).toBe(true);
     });
 
-    it('should return searchResult objects', function() {
-      expect(this.returned_object[0].constructor).toBe('searchResult');
+    it('should return SearchResult objects', function() {
+      expect(this.returned_object[0].airport_code).toBe('LGA');
     });
 
   });
