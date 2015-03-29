@@ -37,8 +37,6 @@ angular.module('hither').factory('FlightFactory', ['$http', function($http) {
     }
   };
 
-  var formatted_q = JSON.stringify(thing);
-
   factory.fetchFlights = function() {
     return $.ajax({
       type: 'POST',
@@ -54,10 +52,13 @@ angular.module('hither').factory('FlightFactory', ['$http', function($http) {
 
 //flight class definition
 function Flight(flight_data){
+  this.dep_time = flight_data.leg[0].departureTime;
+  this.arr_time = flight_data.leg[0].arrivalTime;
   this.carrier_abbv = flight_data.flight.carrier;
   this.airport_ori_code = flight_data.leg[0].origin;
   this.airport_dest_code = flight_data.leg[0].destination;
   this.duration = flight_data.leg[0].duration;
+  this.cabin = flight_data.cabin;
 }
 
 //create flights function

@@ -3,7 +3,7 @@ HELLLO
 <!--   Search: <input ng-model="search"> -->
   <ul>
     <li ng-repeat="trip in trips">
-      {{trip.flights[0].airport_ori_code}}: {{trip.flights[0].duration}}
+      Departing Airport: {{trip.flights[0].airport_ori_code}} Departure Time: {{trip.flights[0].dep_time}}
     </li>
   </ul>
 </div>
