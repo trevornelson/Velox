@@ -3,16 +3,57 @@ var myAppModule = angular.module('hither', []);
 angular.module('hither')
   .controller('SearchController', ['$scope', '$q', 'searchFactory',
     function($scope, $q, searchFactory) {
-      $scope.results = [{name: 'trevor'},{name: 'tina'}];
+
+      $scope.search = new searchFactory.buildSearch();
+      var options = {types : ['airport']};
+      var depart_input = document.getElementById('depart-autocomplete');
+      var arrive_input = document.getElementById('destination-autocomplete');
+      var depart_ac = new google.maps.places.Autocomplete(depart_input, options);
+      var arrive_ac = new google.maps.places.Autocomplete(arrive_input, options);
+
+      google.maps.event.addListener(depart_ac, 'place_changed', function() {
+        console.log('added listener');
+        var place = depart_ac.getPlace();
+        $scope.search.depart_location(searchFactory.buildLocation(place));
+        $scope.$apply();
+      });
 
 
-      $scope.keyup = function(event) {
-        var search_box = event.target;
-        console.log('started keyup function');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // $scope.keyup = function(event) {
+      //   var search_box = event.target;
+      //   console.log('started keyup function');
         // $scope.results = searchFactory.query(search_box.value);
 
-        $scope.results = $q.when(searchFactory.query(search_box.value));
-        console.log($scope.results);
+        // $scope.results = searchFactory.query(search_box.value);
+        // console.log($scope.results);
         // var promise = searchFactory.query(search_box.value);
         // promise.then(function(data) {
         //   console.log(data);
@@ -25,7 +66,7 @@ angular.module('hither')
 
         // $scope.results = data;
         // console.log('ended keyup function');
-      }
+      // }
 
   }
 ]);
@@ -42,9 +83,8 @@ angular.module('hither')
       if (query === '') {
         deferred.reject('No search query supplied');
       } else {
-        var responses = factory.placesService.getQueryPredictions({input: query}, factory.hydrateResults);
+        factory.placesService.getQueryPredictions({input: query}, factory.hydrateResults);
         // console.log('adding resolve to deferred');
-        console.log(responses);
         // deferred.resolve(responses);
       }
 
@@ -82,13 +122,17 @@ angular.module('hither')
       console.log('start callback');
       console.log(predictions);
       return predictions; //factory.hydrateResults(predictions);;
-    }
-
-    factory.buildSearch = function(search_options) {
-      return new Search(search_options);
     };
 
-    var location = function(args) {
+    factory.buildSearch = function() {
+      return new Search();
+    };
+
+    factory.buildLocation = function(args) {
+      return new Location(args);
+    }
+
+    var Location = function(args) {
       this.name = args.name;
       this.airport_code = args.airport_code;
       this.latitude = args.latitude;
@@ -96,11 +140,11 @@ angular.module('hither')
     };
 
     // how to make this accept a object containing any of these parameters?
-    var Search = function(depart_location) {
-      this.depart_location = depart_location;
-      this.arrival_location = null;
-      this.depart_date = null;
-      this.return_date = null;
+    var Search = function() {
+      this.depart_location = '';
+      this.arrival_location = '';
+      this.depart_date = '';
+      this.return_date = '';
     };
 
     var SearchResult = function(args) {

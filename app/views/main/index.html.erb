@@ -4,7 +4,7 @@
     <form name="searchForm" ng-controller="SearchController">
       <div class="row" id="location-inputs">
         <div class="col-md-6">
-          <input type="text" class="search-bar" placeholder="Departure" name="depart_location" id="depart-autocomplete" ng-keyup="keyup($event)" required>
+          <input type="text" class="search-bar" placeholder="Departure" name="depart_location" id="depart-autocomplete" ng-model="search.depart_location.name" required>
           <ul class="list-group">
             <li class="list-group-item" ng-repeat="result in results">
               {{result.name}}
@@ -28,6 +28,18 @@
         </div>
       </div>
       <input type="submit" class="btn btn-default">
+      <div>
+        <h2>Departure</h2>
+        <p>{{search.depart_location.name}}</p>
+        <p>{{search.depart_location.airport_code}}</p>
+        <p>{{search.depart_location.latitude}}</p>
+        <p>{{search.depart_location.longitude}}</p>
+        <h2>Arrival</h2>
+        <p>{{search.arrival_location.name}}</p>
+        <p>{{search.arrival_location.airport_code}}</p>
+        <p>{{search.arrival_location.latitude}}</p>
+        <p>{{search.arrival_location.longitude}}</p>
+      </div>
     </form>
   </div>
 </div>
