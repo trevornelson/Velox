@@ -1,17 +1,8 @@
-<div ng-controller="FlightController as fc">
-  Search: <input ng-model="search">
+<div ng-controller="TripController">
+<!--   Search: <input ng-model="search"> -->
   <ul>
-    <li ng-repeat="flight in fc.flights | orderBy: 'price'">
-      <p>{{flight.name}} : {{flight.price | currency}}</p>
-    </li>
-  </ul>
-</div>
-
-
-<div ng-controller="FlightController as fc">
-  <ul>
-    <li ng-repeat="flight in fc.flights | orderBy: fc.duration">
-      <p>{{flight.name}}</p>
+    <li ng-repeat="trip in trips">
+      <p>{{trip.flights[0].carrier_abbv}} : {{trip.flights[0].duration}}</p>
     </li>
   </ul>
 </div>
