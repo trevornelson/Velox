@@ -21,11 +21,18 @@ angular.module('hither')
     };
 
     factory.selectResult = function(search_result) {
-      factory.buildSearch(search_result);
+      return factory.buildSearch(search_result);
+    };
+
+    factory.hydrateResults = function(results) {
+      var hydrated = [];
+      results.forEach(function(el, ind, arr){
+        hydrated.push(new SearchResult(el));
+      });
+      return hydrated;
     };
 
     factory.buildSearch = function(search_options) {
-      console.log('building search object');
       return new Search(search_options);
     };
 
@@ -44,7 +51,7 @@ angular.module('hither')
       this.return_date = null;
     };
 
-    var searchResult = function(args) {
+    var SearchResult = function(args) {
       this.name = args.description;
       this.airport_code = args.airport_code;
       this.latitude = args.latitude;
