@@ -3,8 +3,9 @@ myAppModule.controller('TripController', ['$scope', 'FlightFactory', function($s
   FlightFactory.fetchFlights().success(function(data) {
       var trip_input = data.trips.tripOption;
       $scope.trips = trip_input.map(function(flight_input) {
-        return console.log(new Trip(createFlights(flight_input.slice[0].segment), flight_input));
+        return new Trip(createFlights(flight_input.slice[0].segment), flight_input);
       });
+      $scope.$apply();
   });
 }] );
 
@@ -36,7 +37,7 @@ myAppModule.factory('FlightFactory', ['$http', function($http) {
   factory.fetchFlights = function() {
     return $.ajax({
       type: 'POST',
-      url: 'https://www.googleapis.com/qpxExpress/v1/trips/search?key=AIzaSyAZwVwEPSvSSXXKzLrt-h-lQMN2T3woqCs',
+      url: 'https://www.googleapis.com/qpxExpress/v1/trips/search?key=AIzaSyAZwVwEPSvSSXXKzLrt-h-lQMN2T3woqCs&',
       contentType: 'application/json',
       data: JSON.stringify(thing),
       dataType: "json"
@@ -48,10 +49,13 @@ myAppModule.factory('FlightFactory', ['$http', function($http) {
 
 //flight class definition
 function Flight(flight_data){
+  this.dep_time = flight_data.leg[0].departureTime;
+  this.arr_time = flight_data.leg[0].arrivalTime;
   this.carrier_abbv = flight_data.flight.carrier;
   this.airport_ori_code = flight_data.leg[0].origin;
   this.airport_dest_code = flight_data.leg[0].destination;
   this.duration = flight_data.leg[0].duration;
+  this.cabin = flight_data.cabin;
 }
 
 //create flights function
