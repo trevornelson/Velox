@@ -87,15 +87,18 @@ describe('searchFactory', function() {
     });
   });
 
-  describe('queryApi', function() {
+  describe('query', function() {
     it('should return null if query input is empty', function() {
-      expect(searchFactory.queryApi()).toBe(null);
+      expect(searchFactory.query('')).toBe(null);
     });
 
     it('should call callback function if query is valid', function() {
       spyOn(searchFactory, 'callback');
-      searchFactory.queryApi('texas');
-      expect(searchFactory.callback).toHaveBeenCalled();
+      searchFactory.query('texas');
+      setTimeout(function() {
+        expect(searchFactory.callback).toHaveBeenCalled();
+      }, 200);
+
     });
   });
 

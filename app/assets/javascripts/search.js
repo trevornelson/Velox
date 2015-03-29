@@ -15,9 +15,14 @@ angular.module('hither')
   .factory('searchFactory', function() {
 
     var factory = {};
+    factory.placesService = new google.maps.places.AutocompleteService();
 
     factory.query = function(query) {
-      return query;
+      if (query === '') {
+        return null;
+      }
+
+      return factory.placesService.getQueryPredictions({input: query}, factory.callback);
     };
 
     factory.selectResult = function(search_result) {
@@ -37,7 +42,7 @@ angular.module('hither')
       //   alert(status);
       //   return;
       // }
-
+      console.log('running callback');
       return factory.hydrateResults(predictions);
     }
 
