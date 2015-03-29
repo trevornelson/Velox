@@ -1,67 +1,72 @@
-(function(){
+var myAppModule = angular.module('hither', []);
 
-  var myAppModule = angular.module('hither', []);
-
-  myAppModule.controller('FlightController', function() {
-    this.flights = flights;
-    this.duration = function(flight) {
-      var dur = ((new Date(flight.arrive)) - (new Date(flight.depart)));
-      return dur;
-    };
+//create hotel controller
+angular.module('hither').controller('TripController', ['$scope', 'FlightFactory', function($scope, FlightFactory) {
+  FlightFactory.fetchFlights().success(function(data) {
+      var flight_input = data.trips.tripOption[0].slice[0].segment[0];
+      var trip_input = data.trips.tripOption;
+      $scope.trips = new Trip(createFlights(flight_input), {price: "USD320.50"});
   });
+}] );
 
-  var flights = [
-    {name: "flight1", price: "800", depart: "2015-03-24T06:57:23+00:00", arrive: "2015-03-24T09:57:23+00:00"},
-    {name: "flight2", price: "300", depart: "2015-03-24T04:57:23+00:00", arrive: "2015-03-24T10:57:23+00:00"},
-    {name: "flight3", price: "400", depart: "2015-03-24T06:57:23+00:00", arrive: "2015-03-24T06:57:23+00:00"}
-  ];
+// create flight factory
+angular.module('hither').factory('FlightFactory', ['$http', function($http) {
+  var factory = {};
 
-})();
-
-thing = {
-  "request": {
-    "slice": [
+  var thing = {
+    "request": {
+      "slice": [
       {
         "origin": "JAN",
         "destination": "KTN",
         "date": "2015-03-27"
       }
-    ],
-    "passengers": {
-      "adultCount": 1,
-      "infantInLapCount": 0,
-      "infantInSeatCount": 0,
-      "childCount": 0,
-      "seniorCount": 0
-    },
-    "solutions": 5,
-    "refundable": false
+      ],
+      "passengers": {
+        "adultCount": 1,
+        "infantInLapCount": 0,
+        "infantInSeatCount": 0,
+        "childCount": 0,
+        "seniorCount": 0
+      },
+      "solutions": 1,
+      "refundable": false
+    }
   }
+
+  factory.fetchFlights = function() {
+    return $.ajax({
+      type: 'POST',
+      url: 'https://www.googleapis.com/qpxExpress/v1/trips/search?key=AIzaSyAZwVwEPSvSSXXKzLrt-h-lQMN2T3woqCs',
+      contentType: 'application/json',
+      data: JSON.stringify(thing),
+      dataType: "json"
+    });
+  };
+
+  return factory;
+}] );
+
+//flight class definition
+function Flight(flight_data){
+  this.carrier_abbv = flight_data.carrier_abbv;
+  this.airport_ori_code = flight_data.origin;
+  this.airport_dest_code = flight_data.destination;
+  this.duration = flight_data.duration;
 }
 
-$(document).on("ready", function(){
+//create flights function
+function createFlights(flight_input){
+  return flight_input.map(function(flight_data) {return new Flight(flight_data)})
+}
 
-  // $.ajax({
-  //   type: 'POST',
-  //   url: 'https://www.googleapis.com/qpxExpress/v1/trips/search?key=AIzaSyDskBz8WieP74_yU_hA7tVRvL1Ifl4ED1w',
-  //   contentType: 'application/json',
-  //   data: JSON.stringify(thing),
-  //   dataType: "json",
-  //   success: function(resp) {
-  //     // console.log(JSON.stringify(resp));
-  //   }
-  // });
-
-  // $.ajax({
-  //   url: 'https://zilyo.p.mashape.com/search?latitude=52.5306438&longitude=13.3830683&pricemax=200&provider=airbnb',
-  //   type: 'POST',
-  //   dataType: 'json',
-  //   success: function(data) {
-  //     // console.log(data)
-  //   },
-  //   beforeSend: function(xhr) {
-  //     xhr.setRequestHeader("X-Mashape-Authorization", "N7SrCXP14imshrRVT7zdeMHz9NeLp1va6vFjsnpDJD7Fi1jnFg");
-  //   }
-  // });
-
-})
+//trip class definition
+function Trip(flight_array, trip_data){
+  this.price = trip_data.price;
+  this.flights = flight_array;
+  this.duration = function(){
+    duration = 0;
+    this.flights.forEach(function(flight){duration = duration + flight.duration});
+    return duration
+  }
+}
