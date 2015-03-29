@@ -6,7 +6,7 @@ angular.module('hither').controller('TripController', ['$scope', 'FlightFactory'
   FlightFactory.fetchFlights().success(function(data) {
       var trip_input = data.trips.tripOption;
       $scope.trips = trip_input.map(function(flight_input) {
-        return console.log(new Trip(createFlights(flight_input.slice[0].segment), flight_input));
+        return new Trip(createFlights(flight_input.slice[0].segment), flight_input);
       });
   });
 }] );
@@ -35,6 +35,8 @@ angular.module('hither').factory('FlightFactory', ['$http', function($http) {
       "refundable": false
     }
   };
+
+  var formatted_q = JSON.stringify(thing);
 
   factory.fetchFlights = function() {
     return $.ajax({
