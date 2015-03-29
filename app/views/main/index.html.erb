@@ -18,12 +18,12 @@
       <div class="row" id="date-inputs">
         <div class="col-md-6">
           <label>Departure Date:</br>
-            <input type="date" name="depart_date" ng-model="itinerary" required>
+            <input type="date" name="depart_date" ng-model="search.depart_date" required>
           </label>
         </div>
         <div class="col-md-6">
           <label>Return Date:</br>
-            <input type="date" name="return_date" ng-model="itinerary">
+            <input type="date" name="return_date" ng-model="search.return_date">
           </label>
         </div>
       </div>
@@ -34,11 +34,13 @@
         <p>{{search.depart_location.airport_code}}</p>
         <p>{{search.depart_location.latitude}}</p>
         <p>{{search.depart_location.longitude}}</p>
-        <h2>Arrival</h2>
+        <p>{{search.depart_date}}</p>
+        <h2>Return</h2>
         <p>{{search.arrival_location.name}}</p>
         <p>{{search.arrival_location.airport_code}}</p>
         <p>{{search.arrival_location.latitude}}</p>
         <p>{{search.arrival_location.longitude}}</p>
+        <p>{{search.return_date}}</p>
       </div>
     </form>
   </div>
