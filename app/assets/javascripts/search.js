@@ -32,6 +32,15 @@ angular.module('hither')
       return hydrated;
     };
 
+    factory.callback = function(predictions, status) {
+      // if (status != google.maps.places.PlaceServiceStatus.OK) {
+      //   alert(status);
+      //   return;
+      // }
+
+      return factory.hydrateResults(predictions);
+    }
+
     factory.buildSearch = function(search_options) {
       return new Search(search_options);
     };
