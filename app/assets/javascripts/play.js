@@ -8,6 +8,7 @@ angular.module('hither').controller('TripController', ['$scope', 'FlightFactory'
       $scope.trips = trip_input.map(function(flight_input) {
         return new Trip(createFlights(flight_input.slice[0].segment), flight_input);
       });
+      $scope.$apply();
   });
 }] );
 
@@ -41,7 +42,7 @@ angular.module('hither').factory('FlightFactory', ['$http', function($http) {
   factory.fetchFlights = function() {
     return $.ajax({
       type: 'POST',
-      url: 'https://www.googleapis.com/qpxExpress/v1/trips/search?key=AIzaSyAZwVwEPSvSSXXKzLrt-h-lQMN2T3woqCs',
+      url: 'https://www.googleapis.com/qpxExpress/v1/trips/search?key=AIzaSyAZwVwEPSvSSXXKzLrt-h-lQMN2T3woqCs&',
       contentType: 'application/json',
       data: JSON.stringify(thing),
       dataType: "json"

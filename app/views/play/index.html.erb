@@ -1,12 +1,12 @@
+HELLLO
 <div ng-controller="TripController">
 <!--   Search: <input ng-model="search"> -->
-HELLLO
   <ul>
     <li ng-repeat="trip in trips">
-      <p>{{trip}}</p>
+      {{trip.flights[0].airport_ori_code}}: {{trip.flights[0].duration}}
     </li>
   </ul>
 </div>
-
+Hello!
 
 
