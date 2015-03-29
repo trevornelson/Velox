@@ -4,7 +4,7 @@
     <form name="searchForm" ng-controller="SearchController">
       <div class="row" id="location-inputs">
         <div class="col-md-6">
-          <input type="text" class="search-bar" placeholder="Departure" name="depart_location" id="depart-autocomplete" ng-model="search.depart_location.name" required>
+          <input type="text" class="search-bar" placeholder="Departure" name="depart_location" id="depart-autocomplete" ng-model="search.depart_location.name" autocomplete="off">
           <ul class="list-group">
             <li class="list-group-item" ng-repeat="result in results">
               {{result.name}}

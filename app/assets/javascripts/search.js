@@ -5,16 +5,21 @@ angular.module('hither')
     function($scope, $q, searchFactory) {
 
       $scope.search = new searchFactory.buildSearch();
-      var options = {types : ['airport']};
+      // var options = {types : ['airport']};
       var depart_input = document.getElementById('depart-autocomplete');
       var arrive_input = document.getElementById('destination-autocomplete');
-      var depart_ac = new google.maps.places.Autocomplete(depart_input, options);
-      var arrive_ac = new google.maps.places.Autocomplete(arrive_input, options);
+      $scope.depart_ac = new google.maps.places.Autocomplete(depart_input);
+      $scope.arrive_ac = new google.maps.places.Autocomplete(arrive_input);
 
-      google.maps.event.addListener(depart_ac, 'place_changed', function() {
+
+
+      google.maps.event.addListener($scope.depart_ac, 'place_changed', function() {
         console.log('added listener');
-        var place = depart_ac.getPlace();
-        $scope.search.depart_location(searchFactory.buildLocation(place));
+        var place = $scope.depart_ac.getPlace();
+        // $scope.search.depart_location = searchFactory.buildLocation(place);
+        $scope.search.depart_location.latitude = place.geometry.location.lat();
+        $scope.search.depart_location.longitude = place.geometry.location.lng();
+        $scope.search.depart_location.name = place.formatted_address;
         $scope.$apply();
       });
 
