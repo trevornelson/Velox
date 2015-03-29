@@ -4,10 +4,10 @@
     <form name="searchForm" ng-controller="SearchController">
       <div class="row" id="location-inputs">
         <div class="col-md-6">
-          <input type="text" class="search-bar" placeholder="Departure" name="depart_location" id="depart-autocomplete" ng-keyup="keyup()" ng-model="search.query" required>
+          <input type="text" class="search-bar" placeholder="Departure" name="depart_location" id="depart-autocomplete" ng-keyup="keyup($event)" required>
           <ul class="list-group">
-            <li class="list-group-item" ng-repeat="result in search.results">
-              {{result.description}}
+            <li class="list-group-item" ng-repeat="result in results">
+              {{result.name}}
             </li>
           </ul>
         </div>

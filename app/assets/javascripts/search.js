@@ -1,40 +1,76 @@
 var myAppModule = angular.module('hither', []);
 
 angular.module('hither')
-  .controller('SearchController', ['$scope', 'searchFactory',
-    function($scope, searchFactory) {
-      var search = searchFactory.buildSearch({});
+  .controller('SearchController', ['$scope', '$q', 'searchFactory',
+    function($scope, $q, searchFactory) {
+      $scope.results = [{name: 'trevor'},{name: 'tina'}];
 
-      $scope.keyup = function() {
-        searchFactory.query();
+
+      $scope.keyup = function(event) {
+        var search_box = event.target;
+        console.log('started keyup function');
+        // $scope.results = searchFactory.query(search_box.value);
+
+        $scope.results = $q.when(searchFactory.query(search_box.value));
+        console.log($scope.results);
+        // var promise = searchFactory.query(search_box.value);
+        // promise.then(function(data) {
+        //   console.log(data);
+        //   console.log('promise success');
+        // }, function(data) {
+        //   console.log(data);
+        // }, function(data) {
+        //   console.log(data);
+        // });
+
+        // $scope.results = data;
+        // console.log('ended keyup function');
       }
+
   }
 ]);
 
 angular.module('hither')
-  .factory('searchFactory', function() {
+  .factory('searchFactory', function($q) {
 
     var factory = {};
     factory.placesService = new google.maps.places.AutocompleteService();
 
     factory.query = function(query) {
+      var deferred = $q.defer();
+
       if (query === '') {
-        return null;
+        deferred.reject('No search query supplied');
+      } else {
+        var responses = factory.placesService.getQueryPredictions({input: query}, factory.hydrateResults);
+        // console.log('adding resolve to deferred');
+        console.log(responses);
+        // deferred.resolve(responses);
       }
 
-      return factory.placesService.getQueryPredictions({input: query}, factory.callback);
+      return deferred.promise;
+
+      // return factory.placesService.getQueryPredictions({input: query}, factory.callback);
+        // factory.placesService.getQueryPredictions({input: query}, factory.callback);
     };
 
     factory.selectResult = function(search_result) {
       return factory.buildSearch(search_result);
     };
 
-    factory.hydrateResults = function(results) {
+    factory.hydrateResults = function(predictions, status) {
+      var deferred = $q.defer();
       var hydrated = [];
-      results.forEach(function(el, ind, arr){
+      console.log(predictions);
+
+      // if (predictions.length > 0) {
+      predictions.forEach(function(el, ind, arr){
         hydrated.push(new SearchResult(el));
       });
-      return hydrated;
+      return deferred.resolve(hydrated);
+      // }
+
+      // return deferred.promise; //resolve(hydrated);
     };
 
     factory.callback = function(predictions, status) {
@@ -42,8 +78,10 @@ angular.module('hither')
       //   alert(status);
       //   return;
       // }
-      console.log('running callback');
-      return factory.hydrateResults(predictions);
+
+      console.log('start callback');
+      console.log(predictions);
+      return predictions; //factory.hydrateResults(predictions);;
     }
 
     factory.buildSearch = function(search_options) {
