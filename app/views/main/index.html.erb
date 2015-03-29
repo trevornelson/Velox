@@ -1,47 +1,28 @@
-<div class="row" onload="initialize()">
+<div class="row">
   <div class="col-md-6 col-md-offset-3">
     <h1>Travel, simplified.</h1>
-    <form name="searchForm" ng-controller="SearchController">
+    <form name="searchForm" ng-controller="SearchController" ng-submit="submit()">
       <div class="row" id="location-inputs">
         <div class="col-md-6">
-          <input type="text" class="search-bar" placeholder="Departure" name="depart_location" id="depart-autocomplete" ng-model="search.depart_location.name" autocomplete="off">
-          <ul class="list-group">
-            <li class="list-group-item" ng-repeat="result in results">
-              {{result.name}}
-            </li>
-          </ul>
+          <input type="text" class="search-bar" placeholder="Departure" name="depart_location" id="depart-autocomplete" ng-model="search.depart_location.name">
         </div>
         <div class="col-md-6">
-          <input type="text" class="search-bar" placeholder="Destination" name="destination_location" id="destination-autocomplete" ng-focus="autoComplete($event)" required>
+          <input type="text" class="search-bar" placeholder="Destination" name="destination_location" id="destination-autocomplete">
         </div>
       </div>
       <div class="row" id="date-inputs">
         <div class="col-md-6">
           <label>Departure Date:</br>
-            <input type="date" name="depart_date" ng-model="search.depart_date" required>
+            <input type="date" name="depart_date" id="depart-date" ng-model="search.depart_date">
           </label>
         </div>
         <div class="col-md-6">
           <label>Return Date:</br>
-            <input type="date" name="return_date" ng-model="search.return_date">
+            <input type="date" name="return_date" id="return-date" ng-model="search.return_date">
           </label>
         </div>
       </div>
       <input type="submit" class="btn btn-default">
-      <div>
-        <h2>Departure</h2>
-        <p>{{search.depart_location.name}}</p>
-        <p>{{search.depart_location.airport_code}}</p>
-        <p>{{search.depart_location.latitude}}</p>
-        <p>{{search.depart_location.longitude}}</p>
-        <p>{{search.depart_date}}</p>
-        <h2>Return</h2>
-        <p>{{search.arrival_location.name}}</p>
-        <p>{{search.arrival_location.airport_code}}</p>
-        <p>{{search.arrival_location.latitude}}</p>
-        <p>{{search.arrival_location.longitude}}</p>
-        <p>{{search.return_date}}</p>
-      </div>
     </form>
   </div>
 </div>

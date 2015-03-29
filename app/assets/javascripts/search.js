@@ -9,16 +9,15 @@ angular.module('hither')
       $scope.submit = function() {
         $scope.search.depart_date = new Date($scope.search.depart_date);
         $scope.search.return_date = new Date($scope.search.return_date);
-        console.log($scope.search);
       }
 
-      var options = {types: ['establishment'],
+      var options = {types: ['(cities)'],
                       componentRestrictions: {country: "us"}
                     };
       var depart_input = document.getElementById('depart-autocomplete');
       var arrive_input = document.getElementById('destination-autocomplete');
-      $scope.depart_ac = new google.maps.places.Autocomplete(depart_input);
-      $scope.arrive_ac = new google.maps.places.Autocomplete(arrive_input);
+      $scope.depart_ac = new google.maps.places.Autocomplete(depart_input, options);
+      $scope.arrive_ac = new google.maps.places.Autocomplete(arrive_input, options);
 
 
 
