@@ -4,9 +4,12 @@ angular.module('hither', []);
 //create hotel controller
 angular.module('hither').controller('TripController', ['$scope', 'FlightFactory', function($scope, FlightFactory) {
   FlightFactory.fetchFlights().success(function(data) {
+    console.log(data);
       var trip_input = data.trips.tripOption;
+      console.log(trip_input)
       $scope.trips = trip_input.map(function(flight_input) {
-        return new Trip(createFlights(flight_input.slice[0].segment), flight_input.saleTotal)
+        console.log(flight_input)
+        return console.log(new Trip(createFlights(flight_input.slice[0].segment), flight_input));
       });
   });
 }] );
@@ -19,8 +22,8 @@ angular.module('hither').factory('FlightFactory', ['$http', function($http) {
     "request": {
       "slice": [
       {
-        "origin": "JAN",
-        "destination": "KTN",
+        "origin": "EWR",
+        "destination": "SFO",
         "date": "2015-03-29"
       }
       ],
@@ -63,14 +66,10 @@ function createFlights(flight_input){
 }
 
 //trip class definition
-function Trip(flight_array, price){
-  this.price = price;
+function Trip(flight_array, flight_input){
+  this.price = flight_input.saleTotal;
   this.flights = flight_array;
-  this.duration = function(){
-    duration = 0;
-    this.flights.forEach(function(flight){duration = duration + flight.duration});
-    return duration
-  }
+  this.duration = flight_input.slice[0].duration;
 }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------
@@ -80,8 +79,8 @@ function Trip(flight_array, price){
 //     "request": {
 //       "slice": [
 //       {
-//         "origin": "JAN",
-//         "destination": "KTN",
+//         "origin": "EWR",
+//         "destination": "SFO",
 //         "date": "2015-03-29"
 //       }
 //       ],
