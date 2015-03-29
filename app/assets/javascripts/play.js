@@ -4,11 +4,8 @@ angular.module('hither', []);
 //create hotel controller
 angular.module('hither').controller('TripController', ['$scope', 'FlightFactory', function($scope, FlightFactory) {
   FlightFactory.fetchFlights().success(function(data) {
-    console.log(data);
       var trip_input = data.trips.tripOption;
-      console.log(trip_input)
       $scope.trips = trip_input.map(function(flight_input) {
-        console.log(flight_input)
         return console.log(new Trip(createFlights(flight_input.slice[0].segment), flight_input));
       });
   });
@@ -34,7 +31,7 @@ angular.module('hither').factory('FlightFactory', ['$http', function($http) {
         "childCount": 0,
         "seniorCount": 0
       },
-      "solutions": 1,
+      "solutions": 2,
       "refundable": false
     }
   };
