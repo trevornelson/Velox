@@ -75,8 +75,8 @@ angular.module('hither')
     };
 
     var Search = function() {
-      this.depart_location = null;
-      this.arrival_location = null;
+      this.depart_location = {};
+      this.arrival_location = {};
       this.depart_date = null;
       this.return_date = null;
     };
