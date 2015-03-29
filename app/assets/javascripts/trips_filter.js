@@ -1,78 +1,71 @@
+//create hotel controller
+myAppModule.controller('TripController', ['$scope', 'FlightFactory', function($scope, FlightFactory) {
+  FlightFactory.fetchFlights().success(function(data) {
+      var trip_input = data.trips.tripOption;
+      $scope.trips = trip_input.map(function(flight_input) {
+        return new Trip(createFlights(flight_input.slice[0].segment), flight_input);
+      });
+      $scope.$apply();
+  });
+}] );
 
-// Flight (leg) object
+// create flight factory
+myAppModule.factory('FlightFactory', ['$http', function($http) {
+  var factory = {};
+
+  var thing = {
+    "request": {
+      "slice": [
+      {
+        "origin": "EWR",
+        "destination": "SFO",
+        "date": "2015-03-29"
+      }
+      ],
+      "passengers": {
+        "adultCount": 1,
+        "infantInLapCount": 0,
+        "infantInSeatCount": 0,
+        "childCount": 0,
+        "seniorCount": 0
+      },
+      "solutions": 2,
+      "refundable": false
+    }
+  };
+
+  factory.fetchFlights = function() {
+    return $.ajax({
+      type: 'POST',
+      url: 'https://www.googleapis.com/qpxExpress/v1/trips/search?key=AIzaSyAZwVwEPSvSSXXKzLrt-h-lQMN2T3woqCs&',
+      contentType: 'application/json',
+      data: JSON.stringify(thing),
+      dataType: "json"
+    });
+  };
+
+  return factory;
+}] );
+
+//flight class definition
 function Flight(flight_data){
-  this.carrier_abbv = flight_data.carrier_abbv;
-  this.airport_ori_code = flight_data.origin;
-  this.airport_dest_code = flight_data.destination;
-  this.duration = flight_data.duration;
+  this.dep_time = flight_data.leg[0].departureTime;
+  this.arr_time = flight_data.leg[0].arrivalTime;
+  this.carrier_abbv = flight_data.flight.carrier;
+  this.airport_ori_code = flight_data.leg[0].origin;
+  this.airport_dest_code = flight_data.leg[0].destination;
+  this.duration = flight_data.leg[0].duration;
+  this.cabin = flight_data.cabin;
 }
 
-// creatFlights function
+//create flights function
 function createFlights(flight_input){
   return flight_input.map(function(flight_data) {return new Flight(flight_data)})
 }
 
-// Trip object
-function Trip(flight_array, trip_data){
-  this.price = trip_data.price;
+//trip class definition
+function Trip(flight_array, flight_input){
+  this.price = flight_input.saleTotal;
   this.flights = flight_array;
-  this.duration = function(){
-    duration = 0;
-    this.flights.forEach(function(flight){duration = duration + flight.duration});
-    return duration
-  }
+  this.duration = flight_input.slice[0].duration;
 }
-
-// stubbed request input
-request_input = {
-  "request": {
-    "slice": [
-      {
-        "origin": "EWR",
-        "destination": "SFO",
-        "date": "2015-03-27"
-      }
-    ],
-    "passengers": {
-      "adultCount": 1,
-      "infantInLapCount": 0,
-      "infantInSeatCount": 0,
-      "childCount": 0,
-      "seniorCount": 0
-    },
-    "solutions": 1,
-    "refundable": false
-  }
-}
-
-// findTrips function when searching
-myAppModule.controller('TripController', function($scope,$http) {
-  var httpConfig = {headers: {'key':'AIzaSyDskBz8WieP74_yU_hA7tVRvL1Ifl4ED1w'}};
-  $scope.findTrips = function(){
-    $http.post('https://www.googleapis.com/qpxExpress/v1/trips/search', request_input)
-    .success(function(data){
-      var flight_input = data.trips.tripOption[0].slice[0].segment[0];
-      var trip_input = data.trips.tripOption;
-      $scope.trips = new Trip(createFlights(flight_input), {price: "USD320.50"});
-    })
-    .error(function(data, status){
-      $scope.trips = new Trip(createFlights(flight_input), {price: "USD320.50"});
-    });
-  }
-});
-
-// stubbed output from the flight api
-flight_output = [
-{
-  carrier_abbv: "US",
-  origin: "EWR",
-  destination: "PHX",
-  duration: "330"
-},
-{
-  carrier_abbv: "CA",
-  origin: "PHX",
-  destination: "LAX",
-  duration: "210"
-}
-];
