@@ -5,6 +5,13 @@ angular.module('hither')
     function($scope, searchFactory) {
 
       $scope.search = new searchFactory.buildSearch();
+
+      $scope.submit = function() {
+        $scope.search.depart_date = new Date($scope.search.depart_date);
+        $scope.search.return_date = new Date($scope.search.return_date);
+        console.log($scope.search);
+      }
+
       var options = {types: ['establishment'],
                       componentRestrictions: {country: "us"}
                     };
