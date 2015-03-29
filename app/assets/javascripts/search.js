@@ -1,107 +1,86 @@
 var myAppModule = angular.module('hither', []);
 
-myAppModule.controller('SearchController', function($scope) {
-  // $scope.departing = new google.maps.places.AutocompleteService();
-  // $scope.returning = new google.maps.places.AutocompleteService();
-  var placesService = new google.maps.places.AutocompleteService();
-  // var search = new Search();
-  this.search = new Search();
-  // show results ul when results.length > 0 && focused on element
-  $scope.focus = function(event) {
-    console.log('in focus function');
-    var search_box = event.target;
-    // this.search.query = search_box.value;
-    console.log(search_box.val);
-    // console.log(this.search.query);
+angular.module('hither')
+  .controller('SearchController', ['$scope', 'searchFactory',
+    function($scope, searchFactory) {
+      $scope.search = new searchFactory.buildSearch();
 
+      $scope.submit = function() {
+        $scope.search.depart_date = new Date($scope.search.depart_date);
+        $scope.search.return_date = new Date($scope.search.return_date);
+        console.log($scope.search);
+      };
 
+      $scope.initAutocomplete = function(autocomplete_element, location_type) {
+        var options = {types: ['(cities)'],
+                        componentRestrictions: {country: "us"}
+                      };
 
-    // console.log(event.target);
+        google.maps.event.addListener(autocomplete_element, 'place_changed', function() {
+          var place = autocomplete_element.getPlace();
+          var lat = place.geometry.location.lat();
+          var lng = place.geometry.location.lng();
 
-    // var search_box = event.target;
-    // console.log(search_box);
+          $scope.search[location_type] = {
+                                          latitude: lat,
+                                          longitude: lng,
+                                          name: place.formatted_address
+                                          };
 
-    // $(search_box).keyup(function(){
-    //   $scope.results = [];
-    //   var query = search_box.value;
-    //   console.log(query);
-    //   placesService.getQueryPredictions({ input: query }, callback);
-    // });
+          searchFactory.fetchAirport(lat, lng)
+          .success(function(data, status, headers, config) {
+            $scope.search[location_type].airport_code = data.airports[0].code;
+          })
+          .error(function(data, status, headers, config) {
+            alert(status);
+          });
+        });
+      };
 
+      var depart_input = document.getElementById('depart-autocomplete');
+      var arrive_input = document.getElementById('destination-autocomplete');
+      $scope.depart_ac = new google.maps.places.Autocomplete(depart_input);
+      $scope.arrive_ac = new google.maps.places.Autocomplete(arrive_input);
 
+      $scope.initAutocomplete($scope.depart_ac, 'depart_location');
+      $scope.initAutocomplete($scope.arrive_ac, 'arrival_location');
 
-    // find object that was focused on
-    // create new autocomplete service object
-    // add keypress listener on that object
-    // query autocomplete service with input value on each keypress
-    //
-  }
-
-  $scope.keyup = function(event) {
-    console.log('in keyup function');
-    var search_box = event.target;
-    console.log(search_box.value);
-    this.search.query = search_box.value;
-    this.search.queryApi();
-  }
-
-  function callback(predictions, status) {
-    if (status != google.maps.places.PlacesServiceStatus.OK) {
-      alert(status);
-      return;
     }
+  ]);
 
-    console.log(predictions);
+angular.module('hither')
+  .factory('searchFactory', ['$http', function($http) {
 
-    $scope.hydrateResults(predictions);
+    var factory = {};
+
+    factory.buildSearch = function() {
+      return new Search();
+    };
+
+    factory.buildLocation = function(args) {
+      return new Location(args);
+    };
+
+    factory.fetchAirport = function(lat, lng) {
+      return $http.jsonp("https://airport.api.aero/airport/nearest/" + lat + "/" + lng + "?user_key=" + sita_key + "&callback=JSON_CALLBACK");
+    };
+
+    var Location = function(args) {
+      this.name = args.name;
+      this.airport_code = args.airport_code;
+      this.latitude = args.latitude;
+      this.longitude = args.longitude;
+    };
+
+    var Search = function() {
+      this.depart_location = {};
+      this.arrival_location = {};
+      this.depart_date = null;
+      this.return_date = null;
+    };
+
+    return factory;
   }
-
-  $scope.hydrateResults = function(search_results) {
-    search_results.forEach(function(el, ind, arr){
-      console.log("hydrating result");
-      $scope.results.push(new searchResult(el));
-    })
-  }
-
-  // on result click...
-  $scope.selectResult = function(places_object) {
-    // hydrate Search object
-  }
-});
-
-var Search = function() {
-  console.log('creating new Search object');
-  this.placesService = new google.maps.places.AutocompleteService();
-  this.results = [];
-  this.depart_location = null;
-  this.destination_location = null;
-  this.departure_date = null;
-  this.arrival_date = null;
-}
-
-Search.prototype = {
-  hydrateResults: function(search_results) {
-    search_results.forEach(function(el, ind, arr){
-      console.log("hydrating result");
-      this.results.push(new searchResult(el));
-    });
-  },
-  queryApi: function(query) {
-    this.placesService.getQueryPredictions({ input: query }, callback);
-  },
-  callback: function(predictions, status) {
-    if (status != google.maps.places.PlacesServiceStatus.OK) {
-      alert(status);
-      return;
-    }
-
-    console.log(predictions);
-
-    this.hydrateResults(predictions);
-  }
-}
+]);
 
 
-var searchResult = function(args) {
-  this.description = args.description;
-}

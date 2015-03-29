@@ -2,24 +2,30 @@
 
 describe('SearchController', function() {
 
-  var $rootScope, $scope, $controller;
+  var $rootScope, $scope, $controller, searchFactory;
 
-  beforeEach(module('hither'));
+  beforeEach(function() {
 
-  beforeEach(inject(function(_$rootScope_, _$controller_){
-    $rootScope = _$rootScope_;
-    $scope = $rootScope.$new();
-    $controller = _$controller_;
+    module('hither');
 
-    $controller('SearchController', {'$rootScope': $rootScope, '$scope': $scope});
-  }));
+    inject(function(_$rootScope_, _$controller_, _searchFactory_) {
+      $rootScope = _$rootScope_;
+      $scope = $rootScope.$new();
+      $controller = _$controller_;
+      searchFactory = _searchFactory_;
 
-  it('should initialize an AutoCompleteService object for departing location', function() {
-    expect($scope.departing.constructor.name == 'Ll');
+      $controller('SearchController', {'$rootScope': $rootScope, '$scope': $scope});
+    });
   });
 
-  it('should initialize an AutoCompleteService object for returning location', function() {
-    expect($scope.returning.constructor.name == 'Ll');
+  xit('should contain injected searchFactory dependency', function() {
+    expect($controller.searchFactory).toBeDefined();
+  });
+
+  xit('should call searchFactory query function when keyup event is triggered', function() {
+    spyOn(searchFactory, 'query');
+    angular.element('#depart-autocomplete').trigger('keyup');
+    expect(searchFactory.query).toHaveBeenCalled();
   });
 
 })
