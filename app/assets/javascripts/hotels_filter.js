@@ -1,3 +1,4 @@
+var myAppModule = angular.module('hither', []);
 //Hotel class definition
 var Hotel = function(data) {
   this.name = data.attr.heading;
@@ -13,7 +14,7 @@ var Hotel = function(data) {
 };
 
   //create hotel controller
-  angular.module('hither').controller('HotelController', ['$scope', 'HotelFactory', function($scope, HotelFactory) {
+  angular.module('hither').controller('HotelController', ['$scope', 'HotelFactory', 'SearchController', function($scope, HotelFactory, SearchController) {
     HotelFactory.fetchHotels().success(function(data) {
         $scope.hotels =  data.result.map(function(hotel_data) {
         return new Hotel(hotel_data);
@@ -27,7 +28,7 @@ var Hotel = function(data) {
     var httpConfig = {  headers:{ "X-Mashape-Authorization": "N7SrCXP14imshrRVT7zdeMHz9NeLp1va6vFjsnpDJD7Fi1jnFg"}};
 
     factory.fetchHotels = function() {
-      return $http.get('https://zilyo.p.mashape.com/search?latitude=52.5306438&longitude=13.3830683&pricemax=200&provider=airbnb', httpConfig);
+      return $http.get('https://zilyo.p.mashape.com/search?latitude='+ $scope.search.depart_location.latitude +'&longitude=' + $scope.search.depart_location.longitude + '', httpConfig);
     };
 
     return factory;
