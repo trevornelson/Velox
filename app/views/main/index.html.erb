@@ -1,28 +1,34 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <h1>Travel, simplified.</h1>
-    <form name="searchForm" ng-controller="SearchController" ng-submit="submit()">
-      <div class="row" id="location-inputs">
-        <div class="col-md-6">
-          <input type="text" class="search-bar" placeholder="Departure" name="depart_location" id="depart-autocomplete" ng-model="search.depart_location.name">
+    <div ng-controller="SearchController">
+      <form name="searchForm" ng-submit="submit()">
+        <div class="row" id="location-inputs">
+          <div class="col-md-6">
+            <input type="text" class="search-bar" placeholder="Departure" name="depart_location" id="depart-autocomplete" ng-model="search.depart_location.name">
+          </div>
+          <div class="col-md-6">
+            <input type="text" class="search-bar" placeholder="Destination" name="destination_location" id="destination-autocomplete">
+          </div>
         </div>
-        <div class="col-md-6">
-          <input type="text" class="search-bar" placeholder="Destination" name="destination_location" id="destination-autocomplete">
+        <div class="row" id="date-inputs">
+          <div class="col-md-6">
+            <label>Departure Date:</br>
+              <input type="date" name="depart_date" id="depart-date" ng-model="search.depart_date">
+            </label>
+          </div>
+          <div class="col-md-6">
+            <label>Return Date:</br>
+              <input type="date" name="return_date" id="return-date" ng-model="search.return_date">
+            </label>
+          </div>
         </div>
-      </div>
-      <div class="row" id="date-inputs">
-        <div class="col-md-6">
-          <label>Departure Date:</br>
-            <input type="date" name="depart_date" id="depart-date" ng-model="search.depart_date">
-          </label>
-        </div>
-        <div class="col-md-6">
-          <label>Return Date:</br>
-            <input type="date" name="return_date" id="return-date" ng-model="search.return_date">
-          </label>
-        </div>
-      </div>
-      <input type="submit" class="btn btn-default">
-    </form>
+        <input type="submit" class="btn btn-default search-submit-btn">
+      </form>
+    </div>
   </div>
+</div>
+
+<div>
+  <%= render "results/index" %>
 </div>

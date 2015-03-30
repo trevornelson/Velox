@@ -1,4 +1,4 @@
-myAppModule.controller('TripController', ['$scope', 'FlightFactory', 'SearchController', function($scope, FlightFactory, SearchController) {
+myAppModule.controller('TripController', ['$scope', 'FlightFactory', function($scope, FlightFactory) {
   FlightFactory.fetchFlights().success(function(data) {
       var trip_input = data.trips.tripOption;
       $scope.trips = trip_input.map(function(flight_input) {
@@ -8,16 +8,16 @@ myAppModule.controller('TripController', ['$scope', 'FlightFactory', 'SearchCont
   });
 }] );
 
-myAppModule.factory('FlightFactory', ['$http', function($http) {
+myAppModule.factory('FlightFactory', ['$http', 'searchFactory', function($http, searchFactory) {
   var factory = {};
 
 var thing = {
   "request": {
     "slice": [
     {
-      "origin": $scope.search.depart_location.airport_code,
-      "destination": $scope.search.arrival_location.airport_code,
-      "date": $scope.search.depart_date
+      "origin": searchFactory.search.depart_location.airport_code,
+      "destination": searchFactory.search.arrival_location.airport_code,
+      "date": searchFactory.search.depart_date
     }
     ],
     "passengers": {

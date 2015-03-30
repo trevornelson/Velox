@@ -1,14 +1,11 @@
-var myAppModule = angular.module('hither', []);
-
-angular.module('hither')
-  .controller('SearchController', ['$scope', 'searchFactory',
+myAppModule.controller('SearchController', ['$scope', 'searchFactory',
     function($scope, searchFactory) {
-      $scope.search = new searchFactory.buildSearch();
+
+      searchFactory.buildSearch();
 
       $scope.submit = function() {
-        $scope.search.depart_date = new Date($scope.search.depart_date);
-        $scope.search.return_date = new Date($scope.search.return_date);
-        console.log($scope.search);
+        searchFactory.search.depart_date = new Date(searchFactory.search.depart_date);
+        searchFactory.search.return_date = new Date(searchFactory.search.return_date);
       };
 
       $scope.initAutocomplete = function(autocomplete_element, location_type) {
@@ -21,7 +18,7 @@ angular.module('hither')
           var lat = place.geometry.location.lat();
           var lng = place.geometry.location.lng();
 
-          $scope.search[location_type] = {
+          searchFactory.search[location_type] = {
                                           latitude: lat,
                                           longitude: lng,
                                           name: place.formatted_address
@@ -29,7 +26,7 @@ angular.module('hither')
 
           searchFactory.fetchAirport(lat, lng)
           .success(function(data, status, headers, config) {
-            $scope.search[location_type].airport_code = data.airports[0].code;
+            searchFactory.search[location_type].airport_code = data.airports[0].code;
           })
           .error(function(data, status, headers, config) {
             alert(status);
@@ -44,17 +41,17 @@ angular.module('hither')
 
       $scope.initAutocomplete($scope.depart_ac, 'depart_location');
       $scope.initAutocomplete($scope.arrive_ac, 'arrival_location');
-
     }
   ]);
 
-angular.module('hither')
-  .factory('searchFactory', ['$http', function($http) {
+myAppModule.factory('searchFactory', ['$http', function($http) {
 
     var factory = {};
 
+    factory.search;
+
     factory.buildSearch = function() {
-      return new Search();
+      factory.search = new Search();
     };
 
     factory.buildLocation = function(args) {
@@ -62,7 +59,7 @@ angular.module('hither')
     };
 
     factory.fetchAirport = function(lat, lng) {
-      return $http.jsonp("https://airport.api.aero/airport/nearest/" + lat + "/" + lng + "?user_key=" + sita_key + "&callback=JSON_CALLBACK");
+      return $http.jsonp("https://airport.api.aero/airport/nearest/" + lat + "/" + lng + "?user_key=739862164e12e81ac1657912fbbe1180&callback=JSON_CALLBACK");
     };
 
     var Location = function(args) {
