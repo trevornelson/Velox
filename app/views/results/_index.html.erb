@@ -8,10 +8,10 @@
 
         <div class='wrapper text-center'>
             <div class="btn-group btn-group-xs" data-toggle="buttons">
-                <button type="button" class="btn btn-default active" ng-click="show_results=true">
+                <button type="button" class="btn btn-default active" ng-click="show_flight_results=true">
                     <input type="radio" name="options" id="option1"> <span class="glyphicon glyphicon-time"></span>
                 </button>
-                <button type="button" class="btn btn-default" ng-click="show_results=false">
+                <button type="button" class="btn btn-default" ng-click="show_flight_results=false">
                     <input type="radio" name="options" id="option3"> <span class="glyphicon glyphicon-usd"></span>
                 </button>
             </div>
@@ -76,23 +76,22 @@
         </div>
     </div>
 
-    <div class="itinerary">
+    <div class="itinerary" ng-controller="TripController">
 
-<!--         <div class="col-md-4 col trip-content" ng-controller="TripController">
-           <ul>
-                <li ng-repeat="trip in trips">{{trip.price}}</li>
-            </ul>
-
-        </div> -->
-
-        <div id="one" class="col-md-4 col hotel-content" ng-show="show_results">
-            <div ng-repeat="hotel in hotels | orderBy:'price'">
-                <a href="{{hotel.url}}">{{hotel.name}}: {{hotel.price}}</a>
+        <div class="col-md-4 col trip-content" ng-hide="show_flight_results">
+            <div ng-repeat="trip in trips | orderBy:'price'">
+                {{trip.price}} -- duration: {{trip.duration}}
             </div>
         </div>
 
-        <div id="two" class="col-md-4 col hotel-content" ng-hide="show_results">
-            <div ng-repeat="hotel in hotels | orderBy:'-price'">
+        <div class="col-md-4 col trip-content" ng-show="show_flight_results">
+            <div ng-repeat="trip in trips | orderBy:'duration'">
+                {{trip.price}} -- duration: {{trip.duration}}
+            </div>
+        </div>
+
+        <div class="col-md-4 col hotel-content">
+            <div ng-repeat="hotel in hotels | orderBy:'price'">
                 <a href="{{hotel.url}}">{{hotel.name}}: {{hotel.price}}</a>
             </div>
         </div>
