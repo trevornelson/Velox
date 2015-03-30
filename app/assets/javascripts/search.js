@@ -1,6 +1,9 @@
 myAppModule.controller('SearchController', ['$scope', '$rootScope', 'searchFactory',
     function($scope, $rootScope, searchFactory) {
 
+      $scope.show_input = true;
+      $scope.show_filter = false;
+
       searchFactory.buildSearch();
 
       $scope.submit = function() {
