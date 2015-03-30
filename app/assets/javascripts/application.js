@@ -13,6 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap.min
+//= require flat_ui
+//= require html5shiv
+//= require respond.min
 //= require google_places
 //= require angular
 //= require angular-mocks
