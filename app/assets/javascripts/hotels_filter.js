@@ -24,7 +24,17 @@ var Hotel = function(data) {
         });
       });
     });
-  }] );
+    $scope.orderProp = 'price';
+    $scope.setFilter = function(filter){
+      if (filter == 1) {
+      $scope.orderProp = 'price';
+    } if (filter == 2) {
+      $scope.orderProp == 'postalCode';
+    }};
+    $scope.useFilter = function(hotel) {
+      return hotel[$scope.orderProp];
+    };
+  }]);
 
   // create hotel factory
   myAppModule.factory('HotelFactory', ['$http', function($http) {
