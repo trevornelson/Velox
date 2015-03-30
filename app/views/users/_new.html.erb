@@ -11,15 +11,15 @@
         <%= form_for(@signup_user) do |f| %>
 
           <%= f.label :username %>
-          <%= f.text_field :username %>
+          <%= f.text_field :username, {class: "form-control" }%>
 
           <%= f.label :password %>
-          <%= f.text_field :password %>
+          <%= f.text_field :password, {class: "form-control" } %>
 
 
       </div>
       <div class="modal-footer">
-          <%= f.submit "Create" %>
+          <%= f.submit "Create", {class: "btn btn-default btn-primary"} %>
         <% end %>
 
         <% if session[:message] %>

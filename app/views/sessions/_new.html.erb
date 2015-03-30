@@ -11,14 +11,14 @@
         <%= form_for(:session, url: sessions_path) do |f| %>
 
           <%= f.label :username %>
-          <%= f.text_field :username %>
+          <%= f.text_field :username, {class: "form-control"} %>
 
           <%= f.label :password %>
-          <%= f.password_field :password %>
+          <%= f.password_field :password, {class: "form-control"} %>
 
       </div>
       <div class="modal-footer">
-          <%= f.submit "Sign In" %>
+          <%= f.submit "Sign In", {class: "btn btn-default btn-primary"} %>
         <% end %>
 
         <% if session[:message] %>

@@ -11,9 +11,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150328203504) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "flights", force: :cascade do |t|
+    t.integer  "trip_id"
+    t.string   "carrier_abbv"
+    t.string   "airport_ori_code"
+    t.string   "airport_dest_code"
+    t.string   "duration"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "hotels", force: :cascade do |t|
+    t.integer  "itinerary_id"
+    t.string   "name"
+    t.string   "city"
+    t.string   "neighbourhood"
+    t.string   "postalCode"
+    t.string   "streetName"
+    t.string   "price"
+    t.string   "provider"
+    t.string   "photo_url"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "itineraries", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "trips", force: :cascade do |t|
+    t.integer  "itinerary_id"
+    t.string   "price"
+    t.string   "duration"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "username"
+    t.string   "password_digest"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
