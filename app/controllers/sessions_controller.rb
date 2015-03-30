@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
 
-
   def create
     user = User.find_by(username: params[:session][:username])
     if user && user.authenticate(params[:session][:password])
@@ -8,7 +7,7 @@ class SessionsController < ApplicationController
     else
       session[:message] = "invalid username and/or password"
     end
-    redirect root
+    redirect root_url
   end
 
   def destroy
