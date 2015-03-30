@@ -1,0 +1,12 @@
+.caption p {
+  font-size: 0.75em;
+}
+
+#user-sidebar {
+  height: 600px;
+}
+
+#update-account {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
