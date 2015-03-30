@@ -33,3 +33,7 @@
   float: right;
   display: inline-block;
 }
+
+.trip-content, .hotel-content {
+  text-align: center;
+}
