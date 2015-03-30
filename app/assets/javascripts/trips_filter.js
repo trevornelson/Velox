@@ -1,46 +1,50 @@
-myAppModule.controller('TripController', ['$scope', 'FlightFactory', function($scope, FlightFactory) {
-  FlightFactory.fetchFlights().success(function(data) {
+myAppModule.controller('TripController', ['$scope', '$rootScope', 'FlightFactory', function($scope, $rootScope, FlightFactory) {
+  $scope.$watch(function() {return $rootScope.search}, function(newValue, oldValue){
+    console.log("trip controller watch called");
+    var thing = {
+      "request": {
+        "slice": [
+        {
+          "origin": newValue.depart_location.airport_code,
+          "destination": newValue.arrival_location.airport_code,
+          "date": newValue.depart_date
+        }
+        ],
+        "passengers": {
+          "adultCount": 1,
+          "infantInLapCount": 0,
+          "infantInSeatCount": 0,
+          "childCount": 0,
+          "seniorCount": 0
+        },
+        "solutions": 5,
+        "refundable": false
+      }
+    };
+    FlightFactory.fetchFlights(thing).success(function(data) {
+      console.log(data.trips);
       var trip_input = data.trips.tripOption;
       $scope.trips = trip_input.map(function(flight_input) {
         return new Trip(createFlights(flight_input.slice[0].segment), flight_input);
       });
       $scope.$apply();
+    });
   });
 }] );
 
-myAppModule.factory('FlightFactory', ['$http', 'searchFactory', function($http, searchFactory) {
+myAppModule.factory('FlightFactory', ['$http', '$rootScope', function($http, $rootScope) {
   var factory = {};
 
-var thing = {
-  "request": {
-    "slice": [
-    {
-      "origin": searchFactory.search.depart_location.airport_code,
-      "destination": searchFactory.search.arrival_location.airport_code,
-      "date": searchFactory.search.depart_date
-    }
-    ],
-    "passengers": {
-      "adultCount": 1,
-      "infantInLapCount": 0,
-      "infantInSeatCount": 0,
-      "childCount": 0,
-      "seniorCount": 0
-    },
-    "solutions": 5,
-    "refundable": false
-  }
-};
 
-factory.fetchFlights = function() {
-  return $.ajax({
-    type: 'POST',
-    url: 'https://www.googleapis.com/qpxExpress/v1/trips/search?key=AIzaSyAZwVwEPSvSSXXKzLrt-h-lQMN2T3woqCs&',
-    contentType: 'application/json',
-    data: JSON.stringify(thing),
-    dataType: "json"
-  });
-};
+  factory.fetchFlights = function(thing) {
+    return $.ajax({
+      type: 'POST',
+      url: 'https://www.googleapis.com/qpxExpress/v1/trips/search?key=AIzaSyAZwVwEPSvSSXXKzLrt-h-lQMN2T3woqCs',
+      contentType: 'application/json',
+      data: JSON.stringify(thing),
+      dataType: "json"
+    });
+  };
 
   return factory;
 }] );
