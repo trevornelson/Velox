@@ -22,12 +22,12 @@ myAppModule.controller('TripController', ['$scope', '$rootScope', 'FlightFactory
       }
     };
     FlightFactory.fetchFlights(thing).success(function(data) {
+      console.log(data.trips);
       var trip_input = data.trips.tripOption;
       $scope.trips = trip_input.map(function(flight_input) {
         return new Trip(createFlights(flight_input.slice[0].segment), flight_input);
       });
       $scope.$apply();
-      console.log($scope.trips);
     });
   });
 }] );
