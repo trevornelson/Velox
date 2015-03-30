@@ -24,7 +24,6 @@ var Hotel = function(data) {
         });
       });
     });
-    $scope.show_results = true;
   }]);
 
   // create hotel factory

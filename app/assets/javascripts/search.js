@@ -3,6 +3,7 @@ myAppModule.controller('SearchController', ['$scope', '$rootScope', 'searchFacto
 
       $scope.show_input = true;
       $scope.show_filter = false;
+      $scope.show_flight_results = true;
 
       searchFactory.buildSearch();
 
