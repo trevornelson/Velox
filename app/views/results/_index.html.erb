@@ -78,7 +78,11 @@
 
     <div class="itinerary">
 
-        <div class="col-md-4 col trip-content">
+        <div class="col-md-4 col trip-content" ng-controller="TripController">
+           <ul>
+                <li ng-repeat="trip in trips">{{trip}}</li>
+            </ul>
+
         </div>
 
         <div class="col-md-4 col hotel-content" ng-controller="HotelController">

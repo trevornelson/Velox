@@ -1,11 +1,13 @@
-myAppModule.controller('SearchController', ['$scope', 'searchFactory',
-    function($scope, searchFactory) {
+myAppModule.controller('SearchController', ['$scope', '$rootScope', 'searchFactory',
+    function($scope, $rootScope, searchFactory) {
 
       searchFactory.buildSearch();
 
       $scope.submit = function() {
         searchFactory.search.depart_date = new Date(searchFactory.search.depart_date);
         searchFactory.search.return_date = new Date(searchFactory.search.return_date);
+        $rootScope.search = searchFactory.search;
+        console.log($rootScope.search);
       };
 
       $scope.initAutocomplete = function(autocomplete_element, location_type) {
