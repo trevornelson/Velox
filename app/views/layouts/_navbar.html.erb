@@ -12,7 +12,7 @@
       <ul class="nav navbar-nav navbar-right">
         <% if @session_user %>
           <li><%= link_to 'my account', curr_user_path %></li>
-          <li><%= link_to 'logout', curr_user_path, method: :delete %></li>
+          <li><%= link_to 'logout', curr_session_path, method: :delete %></li>
         <% else %>
           <li><a href="#" data-toggle="modal" data-target="#login-modal">log in</a></li>
           <li><a href="#" data-toggle="modal" data-target="#signup-modal">sign up</a></li>
