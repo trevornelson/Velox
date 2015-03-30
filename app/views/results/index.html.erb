@@ -1,9 +1,89 @@
-<div class="btn-group" data-toggle="buttons">
-  <button type="button" class="btn btn-default active">
-    <input type="radio" name="options" id="option1" autocomplete="off" checked> <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-  </button>
-  <button type="button" class="btn btn-default">
-    <input type="radio" name="options" id="option3" autocomplete="off"> <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
-  </button>
-</div>
+<!-- must include because toggle is not available in current bootstrap gem -->
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
 
+<div class="three-column-container">
+
+    <div class="col-md-3 col">
+
+        <div class='wrapper text-center'>
+            <div class="btn-group btn-group-xs" data-toggle="buttons">
+                <button type="button" class="btn btn-default active">
+                    <input type="radio" name="options" id="option1"> <span class="glyphicon glyphicon-time"></span>
+                </button>
+                <button type="button" class="btn btn-default">
+                    <input type="radio" name="options" id="option3"> <span class="glyphicon glyphicon-usd"></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="filter-list">
+
+            <div class="filter-option row">
+                <div class="filter-option-label">
+                    Departure
+                </div>
+                <div class="filter-option-switch">
+                    <input type="checkbox" data-toggle="toggle" data-on="PM" data-off="AM" data-onstyle="primary" data-size="mini" data-width="80" data-height="10">
+                </div>
+            </div>
+
+            <div class="filter-option row">
+                <div class="filter-option-label">
+                    Arrival
+                </div>
+                <div class="filter-option-switch">
+                    <input type="checkbox" data-toggle="toggle" data-on="AM" data-off="PM" data-onstyle="primary" data-size="mini" data-width="80" data-height="10">
+                </div>
+            </div>
+
+            <div class="filter-option row">
+                <div class="filter-option-label">
+                    AirBnb
+                </div>
+                <div class="filter-option-switch">
+                    <input type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="primary" data-size="mini" data-width="80" data-height="10">
+                </div>
+            </div>
+
+            <div class="filter-option row">
+                <div class="filter-option-label">
+                    Hotel
+                </div>
+                <div class="filter-option-switch">
+                    <input type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="primary" data-size="mini" data-width="80" data-height="10">
+                </div>
+            </div>
+
+            <div class="filter-option row">
+                <div class="filter-option-label">
+                    Class
+                </div>
+                <div class="filter-option-switch">
+                    <input type="checkbox" data-toggle="toggle" data-on="Business" data-off="Economy" data-onstyle="primary" data-size="mini" data-width="80" data-height="10">
+                </div>
+            </div>
+
+            <div class="filter-option row">
+                <div class="filter-option-label">
+                    Direct
+                </div>
+                <div class="filter-option-switch">
+                    <input type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="primary" data-size="mini" data-width="80" data-height="10">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="itinerary">
+
+        <div class="col-md-4 col trip-content">
+        </div>
+
+        <div class="col-md-4 col hotel-content">
+        </div>
+
+    </div>
+
+</div>
