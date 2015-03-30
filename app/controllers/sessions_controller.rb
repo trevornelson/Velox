@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     else
       session[:message] = "invalid username and/or password"
     end
-    redirect root_url
+    redirect_to root_url
   end
 
   def destroy
