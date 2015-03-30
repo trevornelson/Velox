@@ -50,10 +50,8 @@ myAppModule.factory('searchFactory', ['$http', function($http) {
 
     var factory = {};
 
-    factory.search;
-
     factory.buildSearch = function() {
-      factory.search = new Search();
+      return new Search();
     };
 
     factory.buildLocation = function(args) {
