@@ -1,12 +1,10 @@
 myAppModule.controller('SearchController', ['$scope', '$rootScope', 'searchFactory',
     function($scope, $rootScope, searchFactory) {
 
-      searchFactory.buildSearch();
+      $scope.search = searchFactory.buildSearch();
 
       $scope.submit = function() {
-        // searchFactory.search.depart_date = new Date(searchFactory.search.depart_date);
-        // searchFactory.search.return_date = new Date(searchFactory.search.return_date);
-        $rootScope.search = searchFactory.search;
+        $rootScope.search = $scope.search;
         console.log($rootScope.search);
       };
 
@@ -20,7 +18,7 @@ myAppModule.controller('SearchController', ['$scope', '$rootScope', 'searchFacto
           var lat = place.geometry.location.lat();
           var lng = place.geometry.location.lng();
 
-          searchFactory.search[location_type] = {
+          $scope.search[location_type] = {
                                           latitude: lat,
                                           longitude: lng,
                                           name: place.formatted_address
@@ -28,7 +26,7 @@ myAppModule.controller('SearchController', ['$scope', '$rootScope', 'searchFacto
 
           searchFactory.fetchAirport(lat, lng)
           .success(function(data, status, headers, config) {
-            searchFactory.search[location_type].airport_code = data.airports[0].code;
+            $scope.search[location_type].airport_code = data.airports[0].code;
           })
           .error(function(data, status, headers, config) {
             alert(status);
@@ -72,8 +70,8 @@ myAppModule.factory('searchFactory', ['$http', function($http) {
     var Search = function() {
       this.depart_location = {};
       this.arrival_location = {};
-      this.depart_date = "2015-07-12";
-      this.return_date = "2015-07-12";
+      this.depart_date = null;
+      this.return_date = null;
     };
 
     return factory;
