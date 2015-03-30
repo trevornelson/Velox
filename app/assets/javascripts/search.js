@@ -11,16 +11,17 @@ myAppModule.controller('SearchController', ['$scope', '$rootScope', 'searchFacto
 
       $scope.search = searchFactory.buildSearch();
       $scope.airports = autocomplete_source;
-      $scope.depart_location = '';
-      $scope.arrival_location = '';
-
-      $scope.submit = function() {
-        $rootScope.search = $scope.search;
-        console.log($rootScope.search);
-      }
 
       $scope.onItemSelected = function() {
-        console.log('selected=' + $scope.name);
+        console.log('selected=' + $scope.search.depart_location);
+      };
+
+
+      $scope.submit = function() {
+        console.log($scope.search.depart_location);
+        console.log($scope.search);
+
+        $rootScope.search = $scope.search;
       };
     }
   ]);
@@ -38,7 +39,9 @@ myAppModule.directive('typeahead', function($timeout) {
     },
     link: function(scope, elem, attrs) {
       scope.handleSelection = function(selectedItem) {
+        console.log(selectedItem);
         scope.model = selectedItem;
+        console.log(scope.model);
         scope.current = 0;
         scope.selected = true;
         $timeout(function() {
@@ -57,7 +60,7 @@ myAppModule.directive('typeahead', function($timeout) {
     template: ['<input type="text" ng-model="model" placeholder="{{prompt}}" ng-keydown="selected=false" />',
               '<br/>',
               '<div class="items" ng-hide="!model.length || selected">',
-              '<div class="item" ng-repeat="item in items | filter:model track by $index" ng-click="handleSelection(item[title])" style="cursor:pointer" ng-class="{active:isCurrent($index)}" ng-mouseenter="setCurrent($index)">',
+              '<div class="item" ng-repeat="item in items | filter:model track by $index" ng-click="handleSelection(item)" style="cursor:pointer" ng-class="{active:isCurrent($index)}" ng-mouseenter="setCurrent($index)">',
               '<p class="title">{{item[title]}}</p>',
               '<p class="subtitle">{{item[subtitle]}}</p>',
               '</div>',
