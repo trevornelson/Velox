@@ -1,21 +1,32 @@
-<div id="signup-modal">
+<div class="modal fade" role="dialog" id="signup-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+        <h4 class="modal-title">Sign Up</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for(@signup_user) do |f| %>
 
-  <h1>Signup</h1>
+          <%= f.label :username %>
+          <%= f.text_field :username %>
 
-  <%= form_for(@signup_user) do |f| %>
+          <%= f.label :password %>
+          <%= f.text_field :password %>
 
-    <%= f.label :username %>
-    <%= f.text_field :username %>
 
-    <%= f.label :password %>
-    <%= f.text_field :password %>
+      </div>
+      <div class="modal-footer">
+          <%= f.submit "Create" %>
+        <% end %>
 
-    <%= f.submit "Create Account" %>
-  <% end %>
-
-  <% if session[:message] %>
-    <%= session[:message] %>
-    <% session.delete(:message) %>
-  <% end %>
-
+        <% if session[:message] %>
+          <%= session[:message] %>
+          <% session.delete(:message) %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
