@@ -32,6 +32,17 @@ var Hotel = function(data) {
             $scope.hotel_index++;
         }
     };
+    $scope.resultingHotels = [];
+
+    $scope.airBnb = function($scope){
+      $scope.hotels.forEach(function(hotel){
+        if (hotel.provider == 'airbnb'){
+          $scope.resultingHotels.push(hotel);
+        }
+        return $scope.resultingHotels;
+      })
+    }
+
   }]);
 
   // create hotel factory
