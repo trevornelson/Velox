@@ -9,48 +9,64 @@ myAppModule.controller('SearchController', ['$scope', '$rootScope', 'searchFacto
       $scope.show_filter = false;
       $scope.show_flight_results = true;
 
-      searchFactory.buildSearch();
+      $scope.search = searchFactory.buildSearch();
+      $scope.airports = autocomplete_source;
+
+      $scope.onItemSelected = function() {
+        console.log('selected=' + $scope.search.depart_location);
+      };
+
 
       $scope.submit = function() {
-        $rootScope.search = searchFactory.search;
-        console.log($rootScope.search);
+        console.log($scope.search);
+
+        $rootScope.search = $scope.search;
       };
 
-      $scope.initAutocomplete = function(autocomplete_element, location_type) {
-        var options = {types: ['(cities)'],
-                        componentRestrictions: {country: "us"}
-                      };
-
-        google.maps.event.addListener(autocomplete_element, 'place_changed', function() {
-          var place = autocomplete_element.getPlace();
-          var lat = place.geometry.location.lat();
-          var lng = place.geometry.location.lng();
-
-          searchFactory.search[location_type] = {
-                                          latitude: lat,
-                                          longitude: lng,
-                                          name: place.formatted_address
-                                          };
-
-          searchFactory.fetchAirport(lat, lng)
-          .success(function(data, status, headers, config) {
-            searchFactory.search[location_type].airport_code = data.airports[0].code;
-          })
-          .error(function(data, status, headers, config) {
-            alert(status);
-          });
-        });
-      };
-
-      // var depart_input = document.getElementById('depart-autocomplete');
-      // var arrive_input = document.getElementById('destination-autocomplete');
-      // $scope.depart_ac = new google.maps.places.Autocomplete(depart_input);
-      // $scope.arrive_ac = new google.maps.places.Autocomplete(arrive_input);
-
-      // $scope.initAutocomplete($scope.depart_ac, 'depart_location');
-      // $scope.initAutocomplete($scope.arrive_ac, 'arrival_location');
     }
   ]);
+
+myAppModule.directive('typeahead', ['searchFactory', '$timeout', function(searchFactory, $timeout) {
+  return {
+    restrict: 'AEC',
+    scope: {
+      items: '=',
+      prompt: '@',
+      title: '@',
+      subtitle: '@',
+      model: '=',
+      onSelect: '&'
+    },
+    link: function(scope, elem, attrs) {
+      scope.handleSelection = function(selectedItem) {
+        scope.model = searchFactory.buildLocation(selectedItem);
+        console.log(scope.model);
+        scope.current = 0;
+        scope.selected = true;
+        elem.find('input').text("");
+        $timeout(function() {
+          scope.onSelect();
+        }, 200);
+      };
+      scope.current = 0;
+      scope.selected = true;
+      scope.isCurrent = function(index) {
+        return scope.current == index;
+      };
+      scope.setCurrent = function(index) {
+        scope.current = index;
+      };
+    },
+    template: ['<input type="text" class="search-bar form-control" ng-model="model" placeholder="{{prompt}}" ng-keydown="selected=false" />',
+              '<div class="items" ng-hide="!model.length || selected">',
+              '<div class="item" ng-repeat="item in items | filter:model track by $index" ng-click="handleSelection(item)" style="cursor:pointer" ng-class="{active:isCurrent($index)}" ng-mouseenter="setCurrent($index)">',
+              '<span class="autocomplete-title">{{item[title]}}</span>',
+              '<span class="autocomplete-subtitle">{{item[subtitle]}}</span>',
+              '</div>',
+              '</div>'
+              ].join('\n')
+  };
+}]);
 
 myAppModule.factory('searchFactory', ['$http', function($http) {
 
@@ -59,29 +75,42 @@ myAppModule.factory('searchFactory', ['$http', function($http) {
     factory.search;
 
     factory.buildSearch = function() {
-      factory.search = new Search();
+      return new Search();
     };
 
     factory.buildLocation = function(args) {
       return new Location(args);
     };
 
-    factory.fetchAirport = function(lat, lng) {
-      return $http.jsonp("https://airport.api.aero/airport/nearest/" + lat + "/" + lng + "?user_key=739862164e12e81ac1657912fbbe1180&callback=JSON_CALLBACK");
+    factory.fetchAirport = function(airport_name) {
+      var airport_object;
+      console.log(airport_name);
+      autocomplete_source.forEach(function(el, i, arr) {
+        if (el === airport_name) {
+          console.log(el);
+          airport_object = el;
+        }
+      });
+      return airport_object;
     };
 
     var Location = function(args) {
+      this.city = args.city;
+      this.airport_code = args.code;
+      this.latitude = args.lat;
+      this.longitude = args.lng;
       this.name = args.name;
-      this.airport_code = args.airport_code;
-      this.latitude = args.latitude;
-      this.longitude = args.longitude;
     };
 
+    Location.prototype.toString = function() {
+      return this.name + ' - ' + this.city;
+    }
+
     var Search = function() {
-      this.depart_location = {};
-      this.arrival_location = {};
-      this.depart_date = "2015-07-12";
-      this.return_date = "2015-07-12";
+      this.depart_location = null;
+      this.arrival_location = null;
+      this.depart_date = null;
+      this.return_date = null;
     };
 
     return factory;

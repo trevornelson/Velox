@@ -19,4 +19,5 @@
 //= require google_places
 //= require angular
 //= require angular-mocks
+//= require typeahead
 //= require_tree .

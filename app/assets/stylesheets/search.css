@@ -41,3 +41,41 @@ button.time-dur-btn {
 .trip-content, .hotel-content {
   text-align: center;
 }
+
+#date-inputs {
+  margin-top: 50px;
+}
+
+.search-bar {
+  margin-bottom: 0px;
+  position: absolute;
+  z-index: 20000;
+}
+
+.items {
+  position: absolute;
+  top: 35px;
+  background-color: #ECF0F1;
+  border: 2px solid #1ABC9C;
+  height: auto;
+  width: 100%;
+  display: block;
+  z-index: 10000;
+  padding: 2px 5px 0px 5px;
+  border-radius: 4px;
+}
+
+.item {
+  border-top: 1px solid #95A5A6;
+}
+
+.autocomplete-title {
+  padding: 0px 5px 0px 5px;
+  min-width: 200px;
+}
+
+.autocomplete-subtitle {
+  font-size: 0.75em;
+}
+
+
