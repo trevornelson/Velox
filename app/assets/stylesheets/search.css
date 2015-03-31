@@ -8,6 +8,10 @@
     outline: none;
 }
 
+button.time-dur-btn {
+  width: 70px;
+}
+
 .btn-default {
   width: 100px;
 }
