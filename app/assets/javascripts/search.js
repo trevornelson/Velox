@@ -18,19 +18,15 @@ myAppModule.controller('SearchController', ['$scope', '$rootScope', 'searchFacto
 
 
       $scope.submit = function() {
-        console.log($scope.search.depart_location);
         console.log($scope.search);
 
         $rootScope.search = $scope.search;
       };
 
-      $scope.blur = function(event) {
-        event.target = $scope.search;
-      }
     }
   ]);
 
-myAppModule.directive('typeahead', function($timeout) {
+myAppModule.directive('typeahead', ['searchFactory', '$timeout', function(searchFactory, $timeout) {
   return {
     restrict: 'AEC',
     scope: {
@@ -43,8 +39,7 @@ myAppModule.directive('typeahead', function($timeout) {
     },
     link: function(scope, elem, attrs) {
       scope.handleSelection = function(selectedItem) {
-        console.log(selectedItem);
-        scope.model = selectedItem;
+        scope.model = searchFactory.buildLocation(selectedItem);
         console.log(scope.model);
         scope.current = 0;
         scope.selected = true;
@@ -72,7 +67,7 @@ myAppModule.directive('typeahead', function($timeout) {
               '</div>'
               ].join('\n')
   };
-});
+}]);
 
 myAppModule.factory('searchFactory', ['$http', function($http) {
 
