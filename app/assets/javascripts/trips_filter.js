@@ -27,21 +27,26 @@ myAppModule.controller('TripController', ['$scope', '$rootScope', 'FlightFactory
       $scope.trips = trip_input.map(function(flight_input) {
         return new Trip(createFlights(flight_input.slice[0].segment), flight_input);
       });
+      $rootScope.trips = $scope.trips;
       $scope.$apply();
     }).error(function(data) {
       var trip_input = stub_trips.trips.tripOption;
       $scope.trips = trip_input.map(function(flight_input) {
         return new Trip(createFlights(flight_input.slice[0].segment), flight_input);
       });
+      $rootScope.trips = $scope.trips;
       $scope.$apply();
     });
   });
   $scope.trip_index = 0;
+  $rootScope.trip_index = 0;
   $scope.next = function () {
       if ($scope.trip_index >= $scope.trips.length - 1) {
           $scope.trip_index = 0;
+          $rootScope.trip_index = 0;
       } else {
           $scope.trip_index++;
+          $rootScope.trip_index++;
       }
   };
 }] );

@@ -3,5 +3,5 @@ class User < ActiveRecord::Base
 
   validates :username, uniqueness: true
 
-  has_many :itineries
+  has_many :itineraries
 end

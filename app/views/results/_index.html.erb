@@ -2,6 +2,10 @@
 <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
 
+<div ng-controller="ItineraryController">
+    <button class="btn btn-default" id="save-itinerary-button" ng-click="create()">Save</button>
+</div>
+
 <div class="three-column-container" ng-controller="HotelController">
 
     <div class="col-md-2 col" ng-show="show_filter">
@@ -62,6 +66,7 @@
 
         <div class="col-md-5 col trip-content" ng-hide="show_flight_results">
             <button class="btn btn-default"  ng-click="next()">Next</button>
+            <button class="btn btn-default" ng-click="create()">Save</button>
             <div ng-repeat="trip in trips | orderBy:'price'">
                 <div ng-if="trip_index == $index">
                     <div class="trip-template">

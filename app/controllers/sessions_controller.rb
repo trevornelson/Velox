@@ -1,5 +1,14 @@
 class SessionsController < ApplicationController
 
+  def fetch
+    @user = User.find_by(id: session[:user_id])
+    if @user
+      render json: {username: @user.username, email: @user.email, id: @user.id}
+    else
+      head :unauthorized
+    end
+  end
+
   def create
     user = User.find_by(username: params[:session][:username])
     if user && user.authenticate(params[:session][:password])

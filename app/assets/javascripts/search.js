@@ -1,5 +1,9 @@
-myAppModule.controller('SearchController', ['$scope', '$rootScope', 'searchFactory',
-    function($scope, $rootScope, searchFactory) {
+myAppModule.controller('SearchController', ['$scope', '$rootScope', 'searchFactory', 'userSession',
+    function($scope, $rootScope, searchFactory, userSession) {
+
+      userSession.checkSession().success(function(data) {
+        $rootScope.user = data;
+      });
 
       $scope.show_input = true;
       $scope.show_filter = false;
@@ -8,8 +12,6 @@ myAppModule.controller('SearchController', ['$scope', '$rootScope', 'searchFacto
       searchFactory.buildSearch();
 
       $scope.submit = function() {
-        // searchFactory.search.depart_date = new Date(searchFactory.search.depart_date);
-        // searchFactory.search.return_date = new Date(searchFactory.search.return_date);
         $rootScope.search = searchFactory.search;
         console.log($rootScope.search);
       };
@@ -40,13 +42,13 @@ myAppModule.controller('SearchController', ['$scope', '$rootScope', 'searchFacto
         });
       };
 
-      var depart_input = document.getElementById('depart-autocomplete');
-      var arrive_input = document.getElementById('destination-autocomplete');
-      $scope.depart_ac = new google.maps.places.Autocomplete(depart_input);
-      $scope.arrive_ac = new google.maps.places.Autocomplete(arrive_input);
+      // var depart_input = document.getElementById('depart-autocomplete');
+      // var arrive_input = document.getElementById('destination-autocomplete');
+      // $scope.depart_ac = new google.maps.places.Autocomplete(depart_input);
+      // $scope.arrive_ac = new google.maps.places.Autocomplete(arrive_input);
 
-      $scope.initAutocomplete($scope.depart_ac, 'depart_location');
-      $scope.initAutocomplete($scope.arrive_ac, 'arrival_location');
+      // $scope.initAutocomplete($scope.depart_ac, 'depart_location');
+      // $scope.initAutocomplete($scope.arrive_ac, 'arrival_location');
     }
   ]);
 

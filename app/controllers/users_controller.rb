@@ -19,6 +19,7 @@ class UsersController < ApplicationController
   def show
     @signup_user = User.new
     @session_user = User.find_by(id: session[:user_id])
+    @itineraries = Itinerary.with_all_relations(@session_user.id)
   end
 
   private
