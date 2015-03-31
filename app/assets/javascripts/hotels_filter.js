@@ -27,13 +27,17 @@ var Hotel = function(data) {
           return new Hotel(hotel_data);
         });
       });
+      $rootScope.hotels = $scope.hotels
     });
     $scope.hotel_index = 0;
+    $rootScope.hotel_index = 0;
     $scope.next_hotel = function () {
         if ($scope.hotel_index >= $scope.hotels.length - 1) {
             $scope.hotel_index = 0;
+            $rootScope.hotel_index = 0;
         } else {
             $scope.hotel_index++;
+            $rootScope.hotel_index++;
         }
     };
   }]);
