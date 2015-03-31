@@ -15,4 +15,9 @@ class ItinerariesController < ApplicationController
     end
   end
 
+  def destroy
+    Itinerary.delete(params[:id])
+    head :200
+  end
+
 end
