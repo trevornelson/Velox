@@ -2,6 +2,10 @@
   font-size: 0.75em;
 }
 
+.modal {
+  z-index: 30000;
+}
+
 #user-sidebar {
   height: 600px;
 }
