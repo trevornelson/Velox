@@ -34,6 +34,7 @@ myAppModule.controller('TripController', ['$scope', '$rootScope', 'FlightFactory
       $scope.trips = trip_input.map(function(flight_input) {
         return new Trip(createFlights(flight_input.slice[0].segment), flight_input);
       });
+      $rootScope.trips = $scope.trips;
       $scope.$apply();
     });
   });

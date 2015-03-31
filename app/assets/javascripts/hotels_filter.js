@@ -22,12 +22,13 @@ var Hotel = function(data) {
         $scope.hotels = data.result.map(function(hotel_data) {
           return new Hotel(hotel_data);
         });
+        $rootScope.hotels = $scope.hotels
       }).error(function() {
         $scope.hotels = stub_hotels.result.map(function(hotel_data) {
           return new Hotel(hotel_data);
         });
+        $rootScope.hotels = $scope.hotels
       });
-      $rootScope.hotels = $scope.hotels
     });
     $scope.hotel_index = 0;
     $rootScope.hotel_index = 0;
