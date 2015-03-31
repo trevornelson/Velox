@@ -17,6 +17,8 @@ class Itinerary < ActiveRecord::Base
         t.save
         trip['flights'].each do |flight|
           f = t.flights.new(carrier_abbv: flight['carrier_abbv'],
+                            flight_num: flight['flight_num'],
+                            carrier_full: flight['carrier_full'],
                             airport_ori_code: flight['airport_ori_code'],
                             airport_dest_code: flight['airport_dest_code'],
                             duration: flight['duration'])

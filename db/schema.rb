@@ -18,49 +18,51 @@ ActiveRecord::Schema.define(version: 20150328203504) do
 
   create_table "flights", force: :cascade do |t|
     t.integer  "trip_id"
-    t.string   "carrier_abbv"
-    t.string   "airport_ori_code"
-    t.string   "airport_dest_code"
-    t.string   "duration"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "carrier_abbv",      null: false
+    t.integer  "flight_num",        null: false
+    t.string   "carrier_full",      null: false
+    t.string   "airport_ori_code",  null: false
+    t.string   "airport_dest_code", null: false
+    t.string   "duration",          null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "hotels", force: :cascade do |t|
     t.integer  "itinerary_id"
-    t.string   "name"
-    t.string   "city"
-    t.string   "neighbourhood"
-    t.string   "postalCode"
-    t.string   "streetName"
-    t.string   "price"
-    t.string   "provider"
-    t.string   "photo_url"
-    t.string   "url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "name",          null: false
+    t.string   "city",          null: false
+    t.string   "neighbourhood", null: false
+    t.string   "postal_code",   null: false
+    t.string   "street_name",   null: false
+    t.string   "price",         null: false
+    t.string   "provider",      null: false
+    t.string   "photo_url",     null: false
+    t.string   "url",           null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "itineraries", force: :cascade do |t|
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "trips", force: :cascade do |t|
     t.integer  "itinerary_id"
-    t.string   "price"
-    t.string   "duration"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "price",        null: false
+    t.string   "duration",     null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "username"
-    t.string   "password_digest"
+    t.string   "username",        null: false
+    t.string   "password_digest", null: false
     t.string   "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end
