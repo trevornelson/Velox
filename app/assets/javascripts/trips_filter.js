@@ -1,7 +1,6 @@
 myAppModule.controller('TripController', ['$scope', '$rootScope', 'FlightFactory', function($scope, $rootScope, FlightFactory) {
   $scope.$watch(function() {return $rootScope.search}, function(newValue, oldValue){
-    console.log("trip controller watch called");
-    var thing = {
+    var api_req = {
       "request": {
         "slice": [
         {
@@ -21,7 +20,7 @@ myAppModule.controller('TripController', ['$scope', '$rootScope', 'FlightFactory
         "refundable": false
       }
     };
-    FlightFactory.fetchFlights(thing).success(function(data) {
+    FlightFactory.fetchFlights(api_req).success(function(data) {
       console.log(data.trips);
       var trip_input = data.trips.tripOption;
       $scope.trips = trip_input.map(function(flight_input) {
