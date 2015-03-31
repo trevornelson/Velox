@@ -23,6 +23,10 @@ myAppModule.controller('SearchController', ['$scope', '$rootScope', 'searchFacto
 
         $rootScope.search = $scope.search;
       };
+
+      $scope.blur = function(event) {
+        event.target = $scope.search;
+      }
     }
   ]);
 
@@ -44,6 +48,7 @@ myAppModule.directive('typeahead', function($timeout) {
         console.log(scope.model);
         scope.current = 0;
         scope.selected = true;
+        elem.find('input').text("");
         $timeout(function() {
           scope.onSelect();
         }, 200);
@@ -57,7 +62,7 @@ myAppModule.directive('typeahead', function($timeout) {
         scope.current = index;
       };
     },
-    template: ['<input type="text" ng-model="model" placeholder="{{prompt}}" ng-keydown="selected=false" />',
+    template: ['<input type="text" class="search-bar" ng-model="model" placeholder="{{prompt}}" ng-keydown="selected=false" />',
               '<br/>',
               '<div class="items" ng-hide="!model.length || selected">',
               '<div class="item" ng-repeat="item in items | filter:model track by $index" ng-click="handleSelection(item)" style="cursor:pointer" ng-class="{active:isCurrent($index)}" ng-mouseenter="setCurrent($index)">',

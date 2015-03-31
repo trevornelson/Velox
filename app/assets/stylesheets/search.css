@@ -41,3 +41,13 @@ button.time-dur-btn {
 .trip-content, .hotel-content {
   text-align: center;
 }
+
+.items {
+  position: absolute;
+  background-color: #ABB7B7;
+  height: auto;
+  width: 100%;
+  display: block;
+  z-index: 10000;
+  padding: 5px;
+}
