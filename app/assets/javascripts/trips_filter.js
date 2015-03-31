@@ -67,6 +67,8 @@ function Flight(flight_data){
   this.dep_time = flight_data.leg[0].departureTime;
   this.arr_time = flight_data.leg[0].arrivalTime;
   this.carrier_abbv = flight_data.flight.carrier;
+  this.flight_num = flight_data.flight.number;
+  this.carrier_full = airline_codes[this.carrier_abbv];
   this.airport_ori_code = flight_data.leg[0].origin;
   this.airport_dest_code = flight_data.leg[0].destination;
   this.duration = flight_data.leg[0].duration;
@@ -78,7 +80,7 @@ function createFlights(flight_input){
 }
 
 function Trip(flight_array, flight_input){
-  this.price = flight_input.saleTotal;
+  this.price = flight_input.saleTotal.replace( /^\D+/g, '');;
   this.flights = flight_array;
   this.duration = flight_input.slice[0].duration;
 }
