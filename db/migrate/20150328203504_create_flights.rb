@@ -3,6 +3,8 @@ class CreateFlights < ActiveRecord::Migration
     create_table :flights do |t|
       t.references  :trip
       t.string  :carrier_abbv, null: false
+      t.integer :flight_num, null: false
+      t.string  :carrier_full, null: false
       t.string  :airport_ori_code, null: false
       t.string  :airport_dest_code, null: false
       t.string  :duration, null: false
