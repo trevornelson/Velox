@@ -18,5 +18,4 @@
 //= require respond.min
 //= require angular
 //= require angular-mocks
-//= require typeahead
 //= require_tree .
