@@ -57,12 +57,11 @@ myAppModule.directive('typeahead', ['searchFactory', '$timeout', function(search
         scope.current = index;
       };
     },
-    template: ['<input type="text" class="search-bar" ng-model="model" placeholder="{{prompt}}" ng-keydown="selected=false" />',
-              '<br/>',
+    template: ['<input type="text" class="search-bar form-control" ng-model="model" placeholder="{{prompt}}" ng-keydown="selected=false" />',
               '<div class="items" ng-hide="!model.length || selected">',
               '<div class="item" ng-repeat="item in items | filter:model track by $index" ng-click="handleSelection(item)" style="cursor:pointer" ng-class="{active:isCurrent($index)}" ng-mouseenter="setCurrent($index)">',
-              '<p class="autocomplete-title">{{item[title]}}</p>',
-              '<p class="autocomplete-subtitle">{{item[subtitle]}}</p>',
+              '<span class="autocomplete-title">{{item[title]}}</span>',
+              '<span class="autocomplete-subtitle">{{item[subtitle]}}</span>',
               '</div>',
               '</div>'
               ].join('\n')
