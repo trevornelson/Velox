@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'main#index'
+  get 'sessions/fetch' => 'sessions#fetch'
   resources :users do
     resources :itineraries, only: [:index, :create, :destroy]
   end
