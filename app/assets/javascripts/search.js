@@ -82,18 +82,6 @@ myAppModule.factory('searchFactory', ['$http', function($http) {
       return new Location(args);
     };
 
-    factory.fetchAirport = function(airport_name) {
-      var airport_object;
-      console.log(airport_name);
-      autocomplete_source.forEach(function(el, i, arr) {
-        if (el === airport_name) {
-          console.log(el);
-          airport_object = el;
-        }
-      });
-      return airport_object;
-    };
-
     var Location = function(args) {
       this.city = args.city;
       this.airport_code = args.code;
