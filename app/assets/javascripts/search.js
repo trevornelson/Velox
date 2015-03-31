@@ -1,6 +1,6 @@
-myAppModule.controller('SearchController', ['$scope', '$rootScope', 'searchFactory',
-    function($scope, $rootScope, searchFactory) {
-
+myAppModule.controller('SearchController', ['$scope', '$rootScope', 'searchFactory', 'userSession',
+    function($scope, $rootScope, searchFactory, userSession) {
+      $rootScope.user = userSession.checkSession();
       $scope.show_input = true;
       $scope.show_filter = false;
       $scope.show_flight_results = true;
@@ -40,13 +40,13 @@ myAppModule.controller('SearchController', ['$scope', '$rootScope', 'searchFacto
         });
       };
 
-      var depart_input = document.getElementById('depart-autocomplete');
-      var arrive_input = document.getElementById('destination-autocomplete');
-      $scope.depart_ac = new google.maps.places.Autocomplete(depart_input);
-      $scope.arrive_ac = new google.maps.places.Autocomplete(arrive_input);
+      // var depart_input = document.getElementById('depart-autocomplete');
+      // var arrive_input = document.getElementById('destination-autocomplete');
+      // $scope.depart_ac = new google.maps.places.Autocomplete(depart_input);
+      // $scope.arrive_ac = new google.maps.places.Autocomplete(arrive_input);
 
-      $scope.initAutocomplete($scope.depart_ac, 'depart_location');
-      $scope.initAutocomplete($scope.arrive_ac, 'arrival_location');
+      // $scope.initAutocomplete($scope.depart_ac, 'depart_location');
+      // $scope.initAutocomplete($scope.arrive_ac, 'arrival_location');
     }
   ]);
 
