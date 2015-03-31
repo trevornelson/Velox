@@ -2,38 +2,38 @@ class Itinerary < ActiveRecord::Base
 
   belongs_to  :user
   has_many  :trips
-  has_one :hotel
+  has_many :hotels
 
-  scope :with_all_relations, -> (user_id) { includes(:trips => :flights,
-                                                      :hotel
-                                                      ).find(user_id)}
+  def self.with_all_relations(user_id)
+    return self.includes(:hotels, :trips => :flights)
+  end
 
   def self.create_with_all_relations(params)
-    itinerary = self.new(params[:itinerary_title], params[:user_id])
-    success? = true
-    params[:trips].each do |trip|
-      t = itinerary.trips.new(trip[:details])
-      if valid?
+    itinerary = self.new(title: params['itinerary_title'], user_id: params['user_id'])
+    success = true
+    params['trips'].each do |trip|
+      t = itinerary.trips.new(price: trip['price'], duration: trip['duration'])
+      if t.valid?
         t.save
-        trip[:flights].each do |flight|
+        trip['flights'].each do |flight|
           f = t.flights.new(flight)
           if f.valid?
             f.save
           else
-            success? = false
+            success = false
           end
         end
       else
-        success? = false
+        success = false
       end
     end
-    h = itinerary.hotel.new(params[:hotel])
+    h = itinerary.hotels.new(params['hotel'])
     if h.valid?
       h.save
     else
-      success? = false
+      success = false
     end
-    return success?
+    return success
   end
 
 end
