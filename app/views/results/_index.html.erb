@@ -23,6 +23,15 @@
 
         <div class="filter-list">
 
+<!--             <div class="filter-option row">
+                <div class="filter-option-label">
+                    Departure
+                </div>
+                <div class="filter-option-switch">
+                    <input type="checkbox" data-toggle="toggle" data-on="PM" data-off="AM" data-onstyle="primary" data-size="mini" data-width="80" data-height="10">
+                </div>
+            </div> -->
+
             <div class="filter-option row">
                 <div class="filter-option-label">
                     Departure
@@ -46,7 +55,8 @@
                     AirBnb
                 </div>
                 <div class="filter-option-switch">
-                    <input type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="primary" data-size="mini" data-width="80" data-height="10">
+                    <input type="checkbox" ng-model="airBnb_status" ng-change="airBnb()">
+                    <p>{{airBnb_status}}</p>
                 </div>
             </div>
 
@@ -125,7 +135,7 @@
 
         <div class="col-md-5 col hotel-content">
             <button class="btn btn-default" ng-click="next_hotel()">Next</button>
-            <div ng-repeat="hotel in hotels | orderBy:'price'">
+            <div ng-repeat="hotel in resultingHotels | orderBy:'price'">
                 <div ng-if="hotel_index == $index">
                     <div class="hotel-template">
                             <div class="img-container" style="background-image: url({{hotel.photoUrl}})">

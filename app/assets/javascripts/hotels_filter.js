@@ -22,10 +22,16 @@ var Hotel = function(data) {
         $scope.hotels = data.result.map(function(hotel_data) {
           return new Hotel(hotel_data);
         });
+        $scope.resultingHotels = $scope.hotels.filter(function(ele){
+          return ele.provider !== 'Airbnb';
+        });
         $rootScope.hotels = $scope.hotels
       }).error(function() {
         $scope.hotels = stub_hotels.result.map(function(hotel_data) {
           return new Hotel(hotel_data);
+        });
+        $scope.resultingHotels = $scope.hotels.filter(function(ele){
+          return ele.provider !== 'Airbnb';
         });
         $rootScope.hotels = $scope.hotels
       });
@@ -33,14 +39,30 @@ var Hotel = function(data) {
     $scope.hotel_index = 0;
     $rootScope.hotel_index = 0;
     $scope.next_hotel = function () {
-        if ($scope.hotel_index >= $scope.hotels.length - 1) {
-            $scope.hotel_index = 0;
-            $rootScope.hotel_index = 0;
-        } else {
-            $scope.hotel_index++;
-            $rootScope.hotel_index++;
-        }
+      if ($scope.hotel_index >= $scope.resultingHotels.length - 1) {
+        $scope.hotel_index = 0;
+        $rootScope.hotel_index = 0;
+      } else {
+        $scope.hotel_index++;
+        $rootScope.hotel_index++;
+      }
     };
+
+    // hotel switch filters
+    $scope.airBnb_status = false;
+
+    $scope.airBnb = function() {
+      if ($scope.airBnb_status == false) {
+        $scope.resultingHotels = $scope.hotels.filter(function(ele){
+          return ele.provider !== 'Airbnb';
+        });
+      } else {
+        $scope.resultingHotels = $scope.hotels.filter(function(ele){
+          return ele.provider == 'Airbnb';
+        });
+      };
+    };
+
   }]);
 
   // create hotel factory
