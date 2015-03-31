@@ -1,0 +1,49 @@
+.trip-template{
+  border: 1px solid black;
+  text-align: left;
+  padding: 10px;
+}
+
+.flight-carrier {
+  float: left;
+}
+
+.flight-date {
+  float: right;
+}
+
+.flight-origin {
+  float: left;
+}
+
+.flight-dest {
+  float: right;
+}
+
+.flight-dep {
+  float: left;
+}
+
+.flight-arr {
+  float: right;
+}
+
+
+
+/*<div class="trip-template">
+    <div class="flight-template" ng-repeat="flight in trip.flights">
+        <div class="header-map">
+            <span class="flight-carrier">{{flight.carrier_abbv}}</span>
+            <span class="flight-date">{{flight.dep_time|date:fullDate}}</span>
+        </div>
+        <div class="flight-map">
+            <span class="flight-origin">{{flight.airport_ori_code}}</span> --->
+            <span class="flight-dest">{{flight.airport_dest_code}}</span>
+        </div>
+        <div class="schedule-map">
+            <span class="flight-dep">{{flight.dep_time | date: 'shortTime'}}</span> --->
+            <span class="flight-arr">{{flight.arr_time | date: 'shortTime'}}</span>
+        </div>
+    </div>
+</div>
+<span>{{trip.price}}</span>*/
