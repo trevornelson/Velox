@@ -61,8 +61,8 @@ myAppModule.directive('typeahead', ['searchFactory', '$timeout', function(search
               '<br/>',
               '<div class="items" ng-hide="!model.length || selected">',
               '<div class="item" ng-repeat="item in items | filter:model track by $index" ng-click="handleSelection(item)" style="cursor:pointer" ng-class="{active:isCurrent($index)}" ng-mouseenter="setCurrent($index)">',
-              '<p class="title">{{item[title]}}</p>',
-              '<p class="subtitle">{{item[subtitle]}}</p>',
+              '<p class="autocomplete-title">{{item[title]}}</p>',
+              '<p class="autocomplete-subtitle">{{item[subtitle]}}</p>',
               '</div>',
               '</div>'
               ].join('\n')
