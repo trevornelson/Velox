@@ -22,6 +22,10 @@ var Hotel = function(data) {
         $scope.hotels = data.result.map(function(hotel_data) {
           return new Hotel(hotel_data);
         });
+      }).error(function() {
+        $scope.hotels = stub_hotels.result.map(function(hotel_data) {
+          return new Hotel(hotel_data);
+        });
       });
     });
     $scope.hotel_index = 0;
