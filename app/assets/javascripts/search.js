@@ -1,6 +1,10 @@
 myAppModule.controller('SearchController', ['$scope', '$rootScope', 'searchFactory', 'userSession',
     function($scope, $rootScope, searchFactory, userSession) {
-      $rootScope.user = userSession.checkSession();
+
+      userSession.checkSession().success(function(data) {
+        $rootScope.user = data;
+      });
+
       $scope.show_input = true;
       $scope.show_filter = false;
       $scope.show_flight_results = true;
@@ -8,8 +12,6 @@ myAppModule.controller('SearchController', ['$scope', '$rootScope', 'searchFacto
       searchFactory.buildSearch();
 
       $scope.submit = function() {
-        // searchFactory.search.depart_date = new Date(searchFactory.search.depart_date);
-        // searchFactory.search.return_date = new Date(searchFactory.search.return_date);
         $rootScope.search = searchFactory.search;
         console.log($rootScope.search);
       };
