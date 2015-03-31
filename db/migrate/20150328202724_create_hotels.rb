@@ -2,17 +2,17 @@ class CreateHotels < ActiveRecord::Migration
   def change
     create_table :hotels do |t|
       t.references  :itinerary
-        t.string  :name
-        t.string  :city
-        t.string  :neighbourhood
-        t.string  :postalCode
-        t.string  :streetName
-        t.string  :price
-        t.string  :provider
-        t.string  :photo_url
-        t.string  :url
+        t.string  :name, null: false
+        t.string  :city, null: false
+        t.string  :neighbourhood, null: false
+        t.string  :postalCode, null: false
+        t.string  :streetName, null: false
+        t.string  :price, null: false
+        t.string  :provider, null: false
+        t.string  :photo_url, null: false
+        t.string  :url, null: false
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end
