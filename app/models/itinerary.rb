@@ -9,7 +9,7 @@ class Itinerary < ActiveRecord::Base
   end
 
   def self.create_with_all_relations(params)
-    itinerary = self.new(title: params['itinerary_title'], user_id: params['user_id'])
+    itinerary = self.new(user_id: params['user_id'])
     success = true
     params['trips'].each do |trip|
       t = itinerary.trips.new(price: trip['price'], duration: trip['duration'])
