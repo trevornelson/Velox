@@ -14,3 +14,15 @@
   margin-top: 10px;
   margin-bottom: 20px;
 }
+
+.user-section {
+  height: 1200px;
+}
+
+.hotel-city {
+  font-size: 1.25em;
+}
+
+.itinerary-details {
+  font-size: 0.75em;
+}
