@@ -5,11 +5,13 @@ class Itinerary < ActiveRecord::Base
   has_many :hotels
 
   def self.with_all_relations(user_id)
-    return self.includes(:hotels, :trips => :flights)
+    return self.includes(:hotels, :trips => :flights).where(user_id: user_id)
   end
 
   def self.create_with_all_relations(params)
-    itinerary = self.new(user_id: params['user_id'])
+    user = User.find_by(id: params['user_id'])
+    return nil unless user
+    itinerary = user.itineraries.create()
     success = true
     params['trips'].each do |trip|
       t = itinerary.trips.new(price: trip['price'], duration: trip['duration'])
