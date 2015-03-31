@@ -19,9 +19,5 @@ myAppModule.controller('SaveItineraryController', ['$scope', '$rootScope', '$htt
           $('#login-modal').modal();
         }
       };
-
-      $scope.destroy = function() {
-        // send ajax to itineraries delete
-      }
     }
   ]);
