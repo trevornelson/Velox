@@ -23,7 +23,6 @@
             </div>
 
             <div class="filter-list">
-
                 <div class="filter-option row">
                     <div class="filter-option-label">
                         Departure AM
@@ -81,33 +80,41 @@
             </div>
         </div>
 
-        <div class="itinerary" ng-show="show_filter">
+    <div class="itinerary" ng-show="show_filter">
 
-            <div class="col-md-5 col trip-content" ng-hide="show_flight_results">
-                <button class="btn btn-default"  ng-click="next()">Next</button>
-                <button class="btn btn-default" ng-click="create()">Save</button>
-                <div ng-repeat="trip in resultingTrips | orderBy:'price'">
-                    <div ng-if="trip_index == $index">
-                        <div class="trip-template">
-                            <div class="flight-template" ng-repeat="flight in trip.flights">
-                                <div class="flight-long">{{flight.carrier_full}}</div>
-                                <div class="header-map">
-                                    <span class="flight-carrier">{{flight.carrier_abbv}} {{flight.flight_num}}</span>
-                                    <span class="flight-date">{{flight.dep_time|date:fullDate}}</span>
+        <div class="col-md-5 col trip-content" ng-hide="show_flight_results">
+            <button class="btn btn-default"  ng-click="next()">Next</button>
+            <button class="btn btn-default" ng-click="create()">Save</button>
+            <div ng-repeat="trip in resultingTrips | orderBy:'price'">
+                <div ng-if="trip_index == $index">
+
+                    <div class="box">
+                        <div class="box-icon">
+                            <span class="fa fa-4x fa-html5"></span>
+                        </div>
+                        <div class="info">
+                            <h4 class="text-center">Trips</h4>
+                            <div class="trip-template">
+                                <div class="flight-template" ng-repeat="flight in trip.flights">
+                                    <div class="flight-long">{{flight.carrier_full}}</div>
+                                    <div class="header-map">
+                                        <span class="flight-carrier">{{flight.carrier_abbv}} {{flight.flight_num}}</span>
+                                        <span class="flight-date">{{flight.dep_time|date:fullDate}}</span>
+                                    </div>
+                                    <br>
+                                    <div class="flight-map">
+                                        <span class="flight-origin">{{flight.airport_ori_code}}</span>
+                                        <span class="flight-dest">{{flight.airport_dest_code}}</span>
+                                    </div>
+                                    <br>
+                                    <div class="schedule-map">
+                                        <span class="flight-dep">{{flight.dep_time | date: 'shortTime'}}</span>
+                                        <span class="flight-arr">{{flight.arr_time | date: 'shortTime'}}</span>
+                                    </div>
+                                    <br>
                                 </div>
-                                <br>
-                                <div class="flight-map">
-                                    <span class="flight-origin">{{flight.airport_ori_code}}</span>
-                                    <span class="flight-dest">{{flight.airport_dest_code}}</span>
-                                </div>
-                                <br>
-                                <div class="schedule-map">
-                                    <span class="flight-dep">{{flight.dep_time | date: 'shortTime'}}</span>
-                                    <span class="flight-arr">{{flight.arr_time | date: 'shortTime'}}</span>
-                                </div>
-                                <br>
+                                <span>{{trip.price | currency}}</span>
                             </div>
-                        <span>{{trip.price | currency}}</span>
                         </div>
                     </div>
                 </div>
@@ -136,27 +143,26 @@
                                 </div>
                                 <br>
                             </div>
-                        <span>{{trip.price | currency}}</span>
+                        <span><h6>{{trip.price | currency}}</h6></span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-5 col hotel-content">
-                <button class="btn btn-default" ng-click="next_hotel()">Next</button>
-                <div ng-repeat="hotel in resultingHotels | orderBy:'price'">
-                    <div ng-if="hotel_index == $index">
-                        <div class="hotel-template">
-                                <div class="img-container" style="background-image: url({{hotel.photo_url}})">
-                                    <div class="hotel-price">${{hotel.price}}</div>
-                                    <a href="{{hotel.url}}">
-                                        <div class="hotel-description">
-                                            <div id="provider-tag" class="hotel-attr">{{hotel.provider}}</div>
-                                            <div class="hotel-attr">{{hotel.name}}</div>
-                                            <div class="hotel-attr">{{hotel.city}}, {{hotel.neighbourhood}}</div>
-                                        </div>
-                                    </a>
+        <div class="col-md-5 col hotel-content">
+            <button class="btn btn-default" ng-click="next_hotel()">Next</button>
+            <div ng-repeat="hotel in resultingHotels | orderBy:'price'">
+                <div ng-if="hotel_index == $index">
+                    <div class="hotel-template">
+                        <div class="img-container" style="background-image: url({{hotel.photoUrl}})">
+                            <div class="hotel-price">${{hotel.price}}</div>
+                            <a href="{{hotel.url}}" target="_blank">
+                                <div class="hotel-description">
+                                    <div id="provider-tag" class="hotel-attr">{{hotel.provider}}</div>
+                                    <div class="hotel-attr">{{hotel.name | limitTo:35 }}...</div>
+                                    <div class="hotel-attr">{{hotel.city}}, {{hotel.neighbourhood}}</div>
                                 </div>
+                            </a>
                         </div>
                     </div>
                 </div>
