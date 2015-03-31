@@ -49,6 +49,29 @@ myAppModule.controller('TripController', ['$scope', '$rootScope', 'FlightFactory
           $rootScope.trip_index++;
       }
   };
+
+  //trips switch filters
+  $scope.resultingTrips = $scope.trips;
+
+  $scope.directFlight = function($scope){
+    $scope.trips.forEach(function(trip){
+      if (trip.flights.length == 1){
+        $scope.resultingTrips.push(trip);
+      }
+    })
+    return $scope.resultingTrips;
+  }
+
+  $scope.coachSeat = function($scope){
+    $scope.trips.forEach(function(trip){
+      if (trip.flight[0].cabin == 'COACH') {
+        $scope.resultingTrips.push(trip);
+      }
+    })
+    return $scope.resultingTrips;
+  }
+
+
 }] );
 
 myAppModule.factory('FlightFactory', ['$http', '$rootScope', function($http, $rootScope) {
