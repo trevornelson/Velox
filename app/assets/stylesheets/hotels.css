@@ -1,0 +1,40 @@
+.img-container {
+  position: relative;
+  height: 15em;
+  background: center center;
+  box-shadow: inset 0px -30px 95px #000;
+}
+
+.hotel-description {
+  position: absolute;
+  bottom: 0.7em;
+  left: 1em;
+  font-family: "HelveticaNeue-Light";
+  color: white;
+}
+
+.hotel-attr {
+  text-align: left;
+}
+
+#provider-tag {
+  font-size: 0.75em;
+  background: #A1A6A9;
+  border-radius: 5px;
+  padding: 1px 3px 1px 3px;
+  display: table;
+  box-shadow: 0px 10px 25px #000;
+}
+
+.hotel-price {
+  font-weight: bold;
+  right: 0;
+  top: 0.7em;
+  color: white;
+  font-family: "HelveticaNeue-Light";
+  position: absolute;
+  padding: 8px 15px 8px 8px;
+  background: #2F4F4F;
+  opacity: 0.9;
+
+}
