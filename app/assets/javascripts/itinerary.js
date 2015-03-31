@@ -1,9 +1,9 @@
-myAppModule.controller('SaveItineraryController', ['$scope', '$rootScope',
-    function($scope, $rootScope) {
+myAppModule.controller('SaveItineraryController', ['$scope', '$rootScope', '$http',
+    function($scope, $rootScope, $http) {
 
 
       $scope.create = function() {
-        // send ajax to itineraries create
+        $http.get('/users/:id/itineraries')
       };
 
       $scope.destroy = function() {
