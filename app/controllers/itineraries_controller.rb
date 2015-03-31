@@ -7,7 +7,8 @@ class ItinerariesController < ApplicationController
   end
 
   def create
-    itinerary = Itinerary.create_with_all_relations(params)
+    parsed_json = JSON.parse(params)
+    itinerary = Itinerary.create_with_all_relations(parsed_json)
     if itinerary
       head :200
     else
