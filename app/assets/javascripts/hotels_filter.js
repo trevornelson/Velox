@@ -11,7 +11,7 @@ var Hotel = function(data) {
   this.price = data.price.nightly;
   this.provider = data.provider.full;
   this.availability = data.availability;
-  this.photo_url = data.photos[0].xlarge;
+  this.photoUrl = data.photos[0].large;
   this.url = data.provider.url;
 };
 
