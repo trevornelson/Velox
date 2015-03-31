@@ -81,7 +81,7 @@ myAppModule.factory('searchFactory', ['$http', function($http) {
     factory.search;
 
     factory.buildSearch = function() {
-      factory.search = new Search();
+      return new Search();
     };
 
     factory.buildLocation = function(args) {
@@ -101,17 +101,22 @@ myAppModule.factory('searchFactory', ['$http', function($http) {
     };
 
     var Location = function(args) {
+      this.city = args.city;
+      this.airport_code = args.code;
+      this.latitude = args.lat;
+      this.longitude = args.lng;
       this.name = args.name;
-      this.airport_code = args.airport_code;
-      this.latitude = args.latitude;
-      this.longitude = args.longitude;
     };
 
+    Location.prototype.toString = function() {
+      return this.name + ' - ' + this.city;
+    }
+
     var Search = function() {
-      this.depart_location = {};
-      this.arrival_location = {};
-      this.depart_date = "2015-07-12";
-      this.return_date = "2015-07-12";
+      this.depart_location = null;
+      this.arrival_location = null;
+      this.depart_date = null;
+      this.return_date = null;
     };
 
     return factory;
