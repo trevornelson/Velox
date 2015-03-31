@@ -7,18 +7,24 @@ class ItinerariesController < ApplicationController
   end
 
   def create
-    parsed_json = JSON.parse(params)
-    itinerary = Itinerary.create_with_all_relations(parsed_json)
+    # parsed_json = JSON.parse(params)
+    itinerary = Itinerary.create_with_all_relations(params)
     if itinerary
-      head :200
+      head :created
     else
-      head :400
+      head :bad_request
     end
   end
 
   def destroy
     Itinerary.delete(params[:id])
-    head :200
+    head :ok
+  end
+
+  private
+
+  def itinerary_params
+    params.permit(:user_id, :trips, :hotel)
   end
 
 end
