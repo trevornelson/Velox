@@ -16,7 +16,10 @@ class Itinerary < ActiveRecord::Base
       if t.valid?
         t.save
         trip['flights'].each do |flight|
-          f = t.flights.new(flight)
+          f = t.flights.new(carrier_abbv: flight['carrier_abbv'],
+                            airport_ori_code: flight['airport_ori_code'],
+                            airport_dest_code: flight['airport_dest_code'],
+                            duration: flight['duration'])
           if f.valid?
             f.save
           else
