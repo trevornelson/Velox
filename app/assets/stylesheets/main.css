@@ -20,9 +20,14 @@
 }
 
 .hotel-city {
-  font-size: 1.25em;
+  font-size: 1.15em;
 }
 
 .itinerary-details {
   font-size: 0.75em;
+}
+
+.itinerary-link {
+  font-size: 0.75em;
+  float: right;
 }
