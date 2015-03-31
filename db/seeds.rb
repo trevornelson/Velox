@@ -15,7 +15,7 @@ hotel_imgs = ['http://www.mayfairhotelandspa.com/_images/_design/headers/rooftop
                                               'airport_dest_code' => 'DFW',
                                               'duration' => '3 hours, 10 min',
                                               'dep_time' => '8:47 AM',
-                                              'arr_time' => '9:57 AM')
+                                              'arr_time' => '9:57 AM'
                                               },
                                               {'carrier_abbv' => 'DTA',
                                                 'flight_num' => Faker::Code.isbn,
