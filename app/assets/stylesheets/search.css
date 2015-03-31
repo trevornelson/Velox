@@ -42,12 +42,40 @@ button.time-dur-btn {
   text-align: center;
 }
 
+#date-inputs {
+  margin-top: 50px;
+}
+
+.search-bar {
+  margin-bottom: 0px;
+  position: absolute;
+  z-index: 20000;
+}
+
 .items {
   position: absolute;
-  background-color: #ABB7B7;
+  top: 35px;
+  background-color: #ECF0F1;
+  border: 2px solid #1ABC9C;
   height: auto;
   width: 100%;
   display: block;
   z-index: 10000;
-  padding: 5px;
+  padding: 2px 5px 0px 5px;
+  border-radius: 4px;
 }
+
+.item {
+  border-top: 1px solid #95A5A6;
+}
+
+.autocomplete-title {
+  padding: 0px 5px 0px 5px;
+  min-width: 200px;
+}
+
+.autocomplete-subtitle {
+  font-size: 0.75em;
+}
+
+

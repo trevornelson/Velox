@@ -5,21 +5,21 @@
       <form name="searchForm" ng-submit="submit()">
         <div class="row" id="location-inputs">
           <div class="col-md-6">
-            <typeahead items="airports" prompt="Departure..." title="airport_code" subtitle="city" model="search.depart_location" on-select="onItemSelected()" />
+            <typeahead items="airports" prompt="Departure..." title="code" subtitle="city" model="search.depart_location" on-select="onItemSelected()" />
           </div>
           <div class="col-md-6">
-            <typeahead items="airports" prompt="Destination..." title="airport_code" subtitle="city" model="search.arrival_location" on-select="onItemSelected()" />
+            <typeahead items="airports" prompt="Destination..." title="code" subtitle="city" model="search.arrival_location" on-select="onItemSelected()" />
           </div>
         </div>
         <div class="row" id="date-inputs">
           <div class="col-md-6">
             <label>Departure Date:</br>
-              <input type="date" name="depart_date" id="depart-date" ng-model="search.depart_date">
+              <input type="date" class="form-control" name="depart_date" id="depart-date" ng-model="search.depart_date">
             </label>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 hidden">
             <label>Return Date:</br>
-              <input type="date" name="return_date" id="return-date" ng-model="search.return_date">
+              <input type="date" class="form-control" name="return_date" id="return-date" ng-model="search.return_date">
             </label>
           </div>
         </div>
