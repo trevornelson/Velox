@@ -12,14 +12,18 @@ hotel_imgs = ['http://www.mayfairhotelandspa.com/_images/_design/headers/rooftop
                                               'carrier_full' => 'United',
                                               'airport_ori_code' => 'LGA',
                                               'airport_dest_code' => 'SFO',
-                                              'duration' => '4 hours, 29 min'
+                                              'duration' => '4 hours, 29 min',
+                                              'dep_time' => Faker::Time.between(1.days.ago, Time.now, :morning),
+                                              'arr_time' => Faker::Time.between(1.days.ago, Time.now, :evening)
                                               },
                                               {'carrier_abbv' => 'DTA',
                                                 'flight_num' => Faker::Code.isbn,
                                                 'carrier_full' => 'Delta',
                                                 'airport_ori_code' => 'EWR',
                                                 'airport_dest_code' => 'DFW',
-                                                'duration' => '3 hours, 10 min'}]
+                                                'duration' => '3 hours, 10 min'},
+                                                'dep_time' => Faker::Time.between(1.days.ago, Time.now, :morning),
+                                                'arr_time' => Faker::Time.between(1.days.ago, Time.now, :evening)]
                                               }],
                     'hotel' => {'name' => Faker::Company.name,
                               'city' => Faker::Address.city,

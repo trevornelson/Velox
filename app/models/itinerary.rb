@@ -21,7 +21,9 @@ class Itinerary < ActiveRecord::Base
                             carrier_full: flight['carrier_full'],
                             airport_ori_code: flight['airport_ori_code'],
                             airport_dest_code: flight['airport_dest_code'],
-                            duration: flight['duration'])
+                            duration: flight['duration'],
+                            dep_time: flight['dep_time'],
+                            arr_time: flight['arr_time'])
           if f.valid?
             f.save
           else
