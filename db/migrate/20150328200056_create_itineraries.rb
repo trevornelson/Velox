@@ -3,7 +3,7 @@ class CreateItineraries < ActiveRecord::Migration
     create_table :itineraries do |t|
       t.references :user
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end
