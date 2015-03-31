@@ -3,15 +3,21 @@ myAppModule.controller('SaveItineraryController', ['$scope', '$rootScope',
 
 
       $scope.create = function() {
-
+        // send ajax to itineraries create
       };
+
+      $scope.destroy = function() {
+        // send ajax to itineraries delete
+      }
     }
   ]);
 
 myAppModule.factory('ItineraryFactory', function() {
   var factory = {};
 
-  factory.parse
+  factory.parse = function(){
+    // parse itinerary into correct format for rails
+  }
 
 
   return factory;
