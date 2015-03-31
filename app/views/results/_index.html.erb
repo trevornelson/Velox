@@ -4,14 +4,14 @@
 
 <div class="three-column-container" ng-controller="HotelController">
 
-    <div class="col-md-3 col" ng-show="show_filter">
+    <div class="col-md-2 col" ng-show="show_filter">
 
         <div class='wrapper text-center'>
             <div class="btn-group btn-group-xs" data-toggle="buttons">
-                <button type="button" class="btn btn-default active" ng-click="show_flight_results=true">
+                <button type="button" class="btn btn-default time-dur-btn active" ng-click="show_flight_results=true">
                     <input type="radio" name="options" id="option1"> <span class="glyphicon glyphicon-time"></span>
                 </button>
-                <button type="button" class="btn btn-default" ng-click="show_flight_results=false">
+                <button type="button" class="btn btn-default time-dur-btn" ng-click="show_flight_results=false">
                     <input type="radio" name="options" id="option3"> <span class="glyphicon glyphicon-usd"></span>
                 </button>
             </div>
@@ -76,23 +76,32 @@
         </div>
     </div>
 
-    <div class="itinerary" ng-controller="TripController">
+    <div class="itinerary" ng-controller="TripController"  ng-show="show_filter">
 
-        <div class="col-md-4 col trip-content" ng-hide="show_flight_results">
+        <div class="col-md-5 col trip-content" ng-hide="show_flight_results">
+            <button class="btn btn-default"  ng-click="next()">Next</button>
             <div ng-repeat="trip in trips | orderBy:'price'">
-                {{trip.price}} -- duration: {{trip.duration}}
+                <div ng-if="trip_index == $index">
+                    {{trip.price}} -- duration: {{trip.duration}}
+                </div>
             </div>
         </div>
 
-        <div class="col-md-4 col trip-content" ng-show="show_flight_results">
+        <div class="col-md-5 col trip-content" ng-show="show_flight_results">
+            <button class="btn btn-default"  ng-click="next()">Next</button>
             <div ng-repeat="trip in trips | orderBy:'duration'">
-                {{trip.price}} -- duration: {{trip.duration}}
+                <div ng-if="trip_index == $index">
+                    {{trip.price}} -- duration: {{trip.duration}}
+                </div>
             </div>
         </div>
 
-        <div class="col-md-4 col hotel-content">
+        <div class="col-md-5 col hotel-content">
+            <button class="btn btn-default" ng-click="next_hotel()">Next</button>
             <div ng-repeat="hotel in hotels | orderBy:'price'">
-                <a href="{{hotel.url}}">{{hotel.name}}: {{hotel.price}}</a>
+                <div ng-if="hotel_index == $index">
+                    <a href="{{hotel.url}}">{{hotel.name}}: {{hotel.price}}</a>
+                </div>
             </div>
         </div>
 

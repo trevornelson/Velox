@@ -24,6 +24,14 @@ var Hotel = function(data) {
         });
       });
     });
+    $scope.hotel_index = 0;
+    $scope.next_hotel = function () {
+        if ($scope.hotel_index >= $scope.hotels.length - 1) {
+            $scope.hotel_index = 0;
+        } else {
+            $scope.hotel_index++;
+        }
+    };
   }]);
 
   // create hotel factory
