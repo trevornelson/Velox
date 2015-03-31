@@ -66,8 +66,9 @@
                 <div ng-if="trip_index == $index">
                     <div class="trip-template">
                         <div class="flight-template" ng-repeat="flight in trip.flights">
+                            <div class="flight-long">{{flight.carrier_full}}</div>
                             <div class="header-map">
-                                <span class="flight-carrier">{{flight.carrier_abbv}}</span>
+                                <span class="flight-carrier">{{flight.carrier_abbv}} {{flight.flight_num}}</span>
                                 <span class="flight-date">{{flight.dep_time|date:fullDate}}</span>
                             </div>
                             <br>
@@ -82,7 +83,7 @@
                             </div>
                             <br>
                         </div>
-                    <span>{{trip.price}}</span>
+                    <span>{{trip.price | currency}}</span>
                     </div>
                 </div>
             </div>
@@ -94,8 +95,9 @@
                 <div ng-if="trip_index == $index">
                     <div class="trip-template">
                         <div class="flight-template" ng-repeat="flight in trip.flights">
+                            <div class="flight-long">{{flight.carrier_full}}</div>
                             <div class="header-map">
-                                <span class="flight-carrier">{{flight.carrier_abbv}}</span>
+                                <span class="flight-carrier">{{flight.carrier_abbv}} {{flight.flight_num}}</span>
                                 <span class="flight-date">{{flight.dep_time|date:fullDate}}</span>
                             </div>
                             <br>
@@ -110,7 +112,7 @@
                             </div>
                             <br>
                         </div>
-                    <span>{{trip.price}}</span>
+                    <span>{{trip.price | currency}}</span>
                     </div>
                 </div>
             </div>
