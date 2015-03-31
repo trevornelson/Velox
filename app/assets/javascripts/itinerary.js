@@ -1,5 +1,5 @@
 myAppModule.controller('ItineraryController', ['$scope', '$rootScope', '$http',
-    function($scope, $rootScope, $http, ItineraryFactory) {
+    function($scope, $rootScope, $http) {
 
 
       $scope.create = function() {
@@ -8,8 +8,8 @@ myAppModule.controller('ItineraryController', ['$scope', '$rootScope', '$http',
         if (user_id) {
           var json_itinerary = {
                                 user_id: user_id,
-                                hotels: $rootScope.hotels[$rootScope.hotels_index],
-                                trips: [$rootScope.trips[$rootScope.trips_index]]
+                                hotels: $rootScope.hotels[$rootScope.hotel_index],
+                                trips: [$rootScope.trips[$rootScope.trip_index]]
                                 };
 
           $http.post('/users/' + $rootScope.user.id + '/itineraries', json_itinerary).success(function(data) {
