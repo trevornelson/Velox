@@ -4,7 +4,7 @@ myAppModule.controller('SaveItineraryController', ['$scope', '$rootScope', '$htt
 
       $scope.create = function() {
         var json_itinerary = ItineraryFactory.parse($rootScope.hotels[$rootScope.hotels_index])
-        $http.post('/users/' + $rootScope.user.id + '/itineraries', )
+        $http.post('/users/' + $rootScope.user.id + '/itineraries', json_itinerary)
       };
 
       $scope.destroy = function() {

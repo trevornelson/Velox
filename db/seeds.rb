@@ -2,8 +2,7 @@ user = User.create(username: 'demo_user', password: '12345', email: 'demo@exampl
 
 hotel_imgs = ['http://www.mayfairhotelandspa.com/_images/_design/headers/rooftop2.jpg', 'https://www.gametimesc.com/Content/images/rooms.jpg', 'http://airporthotelguru.com/wp-content/uploads/2008/03/yvrfair1.jpg', 'http://hotelsistanbul.us/wp-content/uploads/2014/07/Hotel-Software-Cloud-Based-Hotel-and-Digital-Marketing.jpg']
 
-json_itinerary = {'itinerary_title' => Faker::Lorem.sentence,
-                  'user_id' => 1,
+json_itinerary = {'user_id' => 1,
                   'trips' => [{'price' => '476.32',
                               'duration' => '7 hours, 39 min',
                               'flights' => [{'carrier_abbv' => 'UNT',
