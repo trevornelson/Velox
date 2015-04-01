@@ -1,3 +1,26 @@
+*{
+  font-family: "Helvetica Neue";
+}
+
+a {
+  text-decoration: none;
+  font-weight: normal;
+}
+
+body {
+  background: url(/assets/sky-desert.jpg);
+  position: center center;
+  font-family: "Helvetica Neue";
+}
+
+.navbar-brand {
+  color: white;
+}
+
+.container {
+  padding: 10px;
+}
+
 .caption p {
   font-size: 0.75em;
 }
@@ -12,6 +35,16 @@
 
 .itinerary-details {
   font-size: 0.75em;
+}
+
+.nav-txt {
+  color: white;
+  font-family: "Helvetica Neue";
+}
+
+.btn-nav {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 p.itinerary-details {
