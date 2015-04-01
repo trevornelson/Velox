@@ -103,34 +103,5 @@ var Hotel = function(data) {
       return filtered;
     };
 
-
-    //   if (dep_a_stat == true) {
-    //     filtered = filtered.filter(function(el) {
-    //       var d = new Date(el.flights[0].dep_time);
-    //       return d.getHours() < 12;
-    //     });
-    //   };
-    //   if (dep_p_stat == true) {
-    //     filtered = filtered.filter(function(el) {
-    //       var d = new Date(el.flights[0].dep_time);
-    //       return d.getHours() >= 12;
-    //     });
-    //   };
-    //   if (arr_a_stat == true) {
-    //     filtered = filtered.filter(function(el) {
-    //       var d = new Date(el.flights[el.flights.length - 1].arr_time);
-    //       return d.getHours() < 12;
-    //     });
-    //   };
-    //   if (arr_p_stat == true) {
-    //     filtered = filtered.filter(function(el) {
-    //       var d = new Date(el.flights[el.flights.length - 1].arr_time);
-    //       return d.getHours() >= 12;
-    //     });
-    //   };
-    //   console.log("returned filtered list");
-    //   return filtered
-    // };
-
     return factory;
   }] );
