@@ -1,4 +1,5 @@
-myAppModule.controller('TripController', ['$scope', '$rootScope', 'FlightFactory', function($scope, $rootScope, FlightFactory) {
+myAppModule.controller('TripController', ['$scope', '$rootScope', 'FlightFactory', 'FilterFactory',function($scope, $rootScope, FlightFactory, FilterFactory) {
+  $scope.options = {};
   $scope.$watch(function() {return $rootScope.search}, function(newValue, oldValue){
     var api_req = {
       "request": {
@@ -20,12 +21,13 @@ myAppModule.controller('TripController', ['$scope', '$rootScope', 'FlightFactory
         "refundable": false
       }
     };
+
     FlightFactory.fetchFlights(api_req).success(function(data) {
-      console.log(data.trips);
       var trip_input = data.trips.tripOption;
       $scope.trips = trip_input.map(function(flight_input) {
         return new Trip(createFlights(flight_input.slice[0].segment), flight_input);
       });
+      $scope.resultingTrips = $scope.trips;
       $rootScope.trips = $scope.trips;
       $scope.$apply();
     }).error(function(data) {
@@ -34,13 +36,15 @@ myAppModule.controller('TripController', ['$scope', '$rootScope', 'FlightFactory
         return new Trip(createFlights(flight_input.slice[0].segment), flight_input);
       });
       $rootScope.trips = $scope.trips;
+      $scope.resultingTrips = $scope.trips;
       $scope.$apply();
     });
   });
+
   $scope.trip_index = 0;
   $rootScope.trip_index = 0;
   $scope.next = function () {
-      if ($scope.trip_index >= $scope.trips.length - 1) {
+      if ($scope.trip_index >= $scope.resultingTrips.length - 1) {
           $scope.trip_index = 0;
           $rootScope.trip_index = 0;
       } else {
@@ -49,27 +53,17 @@ myAppModule.controller('TripController', ['$scope', '$rootScope', 'FlightFactory
       }
   };
 
-  //trips switch filters
-  $scope.resultingTrips = $scope.trips;
+  //Direct flight filters
+  $scope.options.direct_status = false;
+  $scope.options.departam_status = true;
+  $scope.options.departpm_status = true;
+  $scope.options.arriveam_status = true;
+  $scope.options.arrivepm_status = true;
 
-  $scope.directFlight = function($scope){
-    $scope.trips.forEach(function(trip){
-      if (trip.flights.length == 1){
-        $scope.resultingTrips.push(trip);
-      }
-    })
-    return $scope.resultingTrips;
-  }
-
-  $scope.coachSeat = function($scope){
-    $scope.trips.forEach(function(trip){
-      if (trip.flight[0].cabin == 'COACH') {
-        $scope.resultingTrips.push(trip);
-      }
-    })
-    return $scope.resultingTrips;
-  }
-
+  $scope.updateFlights = function() {
+    $scope.resultingTrips = FilterFactory.returnFlights($scope.trips, $scope.options.direct_status, $scope.options.departam_status, $scope.options.departpm_status, $scope.options.arriveam_status, $scope.options.arrivepm_status);
+    $scope.trip_index = 0;
+  };
 
 }] );
 
