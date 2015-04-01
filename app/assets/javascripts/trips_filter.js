@@ -1,5 +1,6 @@
 myAppModule.controller('TripController', ['$scope', '$rootScope', 'FlightFactory', 'FilterFactory',function($scope, $rootScope, FlightFactory, FilterFactory) {
   $scope.options = {};
+  $scope.banned = [];
   $scope.$watch(function() {return $rootScope.search}, function(newValue, oldValue){
     var api_req = {
       "request": {
@@ -72,7 +73,7 @@ myAppModule.controller('TripController', ['$scope', '$rootScope', 'FlightFactory
   $scope.options.arrivepm_status = true;
 
   $scope.updateFlights = function() {
-    $scope.resultingTrips = FilterFactory.returnFlights($scope.trips, $scope.options.direct_status, $scope.options.departam_status, $scope.options.departpm_status, $scope.options.arriveam_status, $scope.options.arrivepm_status);
+    $scope.resultingTrips = FilterFactory.returnFlights($scope.trips, $scope.options.direct_status, $scope.options.departam_status, $scope.options.departpm_status, $scope.options.arriveam_status, $scope.options.arrivepm_status, $scope.banned);
     $scope.trip_index = 0;
     //save filters in root scope for email notifications
     $rootScope.saved_filters = {
@@ -84,6 +85,22 @@ myAppModule.controller('TripController', ['$scope', '$rootScope', 'FlightFactory
     };
   };
 
+  //on click, add banned airline codes to banned array
+  $scope.addBanned = function(curr_trip) {
+    var airCode = curr_trip.flights[0].carrier_full;
+    if ($scope.banned.indexOf(airCode) == -1) {
+      $scope.banned.push(airCode);
+    };
+    $scope.updateFlights();
+  };
+
+  //on click, un-ban airline codes
+  $scope.unBan = function(carrier) {
+    $scope.banned = $scope.banned.filter(function(el) {
+      return el !== carrier;
+    });
+    $scope.updateFlights();
+  };
 }] );
 
 myAppModule.factory('FlightFactory', ['$http', '$rootScope', function($http, $rootScope) {
