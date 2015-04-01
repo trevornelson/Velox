@@ -16,7 +16,7 @@ var Hotel = function(data) {
 };
 
   //create hotel controller
-  myAppModule.controller('HotelController', ['$scope', '$rootScope', 'HotelFactory', function($scope, $rootScope, HotelFactory) {
+  myAppModule.controller('HotelController', ['$scope', '$rootScope', 'HotelFactory', 'FilterFactory', function($scope, $rootScope, HotelFactory, FilterFactory) {
     $scope.$watch(function() {return $rootScope.search}, function(newValue, oldValue){
       HotelFactory.fetchHotels(newValue.arrival_location.latitude, newValue.arrival_location.longitude).success(function(data) {
         $scope.hotels = data.result.map(function(hotel_data) {
@@ -52,15 +52,8 @@ var Hotel = function(data) {
     $scope.airBnb_status = false;
 
     $scope.airBnb = function() {
-      if ($scope.airBnb_status == false) {
-        $scope.resultingHotels = $scope.hotels.filter(function(ele){
-          return ele.provider !== 'Airbnb';
-        });
-      } else {
-        $scope.resultingHotels = $scope.hotels.filter(function(ele){
-          return ele.provider == 'Airbnb';
-        });
-      };
+      $scope.resultingHotels = FilterFactory.returnHotels($scope.airBnb_status, $scope.hotels);
+      $scope.hotel_index = 0;
     };
 
   }]);
@@ -70,8 +63,44 @@ var Hotel = function(data) {
     var factory = {};
     var httpConfig = {  headers:{ "X-Mashape-Authorization": "N7SrCXP14imshrRVT7zdeMHz9NeLp1va6vFjsnpDJD7Fi1jnFg"}};
     factory.fetchHotels = function(lat, lng) {
-      console.log("runs this only once before search is filled");
       return $http.get('https://zilyo.p.mashape.com/search?latitude='+ lat + '&longitude=' + lng + '&maxdistance=35', httpConfig);
+    };
+
+    return factory;
+  }] );
+
+  // Factory in charge of return resulting Hotels array depending on selected filters
+  myAppModule.factory('FilterFactory', [function() {
+    var factory = {};
+
+    factory.returnHotels = function(status, hotels) {
+      if (status == false) {
+        return hotels.filter(function(ele){
+          return ele.provider !== 'Airbnb';
+        });
+        $scope.hotel_index = 0;
+      } else {
+        return hotels.filter(function(ele){
+          return ele.provider == 'Airbnb';
+        });
+        $scope.hotel_index = 0;
+      };
+    };
+
+    factory.returnFlights = function(trips, dir_stat, dep_a_stat, dep_p_stat, arr_a_stat, arr_p_stat) {
+      var depTimeRange = [dep_a_stat? 0 : 12, dep_p_stat? 23 : 12];
+      var arrTimeRange = [arr_a_stat? 0 : 12, arr_p_stat? 23 : 12];
+      var filtered = trips.filter(function(el) {
+        var departure = new Date(el.flights[0].dep_time).getHours();
+        var arrival = new Date(el.flights[el.flights.length - 1].arr_time).getHours();
+        return (dir_stat ? el.flights.length == 1 : true) &&
+          departure >= depTimeRange[0] &&
+          departure <= depTimeRange[1] &&
+          arrival >= arrTimeRange[0] &&
+          arrival <= arrTimeRange[1];
+      });
+      console.log(filtered);
+      return filtered;
     };
 
     return factory;
