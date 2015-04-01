@@ -20,3 +20,15 @@
 #carrier-btn-text {
   color: white;
 }
+
+#carrier-btn-text-remove {
+  color: white;
+}
+
+.filter {
+  color: white;
+  font-size: 0.75em;
+  border-radius: 5px;
+  padding: 1px 5px 1px 5px;
+  display: table;
+}
