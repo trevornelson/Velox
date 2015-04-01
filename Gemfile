@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+ruby '2.2.0'
 # Heroku-fu
 gem 'rails_12factor'
 
