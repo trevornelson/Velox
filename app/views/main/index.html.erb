@@ -1,12 +1,13 @@
 <div class="row" ng-controller="SearchController">
-  <div class="col-md-6 col-md-offset-3" ng-show="show_input">
-    <h1>Travel, simplified.</h1>
+  <div class="col-md-6 col-md-offset-4" ng-show="show_input">
+    <h1><i class="fa fa-paper-plane-o"></i> Velox</h1>
+    <h6><i>"Travel, simplified."</i></h6>
     <div>
       <form name="searchForm" ng-submit="submit()">
         <div class="row" id="location-inputs">
           <div class="col-md-6">
             <typeahead items="airports" prompt="Departure..." title="code" subtitle="city" model="search.depart_location" on-select="onItemSelected()" />
-          </div>
+          </div><br><br>
           <div class="col-md-6">
             <typeahead items="airports" prompt="Destination..." title="code" subtitle="city" model="search.arrival_location" on-select="onItemSelected()" />
           </div>
@@ -23,7 +24,7 @@
             </label>
           </div>
         </div>
-        <input type="submit" class="btn btn-default search-submit-btn" ng-click="show_input=false; show_filter=true">
+        <input type="submit" class="btn btn-primary search-submit-btn" ng-click="show_input=false; show_filter=true">
       </form>
     </div>
   </div>
