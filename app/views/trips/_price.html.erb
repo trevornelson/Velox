@@ -1,8 +1,8 @@
-<button class="btn btn-default"  ng-click="next()">Next</button>
 <div ng-repeat="trip in resultingTrips | orderBy:'price'">
     <div ng-if="trip_index == $index">
-
         <div class="box">
+            <span class="left-arrow"><a href="#" ng-click="prev()"><i class="fa fa-angle-double-left fa-3x"></i></a></span>
+            <span class="right-arrow"><a href="#" ng-click="next()"><i class="fa fa-angle-double-right fa-3x"></i></a></span>
             <div class="box-icon">
                 <span><i class="fa fa-plane fa-3x"></i></span>
             </div>
@@ -16,7 +16,7 @@
                         </div>
                         <br>
                         <div class="flight-map">
-                            <span class="flight-origin">{{flight.airport_ori_code}}</span> <center><i class="fa fa-long-arrow-right"></i></center>
+                            <span class="flight-origin">{{flight.airport_ori_code}}</span>
                             <span class="flight-dest">{{flight.airport_dest_code}}</span>
                         </div>
                         <br>

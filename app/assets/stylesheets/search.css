@@ -78,4 +78,16 @@ button.time-dur-btn {
   font-size: 0.75em;
 }
 
+.left-arrow {
+  float: left;
+}
+
+.arrow {
+  color: black;
+}
+
+.right-arrow {
+  float: right;
+}
+
 

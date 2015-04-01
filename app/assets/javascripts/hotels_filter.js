@@ -40,6 +40,7 @@ var Hotel = function(data) {
     //Function fired on arrow click that controls cycling through of hotels
     $scope.hotel_index = 0;
     $rootScope.hotel_index = 0;
+    //switch to next hotel...
     $scope.next_hotel = function () {
       if ($scope.hotel_index >= $scope.resultingHotels.length - 1) {
         $scope.hotel_index = 0;
@@ -47,6 +48,16 @@ var Hotel = function(data) {
       } else {
         $scope.hotel_index++;
         $rootScope.hotel_index++;
+      }
+    };
+    // switch to previous hotel
+    $scope.prev_hotel = function () {
+      if ($scope.hotel_index <= 0) {
+        $scope.hotel_index = $scope.resultingHotels.length - 1;
+        $rootScope.hotel_index = $scope.resultingHotels.length - 1;
+      } else {
+        $scope.hotel_index--;
+        $rootScope.hotel_index--;
       }
     };
 
