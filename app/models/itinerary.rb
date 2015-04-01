@@ -5,11 +5,13 @@ class Itinerary < ActiveRecord::Base
   has_many :hotels
 
   def self.with_all_relations(user_id)
-    return self.includes(:hotels, :trips => :flights)
+    return self.includes(:hotels, :trips => :flights).where(user_id: user_id)
   end
 
   def self.create_with_all_relations(params)
-    itinerary = self.new(user_id: params['user_id'])
+    user = User.find_by(id: params['user_id'])
+    return nil unless user
+    itinerary = user.itineraries.create()
     success = true
     params['trips'].each do |trip|
       t = itinerary.trips.new(price: trip['price'], duration: trip['duration'])
@@ -17,9 +19,13 @@ class Itinerary < ActiveRecord::Base
         t.save
         trip['flights'].each do |flight|
           f = t.flights.new(carrier_abbv: flight['carrier_abbv'],
+                            flight_num: flight['flight_num'],
+                            carrier_full: flight['carrier_full'],
                             airport_ori_code: flight['airport_ori_code'],
                             airport_dest_code: flight['airport_dest_code'],
-                            duration: flight['duration'])
+                            duration: flight['duration'],
+                            dep_time: flight['dep_time'],
+                            arr_time: flight['arr_time'])
           if f.valid?
             f.save
           else
@@ -30,7 +36,16 @@ class Itinerary < ActiveRecord::Base
         success = false
       end
     end
-    h = itinerary.hotels.new(params['hotel'])
+    h = itinerary.hotels.new(name: params['hotel']['name'],
+                            city: params['hotel']['city'],
+                            neighbourhood: params['hotel']['neighborhood'],
+                            postal_code: params['hotel']['postal_code'],
+                            street_name: params['hotel']['street_name'],
+                            price: params['hotel']['price'],
+                            provider: params['hotel']['provider'],
+                            photo_url: params['hotel']['photo_url'],
+                            url: params['hotel']['url']
+                            )
     if h.valid?
       h.save
     else

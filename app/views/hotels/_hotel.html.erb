@@ -1,4 +1,35 @@
-<h4><%= hotel.city %></h4>
-<p><%= hotel.street_name %></p>
-<p><%= hotel.price %></p>
-<p><a href="<%= hotel.url %>">Link</a></p>
+<h6><%= hotel.city %></h6>
+<div class="panel panel-default">
+  <div class="panel-heading" role="tab" id="hotel-<%= hotel.id %>-heading">
+    <div class="panel-title itinerary-header">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#itinerary-<%= hotel.itinerary_id %>-details" href="#hotel-<%= hotel.id %>-details">
+        Hotel Details
+        <i class="fa fa-bed itinerary-icon"></i>
+        </a>
+      </h4>
+    </div>
+
+    <div id="hotel-<%= hotel.id %>-details" class="panel-collapse collapse" role="tabpanel" aria-labeledby="hotel-<%= hotel.id %>-heading">
+      <ul class="list-group">
+        <li class="list-group-item itinerary-details">
+          <%= hotel.name %>
+          <a href="<%= hotel.url %>"><i class="fa fa-external-link itinerary-icon"></i></a>
+        </li>
+        <li class="list-group-item itinerary-details">
+          <strong>Address: </strong>
+          <%= hotel.street_name %>
+        </li>
+        <li class="list-group-item itinerary-details">
+          <strong>Address: </strong>
+
+        </li>
+
+        <li class="list-group-item itinerary-details">
+          <strong>Price Per Night: </strong>
+          $<%= hotel.price %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

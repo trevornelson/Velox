@@ -8,6 +8,8 @@ class CreateFlights < ActiveRecord::Migration
       t.string  :airport_ori_code, null: false
       t.string  :airport_dest_code, null: false
       t.string  :duration, null: false
+      t.string  :dep_time, null: false
+      t.string  :arr_time, null: false
 
       t.timestamps null: false
     end

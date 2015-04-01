@@ -1,40 +1,15 @@
-<div class="row">
-  <div class="col-md-8">
+<div class="row" id="account-container">
+  <div class="col-md-6 panel panel-default user-section">
     <div class="row">
-      <h2>Saved Itineraries</h2>
+      <h3>Saved Itineraries</h3>
     </div>
     <div class="row">
       <%= render @itineraries %>
     </div>
   </div>
-  <div class="col-md-4 panel panel-default" id="user-sidebar">
-    <h4>Account Settings</h4>
+  <div class="col-md-6 panel panel-default user-section" id="price-alerts">
+    <h3>Price Alerts</h3>
 
-    <div class="container" id="update-account">
-      <%= form_for(@signup_user) do |f| %>
-        <div class="row">
-        <%= f.label :username %>
-        </div>
-        <div class="row">
-        <%= f.text_field :username %>
-        </div>
-        <div class="row">
-        <%= f.label :password %>
-        </div>
-        <div class="row">
-        <%= f.text_field :password %>
-        </div>
-        <div class="row">
-        <%= f.label :email %>
-        </div>
-        <div class="row">
-        <%= f.text_field :email %>
-        </div>
-        <div class="row">
-      <% end %>
-    </div>
-
-    <button class="btn btn-default">Watch Trips</button>
 
   </div>
 </div>

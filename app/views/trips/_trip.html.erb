@@ -1,0 +1,14 @@
+<div class="panel panel-default">
+  <div class="panel-heading" role="tab" id="trip-<%= trip.id %>-heading">
+    <div class="panel-title itinerary-header">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#itinerary-<%= trip.itinerary_id %>-details" href="#trip-<%= trip.id %>-details">
+        Flight Details
+        <i class="fa fa-plane itinerary-icon"></i>
+        </a>
+      </h4>
+    </div>
+    <%= render trip.flights %>
+  </div>
+</div>
+

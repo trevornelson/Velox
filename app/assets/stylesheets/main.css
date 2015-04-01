@@ -6,11 +6,43 @@
   z-index: 30000;
 }
 
-#user-sidebar {
-  height: 600px;
+#account-container {
+  display: flex;
 }
 
-#update-account {
-  margin-top: 10px;
-  margin-bottom: 20px;
+.itinerary-details {
+  font-size: 0.75em;
+}
+
+p.itinerary-details {
+  font-size: 1em;
+  margin: 0px;
+}
+
+.itinerary-icon {
+  font-size: 1.5em;
+  float: right;
+}
+
+.flight-row {
+  padding: 0px 15px 0px 15px;
+  text-align: center;
+}
+
+.flight-arrow {
+  font-size: 2em;
+}
+
+.itinerary-header {
+  padding-top: 5px;
+  padding-bottom: 15px;
+}
+
+h4.panel-title {
+  font-size: 1.3em;
+}
+
+div.panel-heading {
+  background-color: #BDC3C7 !important;
+  color: #2C3E50 !important;
 }

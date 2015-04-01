@@ -2,7 +2,7 @@
 <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
 
-<div ng-controller="ItineraryController">
+<div ng-controller="ItineraryController" ng-show="show_filter">
     <button class="btn btn-default" id="save-itinerary-button" ng-click="create()">Save</button>
 </div>
 
@@ -138,7 +138,7 @@
             <div ng-repeat="hotel in resultingHotels | orderBy:'price'">
                 <div ng-if="hotel_index == $index">
                     <div class="hotel-template">
-                            <div class="img-container" style="background-image: url({{hotel.photoUrl}})">
+                            <div class="img-container" style="background-image: url({{hotel.photo_url}})">
                                 <div class="hotel-price">${{hotel.price}}</div>
                                 <a href="{{hotel.url}}">
                                     <div class="hotel-description">
