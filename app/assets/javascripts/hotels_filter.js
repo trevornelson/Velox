@@ -6,12 +6,12 @@ var Hotel = function(data) {
   this.name = data.attr.heading;
   this.city = data.location.city;
   this.neighbourhood = data.location.neighbourhood;
-  this.postalCode = data.location.postalCode;
-  this.streetName = data.location.streetName;
+  this.postal_code = data.location.postalCode;
+  this.street_name = data.location.streetName;
   this.price = data.price.nightly;
   this.provider = data.provider.full;
   this.availability = data.availability;
-  this.photoUrl = data.photos[0].large;
+  this.photo_url = data.photos[0].large;
   this.url = data.provider.url;
 };
 

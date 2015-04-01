@@ -6,9 +6,11 @@ myAppModule.controller('ItineraryController', ['$scope', '$rootScope', '$http',
         var user_id = $rootScope.user.id
 
         if (user_id) {
+          console.log($rootScope.hotels[$rootScope.hotel_index]);
+
           var json_itinerary = {
                                 user_id: user_id,
-                                hotels: $rootScope.hotels[$rootScope.hotel_index],
+                                hotel: $rootScope.hotels[$rootScope.hotel_index],
                                 trips: [$rootScope.trips[$rootScope.trip_index]]
                                 };
 

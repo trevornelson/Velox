@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 20150328203504) do
     t.string   "airport_ori_code",  null: false
     t.string   "airport_dest_code", null: false
     t.string   "duration",          null: false
+    t.string   "dep_time",          null: false
+    t.string   "arr_time",          null: false
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end
@@ -32,7 +34,7 @@ ActiveRecord::Schema.define(version: 20150328203504) do
     t.integer  "itinerary_id"
     t.string   "name",          null: false
     t.string   "city",          null: false
-    t.string   "neighbourhood", null: false
+    t.string   "neighbourhood"
     t.string   "postal_code",   null: false
     t.string   "street_name",   null: false
     t.string   "price",         null: false

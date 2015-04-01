@@ -36,7 +36,16 @@ class Itinerary < ActiveRecord::Base
         success = false
       end
     end
-    h = itinerary.hotels.new(params['hotel'])
+    h = itinerary.hotels.new(name: params['hotel']['name'],
+                            city: params['hotel']['city'],
+                            neighbourhood: params['hotel']['neighborhood'],
+                            postal_code: params['hotel']['postal_code'],
+                            street_name: params['hotel']['street_name'],
+                            price: params['hotel']['price'],
+                            provider: params['hotel']['provider'],
+                            photo_url: params['hotel']['photo_url'],
+                            url: params['hotel']['url']
+                            )
     if h.valid?
       h.save
     else

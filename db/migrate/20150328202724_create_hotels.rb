@@ -4,7 +4,7 @@ class CreateHotels < ActiveRecord::Migration
         t.references  :itinerary
         t.string  :name, null: false
         t.string  :city, null: false
-        t.string  :neighbourhood, null: false
+        t.string  :neighbourhood
         t.string  :postal_code, null: false
         t.string  :street_name, null: false
         t.string  :price, null: false
