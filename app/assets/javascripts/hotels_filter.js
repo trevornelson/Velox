@@ -36,6 +36,8 @@ var Hotel = function(data) {
         $rootScope.hotels = $scope.hotels
       });
     });
+
+    //Function fired on arrow click that controls cycling through of hotels
     $scope.hotel_index = 0;
     $rootScope.hotel_index = 0;
     $scope.next_hotel = function () {
@@ -69,7 +71,7 @@ var Hotel = function(data) {
     return factory;
   }] );
 
-  // Factory in charge of return resulting Hotels array depending on selected filters
+  // Factory in charge of return resulting hotel and trip arrays depending on selected filters
   myAppModule.factory('FilterFactory', [function() {
     var factory = {};
 
@@ -87,6 +89,7 @@ var Hotel = function(data) {
       };
     };
 
+    //runs each time a filter is clicked -- returns filtered list of flights based on selected filters
     factory.returnFlights = function(trips, dir_stat, dep_a_stat, dep_p_stat, arr_a_stat, arr_p_stat) {
       var depTimeRange = [dep_a_stat? 0 : 12, dep_p_stat? 23 : 12];
       var arrTimeRange = [arr_a_stat? 0 : 12, arr_p_stat? 23 : 12];

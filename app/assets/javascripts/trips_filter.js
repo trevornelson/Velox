@@ -63,12 +63,21 @@ myAppModule.controller('TripController', ['$scope', '$rootScope', 'FlightFactory
   $scope.updateFlights = function() {
     $scope.resultingTrips = FilterFactory.returnFlights($scope.trips, $scope.options.direct_status, $scope.options.departam_status, $scope.options.departpm_status, $scope.options.arriveam_status, $scope.options.arrivepm_status);
     $scope.trip_index = 0;
+    //save filters in root scope for email notifications
+    $rootScope.saved_filters = {
+      "direct_status": $scope.options.direct_status,
+      "departam_status": $scope.options.departam_status,
+      "departpm_status": $scope.options.departpm_status,
+      "arriveam_status": $scope.options.arriveam_status,
+      "arrivepm_status": $scope.options.arrivepm_status
+    };
   };
 
 }] );
 
 myAppModule.factory('FlightFactory', ['$http', '$rootScope', function($http, $rootScope) {
   var factory = {};
+
 
 // api key AIzaSyAZwVwEPSvSSXXKzLrt-h-lQMN2T3woqCs
 
