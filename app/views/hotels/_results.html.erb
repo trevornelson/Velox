@@ -1,76 +1,32 @@
-<div class='wrapper text-center'>
-    <div class="btn-group btn-group-xs" data-toggle="buttons">
-        <button type="button" class="btn btn-default time-dur-btn active" ng-click="show_flight_results=true">
-            <input type="radio" name="options" id="option1"> <i class="fa fa-clock-o fa-lg"></i>
-        </button>
-        <button type="button" class="btn btn-default time-dur-btn" ng-click="show_flight_results=false">
-            <input type="radio" name="options" id="option3"> <i class="fa fa-usd fa-lg"></i>
-        </button>
-    </div>
-</div>
-
-<div class="filter-list">
-    <div class="filter-option row">
-        <div class="filter-option-label">
-            Departure AM
-        </div>
-        <div class="filter-option-switch">
-            <input type="checkbox" id="test1" ng-model="options.departam_status" ng-change="updateFlights()"><label for="test1"><span class="ui"></span></label>
-        </div>
-    </div>
-
-    <div class="filter-option row">
-        <div class="filter-option-label">
-            Departure PM
-        </div>
-        <div class="filter-option-switch">
-            <form action="#">
-                <input type="checkbox" id="test2" ng-model="options.departpm_status" ng-change="updateFlights()"><label for="test2"><span class="ui"></span></label>
-            </form>
-        </div>
-    </div>
-
-    <div class="filter-option row">
-        <div class="filter-option-label">
-            Arrival AM
-        </div>
-        <div class="filter-option-switch">
-            <form action="#">
-                <input type="checkbox" id="test3" ng-model="options.arriveam_status" ng-change="updateFlights()"><label for="test3"><span class="ui"></span></label>
-            </form>
-        </div>
-    </div>
-
-    <div class="filter-option row">
-        <div class="filter-option-label">
-            Arrival PM
-        </div>
-        <div class="filter-option-switch">
-            <form action="#">
-                <input type="checkbox" id="test4" ng-model="options.arrivepm_status" ng-change="updateFlights()"><label for="test4"><span class="ui"></span></label>
-            </form>
-        </div>
-    </div>
-
-    <div class="filter-option row">
-        <div class="filter-option-label">
-            AirBnb
-        </div>
-        <div class="filter-option-switch">
-            <form action="#">
-                <input type="checkbox" id="test5" ng-model="airBnb_status" ng-change="airBnb()"><label for="test5"><span class="ui"></span></label>
-            </form>
-        </div>
-    </div>
-
-    <div class="filter-option row">
-        <div class="filter-option-label">
-            Direct
-        </div>
-        <div class="filter-option-switch">
-            <form action="#">
-                <input type="checkbox" id="test6" ng-model="options.direct_status" ng-change="updateFlights()"><label for="test6"><span class="ui"></span></label>
-            </form>
+<button class="btn btn-default" ng-click="next_hotel()">Next</button>
+<div ng-repeat="hotel in resultingHotels | orderBy:'price'">
+    <div ng-if="hotel_index == $index">
+        <div class="box">
+            <div class="box-icon">
+                <span><i class="fa fa-building-o fa-3x"></i></span>
+            </div>
+            <div class="info">
+                <div class="hotel-template">
+                    <div class="img-container" style="background-image: url({{hotel.photo_url}})">
+                        <div class="hotel-price">
+                            ${{hotel.price}}
+                        </div>
+                        <a href="{{hotel.url}}" target="_blank">
+                            <div class="hotel-description">
+                                <div id="provider-tag" class="hotel-attr">
+                                    {{hotel.provider}}
+                                </div>
+                                <div class="hotel-attr">
+                                    {{hotel.name | limitTo:35 }}...
+                                </div>
+                                <div class="hotel-attr">
+                                    {{hotel.city}}
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
