@@ -101,7 +101,7 @@ var Hotel = function(data) {
     };
 
     //runs each time a filter is clicked -- returns filtered list of flights based on selected filters
-    factory.returnFlights = function(trips, dir_stat, dep_a_stat, dep_p_stat, arr_a_stat, arr_p_stat) {
+    factory.returnFlights = function(trips, dir_stat, dep_a_stat, dep_p_stat, arr_a_stat, arr_p_stat, banned) {
       var depTimeRange = [dep_a_stat? 0 : 12, dep_p_stat? 23 : 12];
       var arrTimeRange = [arr_a_stat? 0 : 12, arr_p_stat? 23 : 12];
       var filtered = trips.filter(function(el) {
@@ -113,8 +113,18 @@ var Hotel = function(data) {
           arrival >= arrTimeRange[0] &&
           arrival <= arrTimeRange[1];
       });
-      console.log(filtered);
-      return filtered;
+      //After going through all toggle filters, run through banned list and remove specfied airlines
+      filtered = filtered.filter(function(el) {
+        return banned.indexOf(el.flights[0].carrier_full) == -1;
+      });
+
+      //display error message if filtered array is empty
+      if (filtered.length < 1) {
+        var message = [{"flights": [{"carrier_full": "Unable to find flights"}]}];
+        return message;
+      } else {
+        return filtered;
+      };
     };
 
     return factory;
