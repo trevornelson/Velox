@@ -1,10 +1,6 @@
 <div class="col-md-6">
-  <div class="thumbnail">
-    <div class="caption">
-      <%= render itinerary.hotels %>
-
-      <%= render itinerary.trips.first.flights %>
-
-    </div>
+  <div class="panel-group" id="itinerary-<%= itinerary.id %>-details" role="tablist" aria-multiselectable="true">
+    <%= render itinerary.hotels %>
   </div>
+  <%= render itinerary.trips %>
 </div>
