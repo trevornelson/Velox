@@ -1,0 +1,32 @@
+<button class="btn btn-default" ng-click="next_hotel()">Next</button>
+<div ng-repeat="hotel in resultingHotels | orderBy:'price'">
+    <div ng-if="hotel_index == $index">
+        <div class="box">
+            <div class="box-icon">
+                <span><i class="fa fa-building-o fa-3x"></i></span>
+            </div>
+            <div class="info">
+                <div class="hotel-template">
+                    <div class="img-container" style="background-image: url({{hotel.photo_url}})">
+                        <div class="hotel-price">
+                            ${{hotel.price}}
+                        </div>
+                        <a href="{{hotel.url}}" target="_blank">
+                            <div class="hotel-description">
+                                <div id="provider-tag" class="hotel-attr">
+                                    {{hotel.provider}}
+                                </div>
+                                <div class="hotel-attr">
+                                    {{hotel.name | limitTo:35 }}...
+                                </div>
+                                <div class="hotel-attr">
+                                    {{hotel.city}}
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
