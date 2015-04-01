@@ -29,7 +29,7 @@
                     <span>{{trip.price | currency}}</span>
                 </div>
             </div>
-            <span class="filter"><a href="#" ng-click="addBanned(trip)">Filter out {{trip.flights[0].carrier_full}}</a></span>
+            <span class="filter btn-embossed btn-danger"><a href="#" id="carrier-btn-text-remove" ng-click="addBanned(trip)">Filter out {{trip.flights[0].carrier_full}}</a></span>
         </div>
     </div>
 </div>
