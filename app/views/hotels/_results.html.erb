@@ -1,7 +1,8 @@
-<button class="btn btn-default" ng-click="next_hotel()">Next</button>
 <div ng-repeat="hotel in resultingHotels | orderBy:'price'">
     <div ng-if="hotel_index == $index">
         <div class="box">
+            <span class="left-arrow"><a href="#" ng-click="prev_hotel()"><i class="fa fa-angle-double-left fa-3x"></i></a></span>
+            <span class="right-arrow"><a href="#" ng-click="next_hotel()"><i class="fa fa-angle-double-right fa-3x"></i></a></span>
             <div class="box-icon">
                 <span><i class="fa fa-building-o fa-3x"></i></span>
             </div>

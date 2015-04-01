@@ -43,6 +43,7 @@ myAppModule.controller('TripController', ['$scope', '$rootScope', 'FlightFactory
 
   $scope.trip_index = 0;
   $rootScope.trip_index = 0;
+  //switch to next trip
   $scope.next = function () {
       if ($scope.trip_index >= $scope.resultingTrips.length - 1) {
           $scope.trip_index = 0;
@@ -50,6 +51,16 @@ myAppModule.controller('TripController', ['$scope', '$rootScope', 'FlightFactory
       } else {
           $scope.trip_index++;
           $rootScope.trip_index++;
+      }
+  };
+  //switch to previous trip
+  $scope.prev = function () {
+      if ($scope.trip_index <= 0) {
+          $scope.trip_index = $scope.resultingTrips.length - 1;
+          $rootScope.trip_index = $scope.resultingTrips.length - 1;
+      } else {
+          $scope.trip_index--;
+          $rootScope.trip_index--;
       }
   };
 
