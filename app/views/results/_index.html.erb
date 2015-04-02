@@ -3,10 +3,6 @@
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
 
 
-<div ng-controller="ItineraryController" ng-show="show_filter">
-    <button class="btn btn-default" id="save-itinerary-button" ng-click="create()">Save</button>
-</div>
-
 <div ng-controller="TripController">
     <div class="three-column-container" ng-controller="HotelController">
 
@@ -29,3 +25,10 @@
         </div>
     </div>
 </div>
+
+<div ng-controller="ItineraryController" ng-show="show_filter">
+    <button class="btn btn-warning btn-embossed " id="save-itinerary-button" ng-click="create()">Save</button><br>
+    <div id="alert-message"></div>
+</div>
+
+

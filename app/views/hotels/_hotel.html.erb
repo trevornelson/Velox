@@ -14,17 +14,12 @@
       <ul class="list-group">
         <li class="list-group-item itinerary-details">
           <%= hotel.name %>
-          <a href="<%= hotel.url %>"><i class="fa fa-external-link itinerary-icon"></i></a>
+          <a href="<%= hotel.url %>" target="_blank"><i class="fa fa-external-link itinerary-icon"></i></a>
         </li>
         <li class="list-group-item itinerary-details">
           <strong>Address: </strong>
           <%= hotel.street_name %>
         </li>
-        <li class="list-group-item itinerary-details">
-          <strong>Address: </strong>
-
-        </li>
-
         <li class="list-group-item itinerary-details">
           <strong>Price Per Night: </strong>
           $<%= hotel.price %>
