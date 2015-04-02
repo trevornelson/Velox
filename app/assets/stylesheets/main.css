@@ -1,3 +1,7 @@
+*body {
+  font-family: Circular, "Helvetica Neue";
+}
+
 .caption p {
   font-size: 0.75em;
 }
@@ -45,4 +49,66 @@ h4.panel-title {
 div.panel-heading {
   background-color: #BDC3C7 !important;
   color: #2C3E50 !important;
+}
+
+#navbar {
+  background-color: black;
+  border-radius: 0px;
+}
+
+.banner-txt {
+  color: white;
+}
+
+.banner-btn {
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+a {
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.btn.pink {
+  background-color: #ff5a5f;
+}
+
+#bold-text {
+  color: black;
+  font-weight: bold;
+  font-size: 3em;
+}
+
+#slim-text {
+  font-family: "HelveticaNeue-Light";
+  color: black;
+  font-size: 3em;
+}
+
+#depart-date {
+  width: 50%;
+  display: inline-block;
+  margin-left: 15px;
+  margin-top: 9px;
+}
+
+.search-submit-btn {
+  display: inline-block;
+  float: right;
+}
+
+.intro-box {
+    border-radius: 3px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    padding: 50px 10px 50px 50px;
+    text-align: left;
+    display: block;
+    margin-top: 60px;
+}
+
+#save-itinerary-button {
+  margin-top: 20px;
+  margin-right: 16px;
+  float: right;
 }
