@@ -1,0 +1,22 @@
+.saved {
+  font-family: "HelveticaNeue";
+  color: black;
+  text-align: center;
+}
+
+.itin-box {
+    border-radius: 3px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    padding: 50px 40px 50px 50px;
+    text-align: left;
+    display: block;
+    margin-top: 60px;
+}
+
+.panel-default > .panel-heading-custom {
+    background: red; color: red;
+}
+
+.custom_class {
+  background-color: red !important;
+}
