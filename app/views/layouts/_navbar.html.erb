@@ -11,9 +11,11 @@
       <div class="collapse navbar-collapse" id="navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
           <% if @session_user %>
+          <span class="save-alert" style="display:none">Itinerary Saved</span>
           <button class="btn btn-primary btn-embossed banner-btn"><%= link_to 'my account', curr_user_path, class: "banner-txt" %></button>
           <button class="btn pink btn-embossed banner-btn"><%= link_to 'logout', curr_session_path, method: :delete, class: "banner-txt" %></button>
           <% else %>
+          <span class="save-alert" style="display:none">Must be logged in to save itinerary</span>
           <button class="btn btn-primary btn-embossed banner-btn"><a class="banner-txt" href="#" data-toggle="modal" data-target="#login-modal">log in</a></button>
           <button class="btn pink btn-embossed banner-btn"><a class="banner-txt" href="#" data-toggle="modal" data-target="#signup-modal">sign up</a></button>
           <% end %>

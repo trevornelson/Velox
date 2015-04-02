@@ -23,3 +23,9 @@ myAppModule.controller('ItineraryController', ['$scope', '$rootScope', '$http',
       };
     }
   ]);
+
+$(document).ready(function() {
+  $('#save-itinerary-button').on('click', function() {
+    $('.save-alert').show();
+  });
+});

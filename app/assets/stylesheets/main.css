@@ -112,3 +112,8 @@ a {
   margin-right: 16px;
   float: right;
 }
+
+.save-alert {
+  color: white;
+  font-family: "HelveticaNeue-Light";
+}
