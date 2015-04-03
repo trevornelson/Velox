@@ -981,6 +981,15 @@ var autocomplete_source = [
     "timezone":"America/New_York"
   },
   {
+    "code":"POS",
+    "name":"Piarco International Airport",
+    "city":"Port of Spain, Trinidad",
+    "country":"Trinidad",
+    "lat":10.5953,
+    "lng":61.3372,
+    "timezone":"Atlantic Standard Time"
+  },
+  {
     "code":"PVD",
     "name":"Theodore Francis Green State",
     "city":"Providence",

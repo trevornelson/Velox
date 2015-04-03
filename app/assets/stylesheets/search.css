@@ -1,4 +1,6 @@
 .search-bar {
+  margin-bottom: 0px;
+  position: absolute;
   width: 100%;
 }
 
@@ -52,7 +54,14 @@
 .search-bar {
   margin-bottom: 0px;
   position: absolute;
+}
+
+#departure-input .search-bar {
   z-index: 20000;
+}
+
+#arrival-input .search-bar {
+  z-index: 18000;
 }
 
 .items {
@@ -63,22 +72,39 @@
   height: auto;
   width: 100%;
   display: block;
-  z-index: 10000;
   padding: 2px 5px 0px 5px;
   border-radius: 4px;
 }
 
+#departure-input .items {
+  z-index: 19000;
+}
+
+#arrival-input .items {
+  z-index: 17000;
+}
+
 .item {
   border-top: 1px solid #95A5A6;
+  height: 50px;
+}
+
+.autocomplete-title-container {
+  display: inline-block;
+  float: left;
+  width: 25%;
+  height: 100%;
 }
 
 .autocomplete-title {
   padding: 0px 5px 0px 5px;
-  min-width: 200px;
 }
 
 .autocomplete-subtitle {
-  font-size: 0.75em;
+  font-size: 0.70em;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  display: block;
 }
 
 .left-arrow {
