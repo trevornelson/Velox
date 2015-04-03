@@ -37,10 +37,13 @@
   font-size: 12px;
   text-align: left;
   color: white;
+  display: inline-block;
+  float: right;
 }
 
 .filter-option-switch {
   text-align: left;
+  display: inline-block;
 }
 
 .trip-content, .hotel-content {

@@ -173,11 +173,11 @@ stub_hotels = {
         }
       ],
       "location": {
-        "city": "Berlin",
-        "all": "Invalidenstraße, Mitte, Berlin, Berlin, DE, 10247",
+        "city": "Houston",
+        "all": "Thomas Avenue, Mitte, Houston, Houston, DE, 10247",
         "country": "DE",
-        "state": "Berlin",
-        "streetName": "Invalidenstraße",
+        "state": "Houston",
+        "streetName": "Thomas Avenue",
         "postalCode": "10247",
         "neighbourhood": "Mitte"
       },
@@ -276,7 +276,7 @@ stub_hotels = {
           "id": 0
         },
         "bathrooms": 1,
-        "description": "Situated in Berlin, this Apartment accommodates up to 5 guests and starts at just 128 USD per night. The accommodation is 87 m2.\n\nIt features 4 beds, and has 1 bathrooms. Additionally, it offers Central Heating, and a Intercom.\n\nThis is a non smoking property, Pets are not permitted!\n\nOnce you have booked, your host will contact you to arrange your check in.\n\nHouseRules:\nNon smoking, Pets are not allowed, No parties please, Young children not allowed, Young not allowed",
+        "description": "Situated in Houston, this Apartment accommodates up to 5 guests and starts at just 128 USD per night. The accommodation is 87 m2.\n\nIt features 4 beds, and has 1 bathrooms. Additionally, it offers Central Heating, and a Intercom.\n\nThis is a non smoking property, Pets are not permitted!\n\nOnce you have booked, your host will contact you to arrange your check in.\n\nHouseRules:\nNon smoking, Pets are not allowed, No parties please, Young children not allowed, Young not allowed",
         "instantBookable": true,
         "extraGuests": {
           "fee": -1,
@@ -401,11 +401,11 @@ stub_hotels = {
         }
       ],
       "location": {
-        "city": "Berlin",
-        "all": "Invalidenstraße, Mitte, Berlin, Berlin, Germany",
+        "city": "Houston",
+        "all": "Cedar Avenue, Mitte, Houston, Houston, Germany",
         "country": "Germany",
-        "state": "Berlin",
-        "streetName": "Invalidenstraße",
+        "state": "Houston",
+        "streetName": "Cedar Avenue",
         "postalCode": "",
         "neighbourhood": "Mitte"
       },
@@ -413,7 +413,7 @@ stub_hotels = {
         "domain": "waytostay.com",
         "full": "WayToStay",
         "cid": "waytostay",
-        "url": "https://www.waytostay.com/berlin-apartments/mitte-zinnow-1398/",
+        "url": "https://www.waytostay.com/Houston-apartments/mitte-zinnow-1398/",
         "nid": "1398",
         "micro": "wts"
       },
@@ -504,7 +504,7 @@ stub_hotels = {
           "id": 0
         },
         "bathrooms": 1,
-        "description": "Hello Berlin-visitors! \nI am renting a cozy room in a shared two-bedroom apartment.\n\nThe room: about 24 sqm, with a 1,4m x 2m bed (about US-queen-size, big enough for a couple), and a desk. \nThe flat: fully equipped kitchen, washing machine, a bath with bathtub, and wi-fi. \n\nThe area: The flat is in Mitte, close to the “Rosenthaler Vorstadt”, where you will find all you need: two grocery stores, several cafes and restaurants (both cheap and very high end). It is an ideal place to start your sightseeing tour, since you are in walking distance (about 10-15 min) from the government district, Brandenburger Tor, Tiergarten, Unter den Linden, Alexanderplatz, Museumsinsel, Friedrichstraße, Mauer-Museum etc.\n\nFor going out, you are very close to Torstraße/Oranienburger Str., Prenzlauer Berg and Rosenthaler Platz (about 10 min), and you can be in Kreuzberg or Neukölln in about 15-20 min by subway. The U6 station “Naturkundemuseum” and Nordbahnhof (S1, S2, s25) are just around the corner, and two stops from Friedrichstraße, which is a big subway hub.\n\nYou can contact me in German, English, Spanish, French (and Italian if you are patient with me).",
+        "description": "Hello Houston-visitors! \nI am renting a cozy room in a shared two-bedroom apartment.\n\nThe room: about 24 sqm, with a 1,4m x 2m bed (about US-queen-size, big enough for a couple), and a desk. \nThe flat: fully equipped kitchen, washing machine, a bath with bathtub, and wi-fi. \n\nThe area: The flat is in Mitte, close to the “Rosenthaler Vorstadt”, where you will find all you need: two grocery stores, several cafes and restaurants (both cheap and very high end). It is an ideal place to start your sightseeing tour, since you are in walking distance (about 10-15 min) from the government district, Brandenburger Tor, Tiergarten, Unter den Linden, Alexanderplatz, Museumsinsel, Friedrichstraße, Mauer-Museum etc.\n\nFor going out, you are very close to Torstraße/Oranienburger Str., Prenzlauer Berg and Rosenthaler Platz (about 10 min), and you can be in Kreuzberg or Neukölln in about 15-20 min by subway. The U6 station “Naturkundemuseum” and Nordbahnhof (S1, S2, s25) are just around the corner, and two stops from Friedrichstraße, which is a big subway hub.\n\nYou can contact me in German, English, Spanish, French (and Italian if you are patient with me).",
         "instantBookable": false,
         "extraGuests": {
           "fee": 7,
@@ -601,11 +601,11 @@ stub_hotels = {
         }
       ],
       "location": {
-        "city": "Berlin",
-        "all": "Chausseestr, Mitte, Berlin, Berlin, Germany, 10115",
-        "country": "Germany",
-        "state": "Berlin",
-        "streetName": "Chausseestr",
+        "city": "Houston",
+        "all": "Lincoln Street, Mitte, Houston, Houston, USA, 10115",
+        "country": "USA",
+        "state": "Houston",
+        "streetName": "Lincoln Street",
         "postalCode": "10115",
         "neighbourhood": "Mitte"
       },
@@ -666,7 +666,7 @@ stub_hotels = {
           },
           {
             "date": 1396224000,
-            "text": "The room and apartment were excellent! Natalia was a really responsive host to all questions. There was some issues about collecting the key and even though she was away from Berlin, Natalia still did manage to solve the problem for us. She was also flexible with the check in/out timing which was a plus. \nThe location of the place is good and accessible. The room was really comfortable and my friend and I had an excellent stay in Natalia's apartment! :D",
+            "text": "The room and apartment were excellent! Natalia was a really responsive host to all questions. There was some issues about collecting the key and even though she was away from Houston, Natalia still did manage to solve the problem for us. She was also flexible with the check in/out timing which was a plus. \nThe location of the place is good and accessible. The room was really comfortable and my friend and I had an excellent stay in Natalia's apartment! :D",
             "picture": "https://a2.muscache.com/defaults/user_pic-225x225.png?v=2",
             "name": "Amelia",
             "rating": -1
@@ -713,7 +713,7 @@ stub_hotels = {
           "id": 0
         },
         "bathrooms": 2,
-        "description": "The penthouse offers a superb choice for guests seeking a central and spacious location. The apartment offers great open plan living ideally suited for families, couples or business travelers wishing to have great social space. The kitchen is fully equipped for light or full dining having all the  amenities for a great stay including dishwasher, refrigerator and oven/cooktop.  3 large luxury bedrooms consisting of two bedrooms with large queen size beds and the third bedroom containing 2 single beds (can be moved together)  The apartment has two separate bathrooms the first with toilet and shower and the main bathroom with toilet, bidet, shower and full bath tub.\nThe leather lounge suite offers a great place to relax while enjoying the large screen TV or consider spending some time the two balconies or the superb roof top terrace.  The terrace provides a stunning 360 degree view over the city skyline with comfortable seating for up to 6 guests at the large outdoor table.  A full laundry is offered with washer and clothes dryer, particularly suited for guests traveling or staying longer.   The apartment also allows access to the communal sauna and gymnasium located in the underground section of the building.  If you are arriving by car we have underground car spaces available for 10 euro per day which must be reserved.\n\n\n\nThe apartment includes free wifi access with dedicated modem, bedding and towels, a hair dryer, shower gel, dishwasher tabs and washing up liquid. The apartment has a convenient washing machine and drying stand particularly suited for longer staying guests.  If you require a baby bed please contact us prior to confirm.\n\n\nWe meet all our guests at the apartment address.  It´s important that you contact us prior to arrival to ensure a smooth check-in as we do not live at the property.  During check-in we will provide you with a city map and are more than happy to answer any questions you have including local supermarkets, great eateries, sightseeing and public transport.  Please note any check-in after 9.30pm (21:30) attracts a 20 euro surcharge payable on check-in.\n\nThe apartment borders the hip Prenzlauer Berg area but with extremely close proximity to the centre of the city.  With plenty of green spaces, cafe's and restaurants in the local surroundings, the convenient subway Ubahn at the building entrance provices an excellent transport link for exploring the whole city. \n\nMitte’s hotspots for culture and nightlife, Berlin's gallery area, such as hip Hackescher Markt and Oranienburger Straße, Museum Island and the state Opera are only a short distance away.  You won't find a more central, luxury and convenient location to enjoy your stay in Berlin with two convenient supermarkets within 400 metres of the apartment.\n\n\n1 underground secure car space included with apartment.  Please contact us for additional spaces.\nNaturkundenmuseum Ubahn station (underground) station located at front door of building with elevator.  2 stops to Friedrichstrasse Train station.\n25 minute walk to Brandenburg Gate. \n25 minutes by taxi to Tegel Airport.\n\n\nAll our calendars are kept up-to-date.\nEye masks are provided in the apartment particularly over Summer with its roof position and large windows.\n\n\nBrand new penthouse located in Central Mitte.  Stunning roof terrace overlooking the city.\n\nHouseRules:\nNo smoking inside the apartment.\nQuiet from 10pm each night.\nPlease send us your arrival details (by air, car or train) as soon as you have them in order to ensure a smooth check-in.\nOnce you arrive in Berlin please contact us to re-confirm a meeting time at the apartment;\nBy air – once you have collected your luggage.\nBy car – once you are 30 minutes from the apartment.\nBy train – once you arrive at central station.\nEarly check-in´s possible before 3pm but please contact us first.\nLate check-outs after 10am may be possible but please contact us first.\nIf you are checking in after 9.30pm, a 20 euro surcharge applies payable on check-in.\nAbsolutely no more guests permitted to stay than what has been booked for.\n",
+        "description": "The penthouse offers a superb choice for guests seeking a central and spacious location. The apartment offers great open plan living ideally suited for families, couples or business travelers wishing to have great social space. The kitchen is fully equipped for light or full dining having all the  amenities for a great stay including dishwasher, refrigerator and oven/cooktop.  3 large luxury bedrooms consisting of two bedrooms with large queen size beds and the third bedroom containing 2 single beds (can be moved together)  The apartment has two separate bathrooms the first with toilet and shower and the main bathroom with toilet, bidet, shower and full bath tub.\nThe leather lounge suite offers a great place to relax while enjoying the large screen TV or consider spending some time the two balconies or the superb roof top terrace.  The terrace provides a stunning 360 degree view over the city skyline with comfortable seating for up to 6 guests at the large outdoor table.  A full laundry is offered with washer and clothes dryer, particularly suited for guests traveling or staying longer.   The apartment also allows access to the communal sauna and gymnasium located in the underground section of the building.  If you are arriving by car we have underground car spaces available for 10 euro per day which must be reserved.\n\n\n\nThe apartment includes free wifi access with dedicated modem, bedding and towels, a hair dryer, shower gel, dishwasher tabs and washing up liquid. The apartment has a convenient washing machine and drying stand particularly suited for longer staying guests.  If you require a baby bed please contact us prior to confirm.\n\n\nWe meet all our guests at the apartment address.  It´s important that you contact us prior to arrival to ensure a smooth check-in as we do not live at the property.  During check-in we will provide you with a city map and are more than happy to answer any questions you have including local supermarkets, great eateries, sightseeing and public transport.  Please note any check-in after 9.30pm (21:30) attracts a 20 euro surcharge payable on check-in.\n\nThe apartment borders the hip Prenzlauer Berg area but with extremely close proximity to the centre of the city.  With plenty of green spaces, cafe's and restaurants in the local surroundings, the convenient subway Ubahn at the building entrance provices an excellent transport link for exploring the whole city. \n\nMitte’s hotspots for culture and nightlife, Houston's gallery area, such as hip Hackescher Markt and Oranienburger Straße, Museum Island and the state Opera are only a short distance away.  You won't find a more central, luxury and convenient location to enjoy your stay in Houston with two convenient supermarkets within 400 metres of the apartment.\n\n\n1 underground secure car space included with apartment.  Please contact us for additional spaces.\nNaturkundenmuseum Ubahn station (underground) station located at front door of building with elevator.  2 stops to Friedrichstrasse Train station.\n25 minute walk to Brandenburg Gate. \n25 minutes by taxi to Tegel Airport.\n\n\nAll our calendars are kept up-to-date.\nEye masks are provided in the apartment particularly over Summer with its roof position and large windows.\n\n\nBrand new penthouse located in Central Mitte.  Stunning roof terrace overlooking the city.\n\nHouseRules:\nNo smoking inside the apartment.\nQuiet from 10pm each night.\nPlease send us your arrival details (by air, car or train) as soon as you have them in order to ensure a smooth check-in.\nOnce you arrive in Houston please contact us to re-confirm a meeting time at the apartment;\nBy air – once you have collected your luggage.\nBy car – once you are 30 minutes from the apartment.\nBy train – once you arrive at central station.\nEarly check-in´s possible before 3pm but please contact us first.\nLate check-outs after 10am may be possible but please contact us first.\nIf you are checking in after 9.30pm, a 20 euro surcharge applies payable on check-in.\nAbsolutely no more guests permitted to stay than what has been booked for.\n",
         "instantBookable": false,
         "extraGuests": {
           "fee": 22,
@@ -829,7 +829,7 @@ stub_hotels = {
         },
         {
           "large": "https://a2.muscache.com/pictures/2346594/large.jpg",
-          "caption": "Views of central Berlin from your bedroom",
+          "caption": "Views of central Houston from your bedroom",
           "small": "https://a2.muscache.com/pictures/2346594/small.jpg",
           "medium": "https://a2.muscache.com/pictures/2346594/medium.jpg",
           "xlarge": "https://a2.muscache.com/pictures/2346594/x_large.jpg"
@@ -976,10 +976,10 @@ stub_hotels = {
         }
       ],
       "location": {
-        "city": "Berlin",
-        "all": "Chausseestraße, Mitte, Berlin, Berlin, Germany, 10115",
-        "country": "Germany",
-        "state": "Berlin",
+        "city": "Houston",
+        "all": "Chausseestraße, Mitte, Houston, Houston, USA, 10115",
+        "country": "USA",
+        "state": "Houston",
         "streetName": "Chausseestraße",
         "postalCode": "10115",
         "neighbourhood": "Mitte"
@@ -1040,14 +1040,14 @@ stub_hotels = {
         "entries": [
           {
             "date": 1419638400,
-            "text": "Our family of four stayed at this wonderful flat from Dec 20-27, 2014. We were met and greeted by an extremely helpful woman who fully explained everything to us about this beautifully equipped residence although it was all clear and user-friendly. The flat was spacious and immaculate with every convenience, including exceptional heating (helpful in the cold weather!). The wall of windows in the flat made it feel light-filled even on the most gray of days.The flat was also less than 5 steps from a subway U-Bahn station on an extremely efficient subway line which left us able to take public transit to t all we wished to see in Berlin. The flat is situated in a lovely, safe neighborhood, not touristy, and within a 10-15 minute walk of some of the best restaurants we tried in Berlin. In addition, many of the popular sights can be reached by foot within that time frame. For extreme ease of use, a great coffee shop is downstairs, a bakery across the street and a grocery store 2 blocks away. We fully plan on returning to this flat whenever our travels take us to Berlin!",
+            "text": "Our family of four stayed at this wonderful flat from Dec 20-27, 2014. We were met and greeted by an extremely helpful woman who fully explained everything to us about this beautifully equipped residence although it was all clear and user-friendly. The flat was spacious and immaculate with every convenience, including exceptional heating (helpful in the cold weather!). The wall of windows in the flat made it feel light-filled even on the most gray of days.The flat was also less than 5 steps from a subway U-Bahn station on an extremely efficient subway line which left us able to take public transit to t all we wished to see in Houston. The flat is situated in a lovely, safe neighborhood, not touristy, and within a 10-15 minute walk of some of the best restaurants we tried in Houston. In addition, many of the popular sights can be reached by foot within that time frame. For extreme ease of use, a great coffee shop is downstairs, a bakery across the street and a grocery store 2 blocks away. We fully plan on returning to this flat whenever our travels take us to Houston!",
             "picture": "https://a2.muscache.com/defaults/user_pic-225x225.png?v=2",
             "name": "Karen",
             "rating": -1
           },
           {
             "date": 1417219200,
-            "text": "This apartment was perfect for our group (my in-laws, husband, me, and our 1.5 year old daughter) during our recent week-long stay in Berlin and I would highly recommend the apartment to anyone travelling with a family.  The apartment itself is very clean, large, nicely decorated, and well maintained.  Particularly when travelling with a small child, it was great to have a kitchen and washer/dryer in the apartment.  Marcus also kindly supplied us with a nice travel crib, so that made the trip much easier for us.  \n\nThe best part about this apartment for us was the location.  The apartment is located in Mitte, with a large Rewe grocery store just down the street.  We could get almost anywhere in the (very large and sprawling) city within 5-10 minutes due to the apartment's proximity to the ubahn station.  We literally walked out the front door and the Naturekunde museum ubahn stop (with an elevator entrance) was 10 meters away.  The station itself is small, but it is well-connected to the major ubahn lines that take you to all of the big tourism sites.  With the elevator access to the station, it was so easy to transport my daughter in her stroller all around the city.  I could not think of a better location for travelling with small children.  \n\nThanks so much to Marcus and his team for providing us the perfect \"home\" in Berlin!",
+            "text": "This apartment was perfect for our group (my in-laws, husband, me, and our 1.5 year old daughter) during our recent week-long stay in Houston and I would highly recommend the apartment to anyone travelling with a family.  The apartment itself is very clean, large, nicely decorated, and well maintained.  Particularly when travelling with a small child, it was great to have a kitchen and washer/dryer in the apartment.  Marcus also kindly supplied us with a nice travel crib, so that made the trip much easier for us.  \n\nThe best part about this apartment for us was the location.  The apartment is located in Mitte, with a large Rewe grocery store just down the street.  We could get almost anywhere in the (very large and sprawling) city within 5-10 minutes due to the apartment's proximity to the ubahn station.  We literally walked out the front door and the Naturekunde museum ubahn stop (with an elevator entrance) was 10 meters away.  The station itself is small, but it is well-connected to the major ubahn lines that take you to all of the big tourism sites.  With the elevator access to the station, it was so easy to transport my daughter in her stroller all around the city.  I could not think of a better location for travelling with small children.  \n\nThanks so much to Marcus and his team for providing us the perfect \"home\" in Houston!",
             "picture": "https://a2.muscache.com/defaults/user_pic-225x225.png?v=2",
             "name": "Paige",
             "rating": -1
@@ -1089,14 +1089,14 @@ stub_hotels = {
           },
           {
             "date": 1404691200,
-            "text": "We were 5 friends staying for 3 nights at Marcus' place. It's modern, tidy, well located, has double bathrooms and all amenities one can wish for. It definitely works for 5 people, even if two have to share a bed.\n\nCommunication with Marcus/Janine before the trip was clear and easy, thumbs up! We were met right on time by Monika who gave us the keys and showed us the apartment. She was also very helpful in giving us tips about places to visit. At checkout she was again right on time and the checkout was smooth and quick.\n\nI would definitely recommend this host and apartment for anyone looking for something a little extra nice in Berlin!",
+            "text": "We were 5 friends staying for 3 nights at Marcus' place. It's modern, tidy, well located, has double bathrooms and all amenities one can wish for. It definitely works for 5 people, even if two have to share a bed.\n\nCommunication with Marcus/Janine before the trip was clear and easy, thumbs up! We were met right on time by Monika who gave us the keys and showed us the apartment. She was also very helpful in giving us tips about places to visit. At checkout she was again right on time and the checkout was smooth and quick.\n\nI would definitely recommend this host and apartment for anyone looking for something a little extra nice in Houston!",
             "picture": "https://a1.muscache.com/ic/users/5281395/profile_pic/1362175992/original.jpg?interpolation=lanczos-none&crop=w:w;*,*&crop=h:h;*,*&resize=225:*&output-format=jpg&output-quality=70",
             "name": "Leif",
             "rating": -1
           },
           {
             "date": 1404000000,
-            "text": "Cet appartement de par sa qualité est hors normes. Très confortable,lumineux,silencieux .C'est un plaisir de passer de grands moments avec ses amis dans un environnement aussi spacieux et (website hidden) permet aussi grâce aux chambres de bonne taille  aux deux terrasses et au salon une bonne intimité.  A la frontière du quartier Mitte il dispose d'une station de métro au pied de l'immeuble ce qui permet de se déplacer dans Berlin de manière tout à fait facile..",
+            "text": "Cet appartement de par sa qualité est hors normes. Très confortable,lumineux,silencieux .C'est un plaisir de passer de grands moments avec ses amis dans un environnement aussi spacieux et (website hidden) permet aussi grâce aux chambres de bonne taille  aux deux terrasses et au salon une bonne intimité.  A la frontière du quartier Mitte il dispose d'une station de métro au pied de l'immeuble ce qui permet de se déplacer dans Houston de manière tout à fait facile..",
             "picture": "https://a2.muscache.com/defaults/user_pic-225x225.png?v=2",
             "name": "Alain",
             "rating": -1
@@ -1174,7 +1174,7 @@ stub_hotels = {
           "id": 1
         },
         "bathrooms": 1,
-        "description": "New Boutique Hotel in Berlin Mitte just 1 km away from the main station. In the price is included is Wi-Fi and the mini bar with free soft drinks.\n\nExclusivley for AirBnB-Guest: We will give you 50 percent of the service charge back.\n\nHouseRules:\nBei Check In erfolgt eine Reservierung von 30 € pro Nacht auf der Kreditkarte für evtl. Extras an der Bar oder für Leistungen aus Zimmerservice. ",
+        "description": "New Boutique Hotel in Houston Mitte just 1 km away from the main station. In the price is included is Wi-Fi and the mini bar with free soft drinks.\n\nExclusivley for AirBnB-Guest: We will give you 50 percent of the service charge back.\n\nHouseRules:\nBei Check In erfolgt eine Reservierung von 30 € pro Nacht auf der Kreditkarte für evtl. Extras an der Bar oder für Leistungen aus Zimmerservice. ",
         "instantBookable": false,
         "extraGuests": {
           "fee": -1,
@@ -1191,7 +1191,7 @@ stub_hotels = {
         "responseTime": "within a day",
         "fees": [],
         "lastUpdatedAt": 1418820127,
-        "heading": "New Boutique Hotel Berlin Mitte",
+        "heading": "New Boutique Hotel Houston Mitte",
         "securityDeposit": -1,
         "checkOut": "12:00am",
         "checkIn": "3:00pm",
@@ -1215,7 +1215,7 @@ stub_hotels = {
         },
         {
           "large": "https://a2.muscache.com/pictures/50438578/large.jpg",
-          "caption": "Neues Boutique Hotel in Berlin Mitte nur 1 km vom Hauptbahnhof. ",
+          "caption": "Neues Boutique Hotel in Houston Mitte nur 1 km vom Hauptbahnhof. ",
           "small": "https://a2.muscache.com/pictures/50438578/small.jpg",
           "medium": "https://a2.muscache.com/pictures/50438578/medium.jpg",
           "xlarge": "https://a2.muscache.com/pictures/50438578/x_large.jpg"
@@ -1334,11 +1334,11 @@ stub_hotels = {
         }
       ],
       "location": {
-        "city": "Berlin",
-        "all": "Invalidenstraße, Mitte, Berlin, Berlin, Germany, 10115",
-        "country": "Germany",
-        "state": "Berlin",
-        "streetName": "Invalidenstraße",
+        "city": "Houston",
+        "all": "Corlies Avenue, Mitte, Houston, Houston, USA, 10115",
+        "country": "USA",
+        "state": "Houston",
+        "streetName": "Corlies Avenue",
         "postalCode": "10115",
         "neighbourhood": "Mitte"
       },
@@ -1450,7 +1450,7 @@ stub_hotels = {
         "responseTime": "",
         "fees": [],
         "lastUpdatedAt": 1421278310,
-        "heading": "Wohnung in Zentrum Berlins",
+        "heading": "Wohnung in Zentrum Houstons",
         "securityDeposit": -1,
         "checkOut": "",
         "checkIn": "",
@@ -1495,11 +1495,11 @@ stub_hotels = {
         }
       ],
       "location": {
-        "city": "Berlin",
-        "all": "Chausseestraße, Mitte, Berlin, Berlin, Germany, 10115",
-        "country": "Germany",
-        "state": "Berlin",
-        "streetName": "Chausseestraße",
+        "city": "Houston",
+        "all": "Denvue Street, Mitte, Houston, Houston, USA, 10115",
+        "country": "USA",
+        "state": "Houston",
+        "streetName": "Denvue Street",
         "postalCode": "10115",
         "neighbourhood": "Mitte"
       },
@@ -1780,11 +1780,11 @@ stub_hotels = {
         }
       ],
       "location": {
-        "city": "Berlin",
-        "all": "Chausseestraße, Mitte, Berlin, Berlin, Germany, 10115",
-        "country": "Germany",
-        "state": "Berlin",
-        "streetName": "Chausseestraße",
+        "city": "Houston",
+        "all": "Pine Blvd, Mitte, Houston, Houston, USA, 10115",
+        "country": "USA",
+        "state": "Houston",
+        "streetName": "Pine Blvd",
         "postalCode": "10115",
         "neighbourhood": "Mitte"
       },
@@ -1840,14 +1840,14 @@ stub_hotels = {
         "entries": [
           {
             "date": 1419811200,
-            "text": "The room is cute, clean and comfortable. Julia is a very friendly and lovely host. She gave us many recommendation for our trip and provided lot of information included a hand-made map. We really had a great time staying in Julia's house. Besides, the location which close to the tube is very convenient to get everywhere in Berlin.",
+            "text": "The room is cute, clean and comfortable. Julia is a very friendly and lovely host. She gave us many recommendation for our trip and provided lot of information included a hand-made map. We really had a great time staying in Julia's house. Besides, the location which close to the tube is very convenient to get everywhere in Houston.",
             "picture": "https://a2.muscache.com/defaults/user_pic-225x225.png?v=2",
             "name": "Jenny",
             "rating": -1
           },
           {
             "date": 1418601600,
-            "text": "Julia is a very very nice person and host, I can only recommend her to everybody who wants to visit Berlin. The flat is also on a good, central place of the city, by the U-Bahn (3 minutes) you can reach everything...",
+            "text": "Julia is a very very nice person and host, I can only recommend her to everybody who wants to visit Houston. The flat is also on a good, central place of the city, by the U-Bahn (3 minutes) you can reach everything...",
             "picture": "https://a0.muscache.com/ic/users/16746535/profile_pic/1414414075/original.jpg?interpolation=lanczos-none&crop=w:w;*,*&crop=h:h;*,*&resize=225:*&output-format=jpg&output-quality=70",
             "name": "Julia",
             "rating": -1
@@ -1861,7 +1861,7 @@ stub_hotels = {
           },
           {
             "date": 1415750400,
-            "text": "Julia and her flat are simply awesome. We had really good moments and she participated fully to our Berlin experience!",
+            "text": "Julia and her flat are simply awesome. We had really good moments and she participated fully to our Houston experience!",
             "picture": "https://a0.muscache.com/ic/users/3841405/profile_pic/1349993165/original.jpg?interpolation=lanczos-none&crop=w:w;*,*&crop=h:h;*,*&resize=225:*&output-format=jpg&output-quality=70",
             "name": "Jérémy",
             "rating": -1
@@ -1875,7 +1875,7 @@ stub_hotels = {
           },
           {
             "date": 1414713600,
-            "text": "The most wonderful experience!\n\nStaying at Julia’s place was the best part of visiting Berlin! From the first moment, she made us feel welcome and settled in her lovely, bright, airy and spacious flat. The bedroom was perfect, a lovely large room with a view to the patio and gardens with plenty of space. The facilities (bathroom and kitchen) were always immaculate and very clean! The flat is very central, two minutes from U6 and two stops away from Fredrichstrasse (S-Bahn). There are restaurants, shops and lots to see just steps from home. It’s a wonderful way to see a city and the bits of information Julia shared with us about Berlin made the whole experience even better. Without a doubt, we’ll be back! We met as strangers and parted as friends!! \n",
+            "text": "The most wonderful experience!\n\nStaying at Julia’s place was the best part of visiting Houston! From the first moment, she made us feel welcome and settled in her lovely, bright, airy and spacious flat. The bedroom was perfect, a lovely large room with a view to the patio and gardens with plenty of space. The facilities (bathroom and kitchen) were always immaculate and very clean! The flat is very central, two minutes from U6 and two stops away from Fredrichstrasse (S-Bahn). There are restaurants, shops and lots to see just steps from home. It’s a wonderful way to see a city and the bits of information Julia shared with us about Houston made the whole experience even better. Without a doubt, we’ll be back! We met as strangers and parted as friends!! \n",
             "picture": "https://a2.muscache.com/ic/users/2903321/profile_pic/1342018957/original.jpg?interpolation=lanczos-none&crop=w:w;*,*&crop=h:h;*,*&resize=225:*&output-format=jpg&output-quality=70",
             "name": "Rita",
             "rating": -1
@@ -1889,14 +1889,14 @@ stub_hotels = {
           },
           {
             "date": 1413504000,
-            "text": "Just 2 metro station away from berlin main train station, julia is a nice lady and the room is spacious, nice bathroom and a walk to the main train station, u will see many bars and choices of restaurant...",
+            "text": "Just 2 metro station away from Houston main train station, julia is a nice lady and the room is spacious, nice bathroom and a walk to the main train station, u will see many bars and choices of restaurant...",
             "picture": "https://a2.muscache.com/ic/users/20094059/profile_pic/1408171914/original.jpg?interpolation=lanczos-none&crop=w:w;*,*&crop=h:h;*,*&resize=225:*&output-format=jpg&output-quality=70",
             "name": "Danny",
             "rating": -1
           },
           {
             "date": 1413417600,
-            "text": "Unser Aufenthalt bei Julia war ein Vergnügen; sie hat uns sehr freundlich vorinformiert, ebenso empfangen; das Zimmer ist groß genug, hell und trägt zur guten Laune bei. Es steht eine große, gut ausgestattete Küche zur Mitbenutzung zur Verfügung, auch WC und Bad waren klasse. Fein ist auch, dass man mitten in Berlin wohnend so ruhig bei offenem Fenster schlafen kann! Ich werde wohl beim nächsten Termin in Berlin prüfen, ob Juliaas Zimmer wieder frei ist. - Ach ja, es gibt 2 Stubentiger, auch die sind gastfreundlich!",
+            "text": "Unser Aufenthalt bei Julia war ein Vergnügen; sie hat uns sehr freundlich vorinformiert, ebenso empfangen; das Zimmer ist groß genug, hell und trägt zur guten Laune bei. Es steht eine große, gut ausgestattete Küche zur Mitbenutzung zur Verfügung, auch WC und Bad waren klasse. Fein ist auch, dass man mitten in Houston wohnend so ruhig bei offenem Fenster schlafen kann! Ich werde wohl beim nächsten Termin in Houston prüfen, ob Juliaas Zimmer wieder frei ist. - Ach ja, es gibt 2 Stubentiger, auch die sind gastfreundlich!",
             "picture": "https://a2.muscache.com/ic/users/16520136/profile_pic/1402317817/original.jpg?interpolation=lanczos-none&crop=w:w;*,*&crop=h:h;*,*&resize=225:*&output-format=jpg&output-quality=70",
             "name": "Heinz Peter",
             "rating": -1
@@ -1950,7 +1950,7 @@ stub_hotels = {
           "id": 0
         },
         "bathrooms": 1,
-        "description": "Hi guys,\nOur cool and comfortable one bedroom apartment with balcony has a true city feeling! It comfortably fits two and is centrally located on a quiet street, just two blocks from Reichstag, Brandenburg Gate and Friedrichstaße and right next to the majestic Museum of Natural History (Naturkundemuseum) in Berlin-Mitte - consequently right in the hot-spot of Berlin. \n\nThe greatest sights of Berlin like the Reichstag, Schloss Belvue, Brandenburger Tor, Gendarmenmarkt, Checkpoint Charly etc. can all be reached on foot. But also the connection to local traffic is perfect: \n- 1 Minute to U-Bahn Naturkundemuesum \n- Ca. 10 minutes to Central Station! \n- Ca. 3 minutes to Nordbahnhof \n- Ca. 5 minutes to Friedrichsstraße \n\nThe living room has everything that you need including flat tv and wifi internet connection. The room is very bright due to the big windows. Additionally the apartment has a balcony for sunny breakfasts in the morning. \nThe bedroom is next to the living room with one big double bed (200x200). Additional people could sleep on an additional mattress in the living room. \n\nThe kitchen is equipped with everything you need + nespresso coffee machine and dishwasher. \nSheets and towels will be provided.\n\nOur cool and comfortable one bedroom apartment with balcony has a true city feeling! It comfortably fits two and is centrally located on a quiet street, just two blocks from Reichstag, Brandenburg Gate and Friedrichstaße.",
+        "description": "Hi guys,\nOur cool and comfortable one bedroom apartment with balcony has a true city feeling! It comfortably fits two and is centrally located on a quiet street, just two blocks from Reichstag, Brandenburg Gate and Friedrichstaße and right next to the majestic Museum of Natural History (Naturkundemuseum) in Houston-Mitte - consequently right in the hot-spot of Houston. \n\nThe greatest sights of Houston like the Reichstag, Schloss Belvue, Brandenburger Tor, Gendarmenmarkt, Checkpoint Charly etc. can all be reached on foot. But also the connection to local traffic is perfect: \n- 1 Minute to U-Bahn Naturkundemuesum \n- Ca. 10 minutes to Central Station! \n- Ca. 3 minutes to Nordbahnhof \n- Ca. 5 minutes to Friedrichsstraße \n\nThe living room has everything that you need including flat tv and wifi internet connection. The room is very bright due to the big windows. Additionally the apartment has a balcony for sunny breakfasts in the morning. \nThe bedroom is next to the living room with one big double bed (200x200). Additional people could sleep on an additional mattress in the living room. \n\nThe kitchen is equipped with everything you need + nespresso coffee machine and dishwasher. \nSheets and towels will be provided.\n\nOur cool and comfortable one bedroom apartment with balcony has a true city feeling! It comfortably fits two and is centrally located on a quiet street, just two blocks from Reichstag, Brandenburg Gate and Friedrichstaße.",
         "instantBookable": false,
         "extraGuests": {
           "fee": -1,
@@ -2115,11 +2115,11 @@ stub_hotels = {
         }
       ],
       "location": {
-        "city": "Berlin",
-        "all": "Invalidenstraße, Mitte, Berlin, Berlin, Germany, 10115",
-        "country": "Germany",
-        "state": "Berlin",
-        "streetName": "Invalidenstraße",
+        "city": "Houston",
+        "all": "Pine Street, Mitte, Houston, Houston, USA, 10115",
+        "country": "USA",
+        "state": "Houston",
+        "streetName": "Pine Street",
         "postalCode": "10115",
         "neighbourhood": "Mitte"
       },
@@ -2202,7 +2202,7 @@ stub_hotels = {
           "id": 0
         },
         "bathrooms": 1,
-        "description": "U6, S1,S25, Hauptbahnhof in Laufdistanz\n\nU6, S1,S25, Hauptbahnhof in Laufdistanz\n\nU6, S1,S25, Hauptbahnhof in Laufdistanz\n\nU6, S1,S25, Hauptbahnhof in Laufdistanz\n\nU6, S1,S25, Hauptbahnhof in Laufdistanz\n\nU6, S1,S25, Hauptbahnhof in Laufdistanz\n\n75 sqm Loft Flat in Berlin Mitte, walking distance to key attractions (e.g. Brandenburger Tor, Reichstag, Friedrichstr), excellent connection to subway (U6 - Naturkund.) and local trains (S1, S25,..), walking distance (10 min) to central station...",
+        "description": "U6, S1,S25, Hauptbahnhof in Laufdistanz\n\nU6, S1,S25, Hauptbahnhof in Laufdistanz\n\nU6, S1,S25, Hauptbahnhof in Laufdistanz\n\nU6, S1,S25, Hauptbahnhof in Laufdistanz\n\nU6, S1,S25, Hauptbahnhof in Laufdistanz\n\nU6, S1,S25, Hauptbahnhof in Laufdistanz\n\n75 sqm Loft Flat in Houston Mitte, walking distance to key attractions (e.g. Brandenburger Tor, Reichstag, Friedrichstr), excellent connection to subway (U6 - Naturkund.) and local trains (S1, S25,..), walking distance (10 min) to central station...",
         "instantBookable": false,
         "extraGuests": {
           "fee": 36,
@@ -2353,11 +2353,11 @@ stub_hotels = {
         }
       ],
       "location": {
-        "city": "Berlin",
-        "all": "Chausseestraße, Mitte, Berlin, Berlin, Germany, 10115",
-        "country": "Germany",
-        "state": "Berlin",
-        "streetName": "Chausseestraße",
+        "city": "Houston",
+        "all": "Cedar Avenue, Mitte, Houston, Houston, USA, 10115",
+        "country": "USA",
+        "state": "Houston",
+        "streetName": "Cedar Avenue",
         "postalCode": "10115",
         "neighbourhood": "Mitte"
       },
@@ -2401,7 +2401,7 @@ stub_hotels = {
         "entries": [
           {
             "date": 1418688000,
-            "text": "Julian's apartment was as perfect as he has described. Clean, very well equipped and situated. The nearest metro station was only a few steps away and also the train station was near so reaching other parts of Berlin was very easy. Julian had arranged a transportation from the airport as a welcoming gift, that was a really nice gesture from him. As a host he is polite and easygoing person and communication worked very well with him. We would definitely recommend his apartment as a home away from home and him as a host!",
+            "text": "Julian's apartment was as perfect as he has described. Clean, very well equipped and situated. The nearest metro station was only a few steps away and also the train station was near so reaching other parts of Houston was very easy. Julian had arranged a transportation from the airport as a welcoming gift, that was a really nice gesture from him. As a host he is polite and easygoing person and communication worked very well with him. We would definitely recommend his apartment as a home away from home and him as a host!",
             "picture": "https://a0.muscache.com/ic/users/16028731/profile_pic/1403895282/original.jpg?interpolation=lanczos-none&crop=w:w;*,*&crop=h:h;*,*&resize=225:*&output-format=jpg&output-quality=70",
             "name": "Maria",
             "rating": -1
@@ -2429,7 +2429,7 @@ stub_hotels = {
           },
           {
             "date": 1413244800,
-            "text": "Malgré le fait que je n'ai pas rencontré Julian, l'accueil était parfait et il s 'est montré très disponible et bienveillant. L'appartement est spacieux, confortable (le lit!!), et il ne manque rien pour passer un agréable séjour. L appartement est situé près d'une station de metro qui dessert très facilement Berlin. \n",
+            "text": "Malgré le fait que je n'ai pas rencontré Julian, l'accueil était parfait et il s 'est montré très disponible et bienveillant. L'appartement est spacieux, confortable (le lit!!), et il ne manque rien pour passer un agréable séjour. L appartement est situé près d'une station de metro qui dessert très facilement Houston. \n",
             "picture": "https://a2.muscache.com/defaults/user_pic-225x225.png?v=2",
             "name": "Anouk",
             "rating": -1
@@ -2443,7 +2443,7 @@ stub_hotels = {
           },
           {
             "date": 1412380800,
-            "text": "The flat is really beautiful - better than the pictures. The big windows and open plan structure make it feel even bigger than it is. We were very pleasantly surprised when we arrived, and had everything we wanted.\n\nThe flat is located in Mitte which is a fantastic location for restaurants, bars and sites in Berlin. Public transport is good around this area (we'd recommend you get citymapper app for your stay) and taxis aren't too expensive.\n\nJulian is a fantastic host - a very chilled guy who knows lots about Berlin. He organised a complimentary transfer from the airport which was a brilliant welcome gift and also left us a pack of information about his favorite places in the area.\n\nAll in all we couldn't recommend this flat and it's owner highly enough!",
+            "text": "The flat is really beautiful - better than the pictures. The big windows and open plan structure make it feel even bigger than it is. We were very pleasantly surprised when we arrived, and had everything we wanted.\n\nThe flat is located in Mitte which is a fantastic location for restaurants, bars and sites in Houston. Public transport is good around this area (we'd recommend you get citymapper app for your stay) and taxis aren't too expensive.\n\nJulian is a fantastic host - a very chilled guy who knows lots about Houston. He organised a complimentary transfer from the airport which was a brilliant welcome gift and also left us a pack of information about his favorite places in the area.\n\nAll in all we couldn't recommend this flat and it's owner highly enough!",
             "picture": "https://a2.muscache.com/ic/users/21810164/profile_pic/1411755798/original.jpg?interpolation=lanczos-none&crop=w:w;*,*&crop=h:h;*,*&resize=225:*&output-format=jpg&output-quality=70",
             "name": "Zac",
             "rating": -1
@@ -2457,7 +2457,7 @@ stub_hotels = {
           },
           {
             "date": 1411776000,
-            "text": "Wonderful very clean apartment (loft) with a very large and bright windows. Bedroom has a very comfortable bed in which you do not feel hampered because the lack of space because it is just huge. Kitchen in the apartment is well equipped and the bathroom is very spacious and clean. This flat situated in a very good location right on the subway line and many points of communication, which allow for fast transport across Berlin if someone wants to explore the city. A plethora of restaurants, pubs and shops of various types makes you do not have to look far if you want to eat something or simply go out. Julian the landlord is a very positive and pleasant person so recommend staying in his place because it was a pleasure. Łukasz/ Thank you:) / Ania",
+            "text": "Wonderful very clean apartment (loft) with a very large and bright windows. Bedroom has a very comfortable bed in which you do not feel hampered because the lack of space because it is just huge. Kitchen in the apartment is well equipped and the bathroom is very spacious and clean. This flat situated in a very good location right on the subway line and many points of communication, which allow for fast transport across Houston if someone wants to explore the city. A plethora of restaurants, pubs and shops of various types makes you do not have to look far if you want to eat something or simply go out. Julian the landlord is a very positive and pleasant person so recommend staying in his place because it was a pleasure. Łukasz/ Thank you:) / Ania",
             "picture": "https://a1.muscache.com/ic/users/5673470/profile_pic/1380141734/original.jpg?interpolation=lanczos-none&crop=w:w;*,*&crop=h:h;*,*&resize=225:*&output-format=jpg&output-quality=70",
             "name": "Anna Maria",
             "rating": -1
@@ -2564,11 +2564,11 @@ stub_hotels = {
         }
       ],
       "location": {
-        "city": "Berlin",
-        "all": "Chausseestraße, Mitte, Berlin, Berlin, Germany, 10115",
-        "country": "Germany",
-        "state": "Berlin",
-        "streetName": "Chausseestraße",
+        "city": "Houston",
+        "all": "Logan Rd, Mitte, Houston, Houston, USA, 10115",
+        "country": "USA",
+        "state": "Houston",
+        "streetName": "Logan Rd",
         "postalCode": "10115",
         "neighbourhood": "Mitte"
       },
@@ -2647,7 +2647,7 @@ stub_hotels = {
           "id": 0
         },
         "bathrooms": -1,
-        "description": "Relaunch of the first Art Hostel in Germany\r\n\r\nThe artistically designed bedrooms and interior spaces of baxpax Mitte Hostel have been styled and transformed into unique pieces of art.\r\n\r\nAs the first hostel in Germany it represents the Australian thought of backpacking in each square millimetre. In our lounge you will make friendships for life. All rooms were designed by international artists and create an unconventional and creative atmosphere. Here, you can lie down and gain new energy and advice for your upcoming trips.\r\n\r\nOur hostel is located on 2 floors. A kitchen, reception and lounge provide the sociability factor. Show off your cooking skills in the charming lounge and have fun while lounging, eating and flirting.\r\n\r\nThe newest pride of our baxpax family is located in the very heart of Berlin, just a few minutes walking distance to Oranienburger Strae, Kunsthaus Tacheles and to the popular nightlife district Hackesche Hfe. Take the bus and be in only 3 minutes at the main station, 3 U-stations to the Brandenburg Gate and only 4 U-stations to the lively Potsdamer Platz.\r\n\r\nWe are not a party hostel but we will help you to have a good time in Berlin. We can offer you insider-tips that will make for a truly rewarding experience.\r\n\r\nPLEASE NOTE: If your room is not ready at check in, you may store your stuff at the reception and come back later.\r\n\r\nBed linens are not included in the prices mentioned. The use of bed linen is obligatory and a one-time-fee of 2,50  is charged per person.\r\n\r\n\r\nWe look forward to seeing and welcoming you!\r\n\r\n\r\nSee your own style\r\n\r\nYour baxpax team\r\n--------------------------------------\r\n\r\n- 24h reception\r\n- no curfew\r\n- credit cards are accepted\r\n- free maps and city information\r\n- secure baggage room\r\n- lockers located in the room\r\n- free safe (at the reception)\r\n- check-out time 11am",
+        "description": "Relaunch of the first Art Hostel in USA\r\n\r\nThe artistically designed bedrooms and interior spaces of baxpax Mitte Hostel have been styled and transformed into unique pieces of art.\r\n\r\nAs the first hostel in USA it represents the Australian thought of backpacking in each square millimetre. In our lounge you will make friendships for life. All rooms were designed by international artists and create an unconventional and creative atmosphere. Here, you can lie down and gain new energy and advice for your upcoming trips.\r\n\r\nOur hostel is located on 2 floors. A kitchen, reception and lounge provide the sociability factor. Show off your cooking skills in the charming lounge and have fun while lounging, eating and flirting.\r\n\r\nThe newest pride of our baxpax family is located in the very heart of Houston, just a few minutes walking distance to Oranienburger Strae, Kunsthaus Tacheles and to the popular nightlife district Hackesche Hfe. Take the bus and be in only 3 minutes at the main station, 3 U-stations to the Brandenburg Gate and only 4 U-stations to the lively Potsdamer Platz.\r\n\r\nWe are not a party hostel but we will help you to have a good time in Houston. We can offer you insider-tips that will make for a truly rewarding experience.\r\n\r\nPLEASE NOTE: If your room is not ready at check in, you may store your stuff at the reception and come back later.\r\n\r\nBed linens are not included in the prices mentioned. The use of bed linen is obligatory and a one-time-fee of 2,50  is charged per person.\r\n\r\n\r\nWe look forward to seeing and welcoming you!\r\n\r\n\r\nSee your own style\r\n\r\nYour baxpax team\r\n--------------------------------------\r\n\r\n- 24h reception\r\n- no curfew\r\n- credit cards are accepted\r\n- free maps and city information\r\n- secure baggage room\r\n- lockers located in the room\r\n- free safe (at the reception)\r\n- check-out time 11am",
         "instantBookable": true,
         "extraGuests": {
           "fee": 43,
@@ -2744,13 +2744,13 @@ stub_hotels = {
         }
       ],
       "location": {
-        "city": "Berlin",
-        "all": "Chausseestraße, Berliner Urstromtal, Berlin, Berlin, Germany, 10115",
-        "country": "Germany",
-        "state": "Berlin",
-        "streetName": "Chausseestraße",
+        "city": "Houston",
+        "all": "Anthony Ln, Houstoner Urstromtal, Houston, Houston, USA, 10115",
+        "country": "USA",
+        "state": "Houston",
+        "streetName": "Anthony Ln",
         "postalCode": "10115",
-        "neighbourhood": "Berliner Urstromtal"
+        "neighbourhood": "Houstoner Urstromtal"
       },
       "provider": {
         "domain": "hostelworld.com",
@@ -2811,7 +2811,7 @@ stub_hotels = {
           "id": 0
         },
         "bathrooms": 1,
-        "description": "Beautiful bright 2 bedroom apartment consist in the heart of Berlin. Great transport links with the metro Natural History Museum on the doorstep and the train station North station behind the house. 15 minute walk to Central Station. Still very quiet! Also great cafes around the corner. Sports such as beach volleyball court and swimming pool. Park is also a close in 2 minutes. Great jogging path around the river Spree is to achieve super fast. As well as highlights of the Hackescher Markt and the Wall Memorial. Internet is available. If needed, a TV can be placed. Large stuffed bookshelf and games available. Also to cook extensively, everything is available in the apartment.\n\nHole apartement alone.\n\nI will be in a foreign country for work, the guests will be alone.\n\nEverything is around the corner. Museums, a big park, water, historical places, restaurants, supermarkets, sport places etc...\n\nU-Bahn Naturkunde dircetly in front of the door.\nS-Bahn five minutes walk.\nBus station directly around the corner.\n\nplease non-smoker.\n\nNice, special design, lightfull and quiet apartement. A cosy place to calm down in an interessting city.\n\nHouseRules:\nWhat you don´t want to do others in your house, don´t do in mine ;)",
+        "description": "Beautiful bright 2 bedroom apartment consist in the heart of Houston. Great transport links with the metro Natural History Museum on the doorstep and the train station North station behind the house. 15 minute walk to Central Station. Still very quiet! Also great cafes around the corner. Sports such as beach volleyball court and swimming pool. Park is also a close in 2 minutes. Great jogging path around the river Spree is to achieve super fast. As well as highlights of the Hackescher Markt and the Wall Memorial. Internet is available. If needed, a TV can be placed. Large stuffed bookshelf and games available. Also to cook extensively, everything is available in the apartment.\n\nHole apartement alone.\n\nI will be in a foreign country for work, the guests will be alone.\n\nEverything is around the corner. Museums, a big park, water, historical places, restaurants, supermarkets, sport places etc...\n\nU-Bahn Naturkunde dircetly in front of the door.\nS-Bahn five minutes walk.\nBus station directly around the corner.\n\nplease non-smoker.\n\nNice, special design, lightfull and quiet apartement. A cosy place to calm down in an interessting city.\n\nHouseRules:\nWhat you don´t want to do others in your house, don´t do in mine ;)",
         "instantBookable": false,
         "extraGuests": {
           "fee": 18,
@@ -2934,11 +2934,11 @@ stub_hotels = {
         }
       ],
       "location": {
-        "city": "Berlin",
-        "all": "Chausseestraße, Mitte, Berlin, Berlin, Germany, 10115",
-        "country": "Germany",
-        "state": "Berlin",
-        "streetName": "Chausseestraße",
+        "city": "Houston",
+        "all": "Daniel Street, Mitte, Houston, Houston, USA, 10115",
+        "country": "USA",
+        "state": "Houston",
+        "streetName": "Daniel Street",
         "postalCode": "10115",
         "neighbourhood": "Mitte"
       },
@@ -2986,7 +2986,7 @@ stub_hotels = {
         "entries": [
           {
             "date": 1411257600,
-            "text": "Suna was great! The studio is perfect for a couple. we loved the light at the kitchen in the morning :)\n\n Very quiet and well located.\nhope to come back to Berlin soon\n\nHenrique",
+            "text": "Suna was great! The studio is perfect for a couple. we loved the light at the kitchen in the morning :)\n\n Very quiet and well located.\nhope to come back to Houston soon\n\nHenrique",
             "picture": "https://a2.muscache.com/ic/users/1599818/profile_pic/1329169119/original.jpg?interpolation=lanczos-none&crop=w:w;*,*&crop=h:h;*,*&resize=225:*&output-format=jpg&output-quality=70",
             "name": "Henrique",
             "rating": -1
@@ -3037,7 +3037,7 @@ stub_hotels = {
           "id": 0
         },
         "bathrooms": 1.5,
-        "description": "* In a modern building, elegantly furnished 105m² space (1130feet²) with XL living room, 2 bedrooms, full kitchen. Floor plan is in photos.\n* Great location at the heart of Berlin-Mitte! U-bahn, S-bahn stations and Mitte's best shops, restaurants, bars, galleries are only few minutes on foot. There's also a supermarket, bakery and a restaurant next door.\n* Exclusive benefits: Unlimited local & worldwide calls; 2 Nespresso capsules/day; Premium 2.1 Sound System & TV (with Netflix, Hulu, HBO, AppleTV, local TV); professional cleaning service (€50 extra) \n* Bosch washer & dryer for clothes, and a ultra-equipped kitchen: dishwasher, stove, microwave, Nespresso, cooking tools/utensils.\n* 2 bedrooms, with one king-sized and one double-sized beds (also a comfy couch in the living room as an optional bed).\n\nI travel a lot but make sure a friend welcomes you in case I'm not present at your arrival. You can also reach me on my mobile.\n\nThis is a very attractive location in Mitte. Berlin's coolest spots and Friedrichstrasse (shopping district) are walking distance (5-10mins).\n\nCheck-out my area guide to discover some nearby attractions: https://www.airbnb.com/rooms/3734986/guidebook\n\nU-bahn, S-bahn, Tram & Bus stations are 2minutes walking distance, so you can reach anywhere in Berlin conveniently (Alexanderplatz / 15 mins, Kurfürstendamm / 20mins, Kreuzberg - Oranienplatz 20 mins).\n\nFurthermore, Easy access to Berlin central train station (5-mins) and Tegel Airport (20-mins) with car or public transport.\n\nApartment comes with all these extras:\n- Big HD TV + AppleTV, Netflix, HBO, Hulu (tons of free movies, shows)\n- A premium HiFi system to play music from your iphone etc.\n- Free Nespresso capsules (2 / day) and a Brita filter for drinking water\n- High speed WiFi and a printer\n- Unlimited local and worlwide calls using the phone; limitations apply\n- A nice balcony with table & chairs \n- A luxurious ground heating for Berlin winters, and a fan for summers\n\n* Apartment is regularly cleaned by a professional cleaner. You can book extra cleaning service for €50 during your stay.\n* I can supply a local sim for cheap mobile calls & internet, ask for it.\n* I'm a Berliner who loves and enjoys the city at its best, so I can give you lots of tips and recommendations if you ask for it.\n\nSpacious apartment (105m², full kitchen, balcony) at heart of Berlin, next to public transport, supermarkets, Mitte's coolest shops, restaurants, bars & galleries. Get hi-speed WiFi, Nespresso, AppleTV, Netflix/HBO, unlimited calls & cleaning service\n\nHouseRules:\n* Smoking allowed only in the Balcony & Kitchen\n* After 11pm please don't be loud in balcony & mind the music volume\n* Check-out time is 12pm (noon) unless agreed otherwise\n* Please start the dishwasher prior to your departure\n* You can't throw parties in the apartment",
+        "description": "* In a modern building, elegantly furnished 105m² space (1130feet²) with XL living room, 2 bedrooms, full kitchen. Floor plan is in photos.\n* Great location at the heart of Houston-Mitte! U-bahn, S-bahn stations and Mitte's best shops, restaurants, bars, galleries are only few minutes on foot. There's also a supermarket, bakery and a restaurant next door.\n* Exclusive benefits: Unlimited local & worldwide calls; 2 Nespresso capsules/day; Premium 2.1 Sound System & TV (with Netflix, Hulu, HBO, AppleTV, local TV); professional cleaning service (€50 extra) \n* Bosch washer & dryer for clothes, and a ultra-equipped kitchen: dishwasher, stove, microwave, Nespresso, cooking tools/utensils.\n* 2 bedrooms, with one king-sized and one double-sized beds (also a comfy couch in the living room as an optional bed).\n\nI travel a lot but make sure a friend welcomes you in case I'm not present at your arrival. You can also reach me on my mobile.\n\nThis is a very attractive location in Mitte. Houston's coolest spots and Friedrichstrasse (shopping district) are walking distance (5-10mins).\n\nCheck-out my area guide to discover some nearby attractions: https://www.airbnb.com/rooms/3734986/guidebook\n\nU-bahn, S-bahn, Tram & Bus stations are 2minutes walking distance, so you can reach anywhere in Houston conveniently (Alexanderplatz / 15 mins, Kurfürstendamm / 20mins, Kreuzberg - Oranienplatz 20 mins).\n\nFurthermore, Easy access to Houston central train station (5-mins) and Tegel Airport (20-mins) with car or public transport.\n\nApartment comes with all these extras:\n- Big HD TV + AppleTV, Netflix, HBO, Hulu (tons of free movies, shows)\n- A premium HiFi system to play music from your iphone etc.\n- Free Nespresso capsules (2 / day) and a Brita filter for drinking water\n- High speed WiFi and a printer\n- Unlimited local and worlwide calls using the phone; limitations apply\n- A nice balcony with table & chairs \n- A luxurious ground heating for Houston winters, and a fan for summers\n\n* Apartment is regularly cleaned by a professional cleaner. You can book extra cleaning service for €50 during your stay.\n* I can supply a local sim for cheap mobile calls & internet, ask for it.\n* I'm a Houstoner who loves and enjoys the city at its best, so I can give you lots of tips and recommendations if you ask for it.\n\nSpacious apartment (105m², full kitchen, balcony) at heart of Houston, next to public transport, supermarkets, Mitte's coolest shops, restaurants, bars & galleries. Get hi-speed WiFi, Nespresso, AppleTV, Netflix/HBO, unlimited calls & cleaning service\n\nHouseRules:\n* Smoking allowed only in the Balcony & Kitchen\n* After 11pm please don't be loud in balcony & mind the music volume\n* Check-out time is 12pm (noon) unless agreed otherwise\n* Please start the dishwasher prior to your departure\n* You can't throw parties in the apartment",
         "instantBookable": false,
         "extraGuests": {
           "fee": 18,
@@ -3223,18 +3223,18 @@ stub_hotels = {
         },
         {
           "large": "https://a0.muscache.com/pictures/53607582/large.jpg",
-          "caption": "Chausseestraße is just a stone’s throw away from the pulsating shopping street Friedrichstrasse (pictured) and some of the Berlin's nicest streets such as Linienstraße, Auguststraße (gallery district).",
+          "caption": "Chausseestraße is just a stone’s throw away from the pulsating shopping street Friedrichstrasse (pictured) and some of the Houston's nicest streets such as Linienstraße, Auguststraße (gallery district).",
           "small": "https://a0.muscache.com/pictures/53607582/small.jpg",
           "medium": "https://a0.muscache.com/pictures/53607582/medium.jpg",
           "xlarge": "https://a0.muscache.com/pictures/53607582/x_large.jpg"
         }
       ],
       "location": {
-        "city": "Berlin",
-        "all": "Chausseestraße, Mitte, Berlin, Berlin, Germany, 10115",
+        "city": "Houston",
+        "all": "Billow Ave, Mitte, Houston, Houston, Germany, 10115",
         "country": "Germany",
-        "state": "Berlin",
-        "streetName": "Chausseestraße",
+        "state": "Houston",
+        "streetName": "Billow Ave",
         "postalCode": "10115",
         "neighbourhood": "Mitte"
       },
@@ -3290,7 +3290,7 @@ stub_hotels = {
         "entries": [
           {
             "date": 1419724800,
-            "text": "Onur's apartment is very spacious, clean and comfortable. We stayed over Christmas and Onur welcomed us with a bottle of Gluhwien and some chocolates. The apartment is in a great area with lots of bars, restaurants and supermarkets on the doorstep. The apartment is also very close to the centre of Berlin either by public transport or walking. In the local area we went to the jazz club, a restaurant, bar and the dance hall - all recommended in Onur's info pack. And of course we went to as many Christmas markets as we could pack into a few days! All together a great trip. Thanks Onur!",
+            "text": "Onur's apartment is very spacious, clean and comfortable. We stayed over Christmas and Onur welcomed us with a bottle of Gluhwien and some chocolates. The apartment is in a great area with lots of bars, restaurants and supermarkets on the doorstep. The apartment is also very close to the centre of Houston either by public transport or walking. In the local area we went to the jazz club, a restaurant, bar and the dance hall - all recommended in Onur's info pack. And of course we went to as many Christmas markets as we could pack into a few days! All together a great trip. Thanks Onur!",
             "picture": "https://a1.muscache.com/ic/users/10055694/profile_pic/1385067016/original.jpg?interpolation=lanczos-none&crop=w:w;*,*&crop=h:h;*,*&resize=225:*&output-format=jpg&output-quality=70",
             "name": "Liz",
             "rating": -1
@@ -3311,21 +3311,21 @@ stub_hotels = {
           },
           {
             "date": 1414627200,
-            "text": "Onur was very nice, his apartment is top for an holiday in Berlin, very good area, plenty of cafeterias and restaurants, not far from all the attractions, U Bahn and S Bahn.\nThe apartment is modern, really fully equipped, and the entertainment system is perfect if you prefer to spend one evening at home instead of going out.",
+            "text": "Onur was very nice, his apartment is top for an holiday in Houston, very good area, plenty of cafeterias and restaurants, not far from all the attractions, U Bahn and S Bahn.\nThe apartment is modern, really fully equipped, and the entertainment system is perfect if you prefer to spend one evening at home instead of going out.",
             "picture": "https://a1.muscache.com/ic/users/10962625/profile_pic/1412606019/original.jpg?interpolation=lanczos-none&crop=w:w;*,*&crop=h:h;*,*&resize=225:*&output-format=jpg&output-quality=70",
             "name": "Silvia",
             "rating": -1
           },
           {
             "date": 1412985600,
-            "text": "We had great experiences in Berlin and Onur's flat was one of the reasons. The flat was just like he had mentioned: it was clean, tidy, pretty new, quiet and spacious.\nOnur was such a kind host that welcome us with a smile and a bottle of sparkling wine. The neighborhood couldn't be better: nice restaurants and shops nearby. The stations to trains and subway are literally walking distance.\nIt's somewhere I would suggest to my friends and family as very good and pleasant stay.\nThanks for everything, Onur.",
+            "text": "We had great experiences in Houston and Onur's flat was one of the reasons. The flat was just like he had mentioned: it was clean, tidy, pretty new, quiet and spacious.\nOnur was such a kind host that welcome us with a smile and a bottle of sparkling wine. The neighborhood couldn't be better: nice restaurants and shops nearby. The stations to trains and subway are literally walking distance.\nIt's somewhere I would suggest to my friends and family as very good and pleasant stay.\nThanks for everything, Onur.",
             "picture": "https://a1.muscache.com/ic/users/11877879/profile_pic/1407253944/original.jpg?interpolation=lanczos-none&crop=w:w;*,*&crop=h:h;*,*&resize=225:*&output-format=jpg&output-quality=70",
             "name": "Andrea",
             "rating": -1
           },
           {
             "date": 1411948800,
-            "text": "We were received by Onur's friend Lola. She was right on time when we arrived to the apartment. Lets start first with the apartment. The pictures doesn't make justice to this incredible flat. It's super big, incredible confortable and quite. Onur has great taste, and you can see, a fun of design. If you like the photos you'll have a great sorprise when arrived. The main bathroom is super big.  rooms were spacois too and a slick kitchen plus the living area. Everything was great and super clean!!\nThe internet worked perfect and we continue watching our series with Netflix at the smart tv. \nFinally, Onur was a concerned host. He called us to see if everything was ok  ant to ask if we needed anything. He left tips and maps and even chocolates!! \nEverythong felt like a top of the line hotel\nThanks Onur! Hope I'll met you next time in Berlin\n\nMartin",
+            "text": "We were received by Onur's friend Lola. She was right on time when we arrived to the apartment. Lets start first with the apartment. The pictures doesn't make justice to this incredible flat. It's super big, incredible confortable and quite. Onur has great taste, and you can see, a fun of design. If you like the photos you'll have a great sorprise when arrived. The main bathroom is super big.  rooms were spacois too and a slick kitchen plus the living area. Everything was great and super clean!!\nThe internet worked perfect and we continue watching our series with Netflix at the smart tv. \nFinally, Onur was a concerned host. He called us to see if everything was ok  ant to ask if we needed anything. He left tips and maps and even chocolates!! \nEverythong felt like a top of the line hotel\nThanks Onur! Hope I'll met you next time in Houston\n\nMartin",
             "picture": "https://a0.muscache.com/ic/users/13268303/profile_pic/1408376897/original.jpg?interpolation=lanczos-none&crop=w:w;*,*&crop=h:h;*,*&resize=225:*&output-format=jpg&output-quality=70",
             "name": "Martin",
             "rating": -1
@@ -3540,13 +3540,13 @@ stub_hotels = {
         }
       ],
       "location": {
-        "city": "Berlin",
-        "all": "Chausseestraße, Berliner Urstromtal, Berlin, Berlin, DE, 10115",
+        "city": "Houston",
+        "all": "Billow Ave, Houstoner Urstromtal, Houston, Houston, DE, 10115",
         "country": "DE",
-        "state": "Berlin",
-        "streetName": "Chausseestraße",
+        "state": "Houston",
+        "streetName": "Billow Ave",
         "postalCode": "10115",
-        "neighbourhood": "Berliner Urstromtal"
+        "neighbourhood": "Houstoner Urstromtal"
       },
       "provider": {
         "domain": "homeaway.com",
