@@ -23,7 +23,13 @@ myAppModule.controller('TripController', ['$scope', '$rootScope', 'FlightFactory
       }
     };
 
+    // set to false initially, to be toggled when api call complete. Bound to ng-hide on query in process animation.
+    $rootScope.flightApiComplete = false;
+
     FlightFactory.fetchFlights(api_req).success(function(data) {
+      $rootScope.flightApiComplete = true;
+      FlightFactory.checkQueryStatus();
+
       var trip_input = data.trips.tripOption;
       $scope.trips = trip_input.map(function(flight_input) {
         return new Trip(createFlights(flight_input.slice[0].segment), flight_input);
@@ -117,6 +123,12 @@ myAppModule.factory('FlightFactory', ['$http', '$rootScope', function($http, $ro
       data: JSON.stringify(thing),
       dataType: "json"
     });
+  };
+
+  factory.checkQueryStatus = function() {
+    if ($rootScope.flightApiComplete && $rootScope.hotelApiComplete) {
+      jQuery('#query-in-process-modal').modal('hide');
+    }
   };
 
   return factory;

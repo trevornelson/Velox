@@ -19,6 +19,8 @@ var Hotel = function(data) {
   myAppModule.controller('HotelController', ['$scope', '$rootScope', 'HotelFactory', 'FilterFactory', function($scope, $rootScope, HotelFactory, FilterFactory) {
     $scope.$watch(function() {return $rootScope.search}, function(newValue, oldValue){
       HotelFactory.fetchHotels(newValue.arrival_location.latitude, newValue.arrival_location.longitude).success(function(data) {
+        $rootScope.hotelApiComplete = true;
+
         $scope.hotels = data.result.map(function(hotel_data) {
           return new Hotel(hotel_data);
         });
@@ -36,6 +38,9 @@ var Hotel = function(data) {
         $rootScope.hotels = $scope.hotels
       });
     });
+
+    // set to false initially, to be toggled when api call complete. Bound to ng-hide on query in process animation.
+    $rootScope.hotelApiComplete = false;
 
     //Function fired on arrow click that controls cycling through of hotels
     $scope.hotel_index = 0;
