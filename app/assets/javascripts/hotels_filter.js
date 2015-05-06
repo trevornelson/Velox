@@ -62,7 +62,7 @@ var Hotel = function(data) {
     };
 
     // hotel switch filters
-    $scope.airBnb_status = false;
+    $scope.airBnb_status = true;
 
     $scope.airBnb = function() {
       $scope.resultingHotels = FilterFactory.returnHotels($scope.airBnb_status, $scope.hotels);
