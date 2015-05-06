@@ -8,6 +8,9 @@
             </div>
             <div class="info">
                 <div class="trip-template">
+                    <div class="query-in-process">
+                        <span class="fa fa-spinner fa-spin"></span>
+                    </div>
                     <div class="flight-template" ng-repeat="flight in trip.flights">
                         <h4 class="text-center">{{flight.carrier_full}}</h4>
                         <div class="header-map">
