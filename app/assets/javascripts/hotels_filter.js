@@ -76,7 +76,7 @@ var Hotel = function(data) {
     var factory = {};
     var httpConfig = {  headers:{ "X-Mashape-Authorization": "S4ftN0SMuLmsh8gvTCpVF3OfIcRKp1CTJqMjsnUJuNbU826Uz4"}};
     factory.fetchHotels = function(lat, lng) {
-      return $http.get('https://zilyo.p.mashape.com/search?latitude='+ lat + '&longitude=' + lng + '&maxdistance=100'); //, httpConfig
+      return $http.get('https://zilyo.p.mashape.com/search?latitude='+ lat + '&longitude=' + lng + '&maxdistance=100', httpConfig);
     };
 
     return factory;
