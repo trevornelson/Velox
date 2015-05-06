@@ -112,7 +112,7 @@ myAppModule.factory('FlightFactory', ['$http', '$rootScope', function($http, $ro
   factory.fetchFlights = function(thing) {
     return $.ajax({
       type: 'POST',
-      url: 'https://www.googleapis.com/qpxExpress/v1/trips/search?key=',
+      url: 'https://www.googleapis.com/qpxExpress/v1/trips/search?key=AIzaSyAZwVwEPSvSSXXKzLrt-h-lQMN2T3woqCs',
       contentType: 'application/json',
       data: JSON.stringify(thing),
       dataType: "json"
