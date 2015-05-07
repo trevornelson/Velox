@@ -34,6 +34,11 @@ App.service('UserSvc', ['$rootScope',
         });
     }
 
+    logout: function() {
+      $http.({ method: 'DELETE', url: '/sessions/' + user.id })
+        .success(function(data) { service.user = null; }
+      );
+    }
 
   };
 
