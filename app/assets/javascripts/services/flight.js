@@ -6,6 +6,7 @@ App.service('FlightSvc', ['$http',
 
   var service = {
     trips: [],
+    qpxKey: 'AIzaSyCN4pjLu5qK0ylXiV3wlEkrBXUKCz6BuLE',
     getRequestTemplate: function() {
       var reqTemplate = {
       "request": {
@@ -39,10 +40,10 @@ App.service('FlightSvc', ['$http',
     },
     fetch: function(opts) {
       // queries QPX API, returns a promise until query is complete.
-      request = service.createRequest(opts);
+      var data = service.createRequest(opts);
+      var url = 'https://www.googleapis.com/qpxExpress/v1/trips/search?key=' + service.qpxKey;
 
-      return $http.post('/https://www.googleapis.com/qpxExpress/v1/trips/search?key=AIzaSyCN4pjLu5qK0ylXiV3wlEkrBXUKCz6BuLE',
-                  request);
+      return $http.post(url, data);
     }
   }
 }]);
