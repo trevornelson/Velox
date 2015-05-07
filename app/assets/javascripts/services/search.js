@@ -10,6 +10,18 @@ myAppModule.service('SearchSvc', ['$rootScope', 'FlightSvc',
       depart_location: '',
       depart_date: '',
       return_date: ''
+    },
+    trips: [],
+    hotels: [],
+    queryAPIs: function() {
+      var flightsPromise = FlightSvc.fetch(service.searchOptions);
+      var rentalsPromise = RentalSvc.fetch(service.searchOptions);
+
+      $q.all([flightsPromise, rentalsPromise]).then(function(data){
+        trips.concat(data[0]);
+        hotels.concat(data[1]);
+        $rootScope.$broadcast('search.update');
+      });
     }
   }
 
