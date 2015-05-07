@@ -5,7 +5,16 @@ App.service('UserSvc', ['$rootScope',
                 function($rootScope) {
 
   var service = {
+    user: null,
+    getUser: function() {
+      if (!user) {
+        $http.get('/sessions/fetch')
+          .success( function(data) { service.user = data; }
+        );
+      }
 
+      return user;
+    }
 
   };
 
