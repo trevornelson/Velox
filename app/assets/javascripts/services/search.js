@@ -22,7 +22,7 @@ Service for querying Google QPX Api and storing responses
 myAppModule.service('FlightSvc', function() {
   var service = {
     getRequestTemplate: function() {
-      return {
+      var reqTemplate = {
       "request": {
         "slice": [],
         "passengers": {
@@ -36,6 +36,8 @@ myAppModule.service('FlightSvc', function() {
         "refundable": false
       }
     };
+
+    return reqTemplate;
     },
     createRequest: function(opts) {
       var req = getRequestTemplate();
@@ -47,19 +49,15 @@ myAppModule.service('FlightSvc', function() {
 
       // push trip leg into slice array to make implementing two-way trips easier later
       req.request.slice.push(trip_leg);
-      
-      return req;
-    },
-    fetch: function() {
 
+      return JSON.stringify(req);
+    },
+    fetch: function(opts) {
+      // queries QPX API, returns a promise until query is complete.
+      request = service.createRequest(opts);
+
+      return $http.post('/https://www.googleapis.com/qpxExpress/v1/trips/search?key=AIzaSyCN4pjLu5qK0ylXiV3wlEkrBXUKCz6BuLE',
+                  request);
     }
   }
-
-return $.ajax({
-      type: 'POST',
-      url: 'https://www.googleapis.com/qpxExpress/v1/trips/search?key=',
-      contentType: 'application/json',
-      data: JSON.stringify(thing),
-      dataType: "json"
-    });
 });
