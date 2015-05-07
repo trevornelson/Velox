@@ -5,6 +5,7 @@ App.service('FlightSvc', ['$http',
                   function($http) {
 
   var service = {
+    trips: [],
     getRequestTemplate: function() {
       var reqTemplate = {
       "request": {
