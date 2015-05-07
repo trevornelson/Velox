@@ -2,7 +2,7 @@
 Service for storing the search inputs and initiating resulting API queries.
 Dependencies: $rootScope, FlightSvc, 
 **/
-myAppModule.service('SearchSvc', ['$rootScope', 'FlightSvc',
+App.service('SearchSvc', ['$rootScope', 'FlightSvc',
                                   function($rootScope, FlightSvc) {
   var service = {
     searchOptions: {
@@ -31,7 +31,7 @@ myAppModule.service('SearchSvc', ['$rootScope', 'FlightSvc',
 /**
 Service for querying Google QPX Api and storing responses
 **/
-myAppModule.service('FlightSvc', function() {
+App.service('FlightSvc', function() {
   var service = {
     getRequestTemplate: function() {
       var reqTemplate = {
@@ -73,3 +73,7 @@ myAppModule.service('FlightSvc', function() {
     }
   }
 });
+
+/**
+Service for querying Zilyo API and storing a collection of accommedations
+**/

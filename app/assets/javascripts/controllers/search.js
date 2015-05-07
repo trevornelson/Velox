@@ -1,6 +1,5 @@
-myAppModule.controller('TripController',
-                      ['$scope', 'SearchSvc', 'FlightSvc', 'HotelSvc',
-                      function($scope, SearchSvc, HotelSvc) {
+App.controller('SearchController', ['$scope', 'SearchSvc', 'FlightSvc', 'HotelSvc',
+                            function($scope, SearchSvc, HotelSvc) {
   $scope.$on('search.update', function(event) {
     $scope.trips = SearchSvc.trips;
     $scope.hotels = SearchSvc.hotels;
@@ -9,4 +8,4 @@ myAppModule.controller('TripController',
   $scope.trips = [];
   $scope.hotels = [];
 
-});
+}]);
