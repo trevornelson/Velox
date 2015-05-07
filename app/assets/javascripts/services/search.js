@@ -12,7 +12,6 @@ App.service('SearchSvc', ['$rootScope', 'FlightSvc', 'HotelSvc',
       depart_date: '',
       return_date: ''
     },
-    hotels: [],
     queryAPIs: function() {
       var flightsPromise = FlightSvc.fetch(service.searchOptions);
       var rentalsPromise = RentalSvc.fetch(service.searchOptions);
