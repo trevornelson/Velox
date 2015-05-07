@@ -12,14 +12,15 @@ App.service('SearchSvc', ['$rootScope', 'FlightSvc', 'HotelSvc',
       depart_date: '',
       return_date: ''
     },
+
+    // Query 3rd party APIs and update corresponding collections once they've resolved.
     queryAPIs: function() {
       var flightsPromise = FlightSvc.fetch(service.searchOptions);
-      var rentalsPromise = RentalSvc.fetch(service.searchOptions);
+      var hotelsPromise = HotelSvc.fetch(service.searchOptions);
 
-      $q.all([flightsPromise, rentalsPromise]).then(function(data){
-        trips.concat(data[0]);
-        hotels.concat(data[1]);
-        $rootScope.$broadcast('result.update');
+      $q.all([flightsPromise, hotelsPromise]).then(function(data){
+        FlightSvc.updateTrips(data[0]);
+        HotelSvc.updateHotels(data[1]);
       });
     }
   }

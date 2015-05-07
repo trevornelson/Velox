@@ -1,8 +1,8 @@
 /**
 Service for querying Zilyo API and storing a collection of accommedations
 **/
-App.service('HotelSvc', ['$http', '$rootScope',
-                function( $http,   $rootScope ) {
+App.service('HotelSvc', ['$rootScope', '$http',
+                function( $rootScope,   $http, ) {
 
   var service = {
     hotels: [],
@@ -10,13 +10,13 @@ App.service('HotelSvc', ['$http', '$rootScope',
     zilyoAuth: {
       headers: { "X-Mashape-Authorization": "S4ftN0SMuLmsh8gvTCpVF3OfIcRKp1CTJqMjsnUJuNbU826Uz4"}
     },
-    
+
     createRequest: function(destination) {
       return 'https://zilyo.p.mashape.com/search?latitude='+ destination.lat + '&longitude=' + destination.lng + '&maxdistance=100';
     },
 
-    fetch: function(destination) {
-      var url = service.createRequest(destination);
+    fetch: function(opts) {
+      var url = service.createRequest(opts.arrival_location);
 
       return $http.get(url, service.zilyoAuth);
     },
