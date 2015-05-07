@@ -21,16 +21,10 @@ Service for querying Google QPX Api and storing responses
 **/
 myAppModule.service('FlightSvc', function() {
   var service = {
-    createRequest: function(opts) {
+    getRequestTemplate: function() {
       return {
       "request": {
-        "slice": [
-        {
-          "origin": opts.arrival_location.code,
-          "destination": opts.depart_location.code,
-          "date": opts.depart_date
-        }
-        ],
+        "slice": [],
         "passengers": {
           "adultCount": 1,
           "infantInLapCount": 0,
@@ -42,6 +36,19 @@ myAppModule.service('FlightSvc', function() {
         "refundable": false
       }
     };
+    },
+    createRequest: function(opts) {
+      var req = getRequestTemplate();
+      var trip_leg = {
+                      "origin": opts.arrival_location.code,
+                      "destination": opts.depart_location.code,
+                      "date": opts.depart_date
+                      }
+
+      // push trip leg into slice array to make implementing two-way trips easier later
+      req.request.slice.push(trip_leg);
+      
+      return req;
     },
     fetch: function() {
 
