@@ -21,7 +21,7 @@ describe('searchFactory', function() {
     });
 
 
-    it('should call buildSearch function', function() {
+    xit('should call buildSearch function', function() {
       spyOn(searchFactory, 'buildSearch');
       searchFactory.selectResult();
       expect(searchFactory.buildSearch).toHaveBeenCalled();
@@ -42,11 +42,11 @@ describe('searchFactory', function() {
       this.returned_object = searchFactory.hydrateResults(search_results);
     });
 
-    it('should return an array', function() {
+    xit('should return an array', function() {
       expect(Array.isArray(this.returned_object)).toBe(true);
     });
 
-    it('should return SearchResult objects', function() {
+    xit('should return SearchResult objects', function() {
       expect(this.returned_object[0].airport_code).toBe('LGA');
     });
 
@@ -80,7 +80,7 @@ describe('searchFactory', function() {
       expect(results).toBe(null);
     });
 
-    it('should call hydrateResults function if query status is OK', function() {
+    xit('should call hydrateResults function if query status is OK', function() {
       spyOn(searchFactory, 'hydrateResults');
       searchFactory.callback(this.predictions, 'OK');
       expect(searchFactory.hydrateResults).toHaveBeenCalled();
@@ -88,11 +88,11 @@ describe('searchFactory', function() {
   });
 
   describe('query', function() {
-    it('should return null if query input is empty', function() {
+    xit('should return null if query input is empty', function() {
       expect(searchFactory.query('')).toBe(null);
     });
 
-    it('should call callback function if query is valid', function() {
+    xit('should call callback function if query is valid', function() {
       spyOn(searchFactory, 'callback');
       searchFactory.query('texas');
       setTimeout(function() {

@@ -14,7 +14,7 @@ describe('TripController', function() {
     $controller('TripController', {'$rootScope': $rootScope, '$scope': $scope});
   }));
 
-  it('should return a trip that contains an array of flight(s)', function() {
+  xit('should return a trip that contains an array of flight(s)', function() {
     expect($scope.trips.constructor.name === Array);
   });
 
