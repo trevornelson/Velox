@@ -13,7 +13,7 @@ describe('UserSvc', function() {
     });
   });
 
-  describe('getUser', function() {
+  describe('login', function() {
 
     it('should return user when a user correctly logs in', function() {
       httpBackend.expect('POST', '/sessions').respond({
