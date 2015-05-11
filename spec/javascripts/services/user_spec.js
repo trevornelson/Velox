@@ -22,8 +22,10 @@ describe('UserSvc', function() {
         "password": "HdtyJ842Jghgk498KSLgnd32Fvb"
       });
 
-      UserSvc.login({username: 'testUsername', password: '12345'});
-      expect(UserSvc.user['username']).toEqual("testUsername");
+      var deferredResponse = UserSvc.login({username: 'testUsername', password: '12345'});
+      deferredResponse.then(function() {
+        expect(UserSvc.user['username']).toEqual("testUsername");
+      });
 
       $scope.$apply();
       $httpBackend.flush();
