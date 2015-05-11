@@ -2,17 +2,29 @@
 
 describe('SearchSvc', function() {
 
-  var SearchSvc, FlightSvc, HotelSvc, $httpBackend;
+  var SearchSvc, FlightSvc, HotelSvc, $httpBackend, $scope;
+
+  var qpxMock = {
+
+  }
+
+  var zilyoMock = {
+
+  }
 
   beforeEach(function() {
     module('app');
 
-    inject(function(_SearchSvc_, _FlightSvc_, _HotelSvc_, _$httpBackend_) {
+    inject(function(_SearchSvc_, _FlightSvc_, _HotelSvc_, _$httpBackend_, $rootScope) {
       SearchSvc = _SearchSvc_;
       FlightSvc = _FlightSvc_;
       HotelSvc = _HotelSvc_;
       $httpBackend = _$httpBackend_;
+      $scope = $rootScope.$new();
     });
+
+    $httpBackend.expectPOST(/https:\/\/www\.googleapis\.com\/qpxExpress\/v1\/trips\/search.*/).respond(qpxMock);
+    $httpBackend.expectGET(/https:\/\/zilyo\.p\.mashape\.com\/search.*/).respond(zilyoMock);
   });
 
   describe('queryApis', function() {
@@ -31,14 +43,28 @@ describe('SearchSvc', function() {
 
     it('should call the updateTrips function', function() {
       spyOn(FlightSvc, 'updateTrips');
-      SearchSvc.queryAPIs();
-      expect(FlightSvc.updateTrips).toHaveBeenCalled();
+
+      var deferredResponse = SearchSvc.queryAPIs();
+      deferredResponse.then(function() {
+        expect(FlightSvc.updateTrips).toHaveBeenCalled();
+      });
+
+      // $scope.$apply needed to manually resolve promises
+      $scope.$apply();
+      $httpBackend.flush();
     });
 
     it('should call the updateHotels function', function() {
       spyOn(HotelSvc, 'updateHotels');
-      SearchSvc.queryAPIs();
-      expect(HotelSvc.updateHotels).toHaveBeenCalled();
+
+      var deferredResponse = SearchSvc.queryAPIs();
+      deferredResponse.then(function() {
+        expect(HotelSvc.updateHotels).toHaveBeenCalled();
+      });
+
+      // $scope.$apply needed to manually resolve promises
+      $scope.$apply();
+      $httpBackend.flush();
     });
 
 
