@@ -46,18 +46,17 @@ describe('HotelSvc', function() {
 
   });
 
-  describe('updateHotels', function() {
+  describe('parseZilyo', function() {
 
     it('should update the hotels collection', function() {
-      HotelSvc.updateHotels(stub_hotels);
-      expect(HotelSvc.hotels.count).toEqual(14);
+      HotelSvc.parseZilyo(stub_hotels);
+      expect(HotelSvc.hotels.length).toEqual(14);
     });
 
     it('should update the hotel collection with Hotel objects', function() {
-      HotelSvc.updateHotels(stub_hotels);
+      HotelSvc.parseZilyo(stub_hotels);
       var firstHotel = HotelSvc.hotels[0];
-
-      expect(firstHotel instanceof Hotel).toEqual(true);
+      expect(firstHotel.constructor.name).toEqual('Hotel');
     });
 
   });
