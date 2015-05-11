@@ -51,7 +51,7 @@ describe('FlightSvc', function() {
 
     it('should update the trips collection', function() {
       FlightSvc.parseQPX(stub_trips);
-      expect(FlightSvc.trips.length).toEqual(40)
+      expect(FlightSvc.trips.length).toEqual(20)
     });
 
     it('should update the trips collection with Trip objects', function() {
