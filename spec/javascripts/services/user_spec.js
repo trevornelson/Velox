@@ -7,9 +7,10 @@ describe('UserSvc', function() {
   beforeEach(function() {
     module('app');
 
-    inject(function(_UserSvc_, _$httpBackend_) {
+    inject(function(_UserSvc_, _$httpBackend_, $rootScope) {
       UserSvc = _UserSvc_;
       $httpBackend = _$httpBackend_;
+      $scope = $rootScope.$new();
     });
   });
 
@@ -24,6 +25,7 @@ describe('UserSvc', function() {
       UserSvc.login({username: 'testUsername', password: '12345'});
       expect(UserSvc.user['username']).toEqual("testUsername");
 
+      $scope.$apply();
       $httpBackend.flush();
     });
   });
