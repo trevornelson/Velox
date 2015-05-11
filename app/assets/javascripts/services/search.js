@@ -2,8 +2,8 @@
 Service for storing the search inputs and initiating resulting API queries.
 Dependencies: $rootScope, FlightSvc, 
 **/
-App.service('SearchSvc', ['$rootScope', 'FlightSvc', 'HotelSvc',
-                  function($rootScope,   FlightSvc,   HotelSvc) {
+App.service('SearchSvc', ['$rootScope', '$q', 'FlightSvc', 'HotelSvc',
+                  function($rootScope,   $q,   FlightSvc,   HotelSvc) {
 
   var service = {
     searchOptions: {
