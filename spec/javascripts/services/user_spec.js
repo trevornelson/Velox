@@ -15,22 +15,17 @@ describe('UserSvc', function() {
 
   describe('getUser', function() {
 
-    it('should contain a user service object', function() {
-      expect(UserSvc).not.toEqual(null);
-    });
-
-    it('should return user when the session has been authenticated', function() {
-      httpBackend.whenGET('/sessions/fetch').respond({
+    it('should return user when a user correctly logs in', function() {
+      httpBackend.expect('POST', '/sessions').respond({
         "username": "testUsername",
         "password": "HdtyJ842Jghgk498KSLgnd32Fvb"
       });
 
-      UserSvc.getUser().then( function(user) {
-        expect(user.username).toEqual("testUsername");
-      });
+      UserSvc.login({username: 'testUsername', password: '12345'});
+      expect(UserSvc.user['username']).toEqual("testUsername");
 
       httpBackend.flush();
     });
   });
 
-});
+}); 
