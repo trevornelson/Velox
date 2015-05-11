@@ -24,15 +24,21 @@ describe('SearchSvc', function() {
     });
 
     it('should call the fetch HotelSvc function', function() {
-
+      spyOn(HotelSvc, 'fetch');
+      SearchSvc.queryAPIs();
+      expect(HotelSvc.fetch).toHaveBeenCalled();
     });
 
     it('should call the updateTrips function', function() {
-
+      spyOn(FlightSvc, 'updateTrips');
+      SearchSvc.queryAPIs();
+      expect(FlightSvc.updateTrips).toHaveBeenCalled();
     });
 
     it('should call the updateHotels function', function() {
-
+      spyOn(HotelSvc, 'updateHotels');
+      SearchSvc.queryAPIs();
+      expect(HotelSvc.updateHotels).toHaveBeenCalled();
     });
 
 
