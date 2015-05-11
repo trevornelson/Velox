@@ -48,7 +48,7 @@ App.service('FlightSvc', ['$rootScope', '$http',
       var url = 'https://www.googleapis.com/qpxExpress/v1/trips/search?key=' + service.qpxKey;
 
       return $http.post(url, data);
-    }
+    },
 
     // Once all queries are done, set trips collection and broadcast trips.update event.
     updateTrips: function(trips) {
