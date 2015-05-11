@@ -30,7 +30,7 @@ App.service('FlightSvc', ['$rootScope', '$http',
 
     // push trip leg into template's 'slice' array to make implementing two-way trips easier later.
     createRequest: function(opts) {
-      var req = getRequestTemplate();
+      var req = service.getRequestTemplate();
       var trip_leg = {
                       "origin": opts.arrival_location.code,
                       "destination": opts.depart_location.code,
