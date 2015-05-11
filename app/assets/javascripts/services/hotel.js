@@ -2,7 +2,7 @@
 Service for querying Zilyo API and storing a collection of accommedations
 **/
 App.service('HotelSvc', ['$rootScope', '$http',
-                function( $rootScope,   $http, ) {
+                function( $rootScope,   $http ) {
 
   var service = {
     hotels: [],
