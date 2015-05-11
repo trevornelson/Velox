@@ -2,7 +2,7 @@
 
 describe('UserSvc', function() {
 
-  var UserSvc, httpBackend;
+  var UserSvc, $httpBackend, $scope;
 
   beforeEach(function() {
     module('app');
