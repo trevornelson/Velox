@@ -18,4 +18,5 @@
 //= require respond.min
 //= require angular
 //= require angular-mocks
+//= require angular-route.js
 //= require_tree .
