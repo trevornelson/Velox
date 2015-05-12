@@ -19,8 +19,6 @@ var Hotel = function(data) {
   myAppModule.controller('HotelController', ['$scope', '$rootScope', 'HotelFactory', 'FilterFactory', function($scope, $rootScope, HotelFactory, FilterFactory) {
     $scope.$watch(function() {return $rootScope.search}, function(newValue, oldValue){
       HotelFactory.fetchHotels(newValue.arrival_location.latitude, newValue.arrival_location.longitude).success(function(data) {
-        $rootScope.hotelApiComplete = true;
-
         $scope.hotels = data.result.map(function(hotel_data) {
           return new Hotel(hotel_data);
         });
@@ -38,9 +36,6 @@ var Hotel = function(data) {
         $rootScope.hotels = $scope.hotels
       });
     });
-
-    // set to false initially, to be toggled when api call complete. Bound to ng-hide on query in process animation.
-    $rootScope.hotelApiComplete = false;
 
     //Function fired on arrow click that controls cycling through of hotels
     $scope.hotel_index = 0;
@@ -67,7 +62,7 @@ var Hotel = function(data) {
     };
 
     // hotel switch filters
-    $scope.airBnb_status = true;
+    $scope.airBnb_status = false;
 
     $scope.airBnb = function() {
       $scope.resultingHotels = FilterFactory.returnHotels($scope.airBnb_status, $scope.hotels);
@@ -81,7 +76,7 @@ var Hotel = function(data) {
     var factory = {};
     var httpConfig = {  headers:{ "X-Mashape-Authorization": "S4ftN0SMuLmsh8gvTCpVF3OfIcRKp1CTJqMjsnUJuNbU826Uz4"}};
     factory.fetchHotels = function(lat, lng) {
-      return $http.get('https://zilyo.p.mashape.com/search?latitude='+ lat + '&longitude=' + lng + '&maxdistance=100', httpConfig);
+      return $http.get('https://zilyo.p.mashape.com/search?latitude='+ lat + '&longitude=' + lng + '&maxdistance=100'); //, httpConfig
     };
 
     return factory;

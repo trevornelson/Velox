@@ -18,7 +18,8 @@ myAppModule.controller('SearchController', ['$scope', '$rootScope', 'searchFacto
 
 
       $scope.submit = function() {
-        jQuery('#query-in-process-modal').modal('show');
+        console.log($scope.search);
+
         $rootScope.search = $scope.search;
       };
 
