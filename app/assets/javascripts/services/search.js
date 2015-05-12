@@ -27,7 +27,19 @@ App.service('SearchSvc', ['$rootScope', '$q', 'FlightSvc', 'HotelSvc',
       });
 
       return deferred.promise;
-    }
+    },
+
+    buildLocation: function(args) {
+      function Location(args) {
+        this.city = args.city;
+        this.airport_code = args.code;
+        this.latitude = args.lat;
+        this.longitude = args.lng;
+        this.name = args.name;
+      };
+
+      return new Location(args);
+    };
   }
 
   return service;
